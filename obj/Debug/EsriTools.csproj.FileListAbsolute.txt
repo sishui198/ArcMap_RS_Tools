@@ -1,6 +1,5 @@
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\bin\Debug\EsriTools.dll
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\bin\Debug\EsriTools.pdb
-C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.csprojResolveAssemblyReference.cache
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.DockWins.CleaningTrackerUpdate_Dock.resources
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.DockWins.HydroTrackerUpdate_Dock.resources
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.DockWins.ToggleSelectability_Dock.resources

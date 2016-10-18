@@ -130,8 +130,15 @@ namespace EsriTools.Forms
             _utilities = new Classes.Utilities(_map);
             cboTileIndex.Items.Clear();
             cboTileIndex.Items.AddRange(_utilities.PolygonLayers().ToArray());
-            if (cboTileIndex.Items.Count > -1)
+            if (cboTileIndex.Items.Count > 0)
+            {
                 cboTileIndex.SelectedIndex = 0;
+            }
+            else
+            {
+                MessageBox.Show("Add Some Polygon Layers to Arcmap", MB_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+                
         }
 
         private bool CheckRequirments()
