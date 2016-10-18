@@ -117,6 +117,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Config.esriaddinx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TileLasLoaderHelp_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TileLasLoaderHelp_Form.Designer.cs">
+      <DependentUpon>TileLasLoaderHelp_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ToolCollection\TileLasLoader\TileLasLoaderSettings_Button.cs" />
     <Compile Include="ToolCollection\Lidar\CleaningTrackerUpdater_Button.cs" />
     <Compile Include="ToolCollection\Lidar\HydroTrackerUpdater_Button.cs" />
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DockWins\ToggleVisibility_Dock.resx">
       <DependentUpon>ToggleVisibility_Dock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TileLasLoaderHelp_Form.resx">
+      <DependentUpon>TileLasLoaderHelp_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TileLasLoader_Form.resx">
       <DependentUpon>TileLasLoader_Form.cs</DependentUpon>
@@ -282,6 +291,15 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TileLasLoaderHelpImage.png" />
   </ItemGroup>
   <PropertyGroup>
     <ZipFileExtension>esriAddIn</ZipFileExtension>

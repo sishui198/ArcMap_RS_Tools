@@ -119,6 +119,12 @@ namespace EsriTools.Forms
             previousLasWorkspace = txbLasWorkspace.Text;
         }
 
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            TileLasLoaderHelp_Form help = new TileLasLoaderHelp_Form();
+            help.ShowDialog();
+        }
+
         #endregion
 
         #region Method(s)
@@ -172,6 +178,38 @@ namespace EsriTools.Forms
             return false;
         }
 
+        private void LoadFile(String FilePath)
+        {
+            String extension = String.Empty;
+
+            if (txbCustomExtension.Text != String.Empty)
+            {
+                extension = txbCustomExtension.Text;
+                if (extension.Contains("."))
+                    extension = extension.Replace(".", "");
+                if (File.Exists(FilePath + extension))
+                {
+                    Process.Start(FilePath + extension);
+                    return;
+                }
+                else
+                {
+                    string message = "No Such File with '" + extension + "' extension\nNow Trying LAS";
+                    MessageBox.Show(message, MB_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            
+            if (File.Exists(FilePath + "las"))
+            {
+                Process.Start(FilePath + "las");
+            }
+            else
+            {
+                string message = "No Such File with 'las' extension";
+                MessageBox.Show(message, MB_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
         internal void LoadLasFile(int X, int Y)
         {
             if (CheckRequirments())
@@ -196,7 +234,7 @@ namespace EsriTools.Forms
                         if (obj != DBNull.Value)
                         {
                             string tilename = obj.ToString();
-                            Process.Start(txbLasWorkspace.Text + "\\" + tilename + ".las");
+                            LoadFile(txbLasWorkspace.Text + "\\" + tilename + ".");
                             break;
                         }
                     }
@@ -208,5 +246,9 @@ namespace EsriTools.Forms
             }
         }
         #endregion
+
+       
+
+        
     }
 }

@@ -4,6 +4,7 @@ C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.Do
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.DockWins.HydroTrackerUpdate_Dock.resources
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.DockWins.ToggleSelectability_Dock.resources
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.DockWins.ToggleVisibility_Dock.resources
+C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.Forms.TileLasLoaderHelp_Form.resources
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.Forms.TileLasLoader_Form.resources
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.Properties.Resources.resources
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.csproj.GenerateResource.Cache
