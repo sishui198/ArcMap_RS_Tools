@@ -77,6 +77,7 @@
             // 
             // cboTileIndex
             // 
+            this.cboTileIndex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTileIndex.FormattingEnabled = true;
             this.cboTileIndex.Location = new System.Drawing.Point(103, 35);
             this.cboTileIndex.Name = "cboTileIndex";
@@ -96,6 +97,7 @@
             // 
             // cboNameField
             // 
+            this.cboNameField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNameField.FormattingEnabled = true;
             this.cboNameField.Location = new System.Drawing.Point(235, 35);
             this.cboNameField.Name = "cboNameField";
@@ -211,6 +213,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Tile LAS Loader";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.TileLasLoader_Form_Load);
             this.VisibleChanged += new System.EventHandler(this.TileLasLoader_Form_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();

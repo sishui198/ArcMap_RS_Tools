@@ -10,4 +10,5 @@ C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.Pr
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.csproj.GenerateResource.Cache
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.dll
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.pdb
+C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\obj\Debug\EsriTools.csprojResolveAssemblyReference.cache
 C:\Users\chris\Documents\SourceControl\RS Tools\EsriTools\bin\Debug\EsriTools.esriAddIn

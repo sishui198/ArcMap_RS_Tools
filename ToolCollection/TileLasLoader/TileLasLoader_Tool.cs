@@ -31,6 +31,8 @@ namespace EsriTools.ToolCollection.TileLasLoader
         {
             base.OnMouseDown(arg);
             _form.LoadLasFile(arg.X, arg.Y);
+
+            // Was Going to be used to reset user back to previous tool but proved to resource exaustive. ie: tracking tools
             ArcMap.Application.CurrentTool = _previousCommand;
         }
 
