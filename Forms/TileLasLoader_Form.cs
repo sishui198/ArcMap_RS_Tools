@@ -15,6 +15,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Ookii.Dialogs;
 
 namespace EsriTools.Forms
 {
@@ -100,15 +101,27 @@ namespace EsriTools.Forms
         private void btnBrowseLas_Click(object sender, EventArgs e)
         {
             string previousFolderDst = this.txbLasWorkspace.Text;
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
+
+            //FolderBrowserDialog fbd = new FolderBrowserDialog();
+            //if (Directory.Exists(previousFolderDst))
+            //    fbd.SelectedPath = previousFolderDst;
+            //DialogResult result = new DialogResult();
+
+            //result = fbd.ShowDialog();
+
+            //if (result == DialogResult.OK)
+            //    txbLasWorkspace.Text = fbd.SelectedPath;
+
+            VistaFolderBrowserDialog folderBrowserDialog = new VistaFolderBrowserDialog();
             if (Directory.Exists(previousFolderDst))
-                fbd.SelectedPath = previousFolderDst;
-            DialogResult result = new DialogResult();
+                folderBrowserDialog.SelectedPath = txbLasWorkspace.Text;
 
-            result = fbd.ShowDialog();
+            if (!VistaFolderBrowserDialog.IsVistaFolderDialogSupported)
+                MessageBox.Show(this, "Because you are not using Windows Vista or later, the regular folder browser dialog will be used. Please use Windows Vista to see the new dialog.", "Sample folder browser dialog");
+            if (folderBrowserDialog.ShowDialog(this) == DialogResult.OK)
+                txbLasWorkspace.Text = (folderBrowserDialog.SelectedPath);
 
-            if (result == DialogResult.OK)
-                txbLasWorkspace.Text = fbd.SelectedPath;
+            
 
         }
 
