@@ -2,7 +2,7 @@
   <Name>EsriTools</Name>
   <AddInID>{b0c70fb1-f041-4b73-8a24-78d7befa0ab9}</AddInID>
   <Description>A collection of tools to enhance ESRI Desktop user performance. Report bugs chris.stayte@woolpert.com</Description>
-  <Version>1.5.2</Version>
+  <Version>1.5.3</Version>
   <Image>Images\EsriTools.png</Image>
   <Author>ChrisStayte</Author>
   <Company>Woolpert</Company>
