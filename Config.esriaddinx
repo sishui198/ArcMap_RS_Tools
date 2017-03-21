@@ -5,7 +5,7 @@
   <Version>1.5.3</Version>
   <Image>Images\RS_Tools.png</Image>
   <Author>ChrisStayte</Author>
-  <Company>Woolpert</Company>
+  <Company></Company>
   <Date>1/29/2016</Date>
   <Targets>
     <Target name="Desktop" version="10.5" />
