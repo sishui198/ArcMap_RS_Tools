@@ -1,4 +1,4 @@
-﻿namespace EsriTools.Forms
+﻿namespace RS_Tools.Forms
 {
     partial class TileLasLoaderHelp_Form
     {
@@ -34,7 +34,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::EsriTools.Properties.Resources.TileLasLoaderHelpImage;
+            this.pictureBox1.Image = global::RS_Tools.Properties.Resources.TileLasLoaderHelpImage;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(574, 273);

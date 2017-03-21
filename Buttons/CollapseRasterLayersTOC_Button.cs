@@ -10,7 +10,7 @@ using ESRI.ArcGIS.Display;
 using System.Windows.Forms;
 
 
-namespace EsriTools.Buttons
+namespace RS_Tools.Buttons
 {
     public class CollapseRasterLayersTOC_Button : ESRI.ArcGIS.Desktop.AddIns.Button
     {

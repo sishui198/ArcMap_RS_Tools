@@ -5,7 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 
 
-namespace EsriTools.ToolCollection.TileLasLoader
+namespace RS_Tools.ToolCollection.TileLasLoader
 {
     public class TileLasLoaderSettings_Button : ESRI.ArcGIS.Desktop.AddIns.Button
     {
@@ -17,8 +17,8 @@ namespace EsriTools.ToolCollection.TileLasLoader
 
         protected override void OnClick()
         {
-            //var form = (EsriTools.Forms.TileLasLoader_Form)Application.OpenForms["TileLasLoader_Form"];
-            EsriTools.Forms.TileLasLoader_Form form = EsriTools.Forms.TileLasLoader_Form.instance;
+            //var form = (RS_Tools.Forms.TileLasLoader_Form)Application.OpenForms["TileLasLoader_Form"];
+            RS_Tools.Forms.TileLasLoader_Form form = RS_Tools.Forms.TileLasLoader_Form.instance;
 
             if (form == null)
                 return;

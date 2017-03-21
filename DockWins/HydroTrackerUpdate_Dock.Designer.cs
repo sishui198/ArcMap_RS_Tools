@@ -1,4 +1,4 @@
-﻿namespace EsriTools.DockWins
+﻿namespace RS_Tools.DockWins
 {
     partial class HydroTrackerUpdate_Dock
     {

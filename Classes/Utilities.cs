@@ -13,7 +13,7 @@ using System.Collections;
 using System.Windows.Forms;
 
 
-namespace EsriTools.Classes
+namespace RS_Tools.Classes
 {
     class Utilities
     {

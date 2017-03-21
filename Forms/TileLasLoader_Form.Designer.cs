@@ -1,4 +1,4 @@
-﻿namespace EsriTools.Forms
+﻿namespace RS_Tools.Forms
 {
     partial class TileLasLoader_Form
     {
@@ -126,7 +126,7 @@
             // btnBrowseLas
             // 
             this.btnBrowseLas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBrowseLas.Image = global::EsriTools.Properties.Resources.searches_folder;
+            this.btnBrowseLas.Image = global::RS_Tools.Properties.Resources.searches_folder;
             this.btnBrowseLas.Location = new System.Drawing.Point(332, 83);
             this.btnBrowseLas.Name = "btnBrowseLas";
             this.btnBrowseLas.Size = new System.Drawing.Size(24, 24);
@@ -175,7 +175,7 @@
             // 
             // btnHelp
             // 
-            this.btnHelp.Image = global::EsriTools.Properties.Resources.help1;
+            this.btnHelp.Image = global::RS_Tools.Properties.Resources.help1;
             this.btnHelp.Location = new System.Drawing.Point(33, 63);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Size = new System.Drawing.Size(33, 33);

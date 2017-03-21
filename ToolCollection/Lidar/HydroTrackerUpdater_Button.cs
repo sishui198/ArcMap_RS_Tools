@@ -6,7 +6,7 @@ using ESRI.ArcGIS.Framework;
 using ESRI.ArcGIS.esriSystem;
 
 
-namespace EsriTools.ToolCollection.Lidar
+namespace RS_Tools.ToolCollection.Lidar
 {
     public class HydroTrackerUpdater_Button : ESRI.ArcGIS.Desktop.AddIns.Button
     {
@@ -31,7 +31,7 @@ namespace EsriTools.ToolCollection.Lidar
             if (_dockWindow == null)
             {
                 UID dockWinId = new UIDClass();
-                dockWinId.Value = ThisAddIn.IDs.EsriTools_DockWins_HydroTrackerUpdate_Dock;
+                dockWinId.Value = ThisAddIn.IDs.RS_Tools_DockWins_HydroTrackerUpdate_Dock;
                 _dockWindow = ArcMap.DockableWindowManager.GetDockableWindow(dockWinId);
             }
             if (_dockWindow == null)

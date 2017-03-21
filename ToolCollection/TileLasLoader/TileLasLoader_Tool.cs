@@ -11,16 +11,16 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Display;
 
-namespace EsriTools.ToolCollection.TileLasLoader
+namespace RS_Tools.ToolCollection.TileLasLoader
 {
     public class TileLasLoader_Tool : ESRI.ArcGIS.Desktop.AddIns.Tool
     {
-        private static EsriTools.Forms.TileLasLoader_Form _form;
+        private static RS_Tools.Forms.TileLasLoader_Form _form;
         ICommandItem _previousCommand = null;
 
         public TileLasLoader_Tool()
         {
-            _form = EsriTools.Forms.TileLasLoader_Form.instance;
+            _form = RS_Tools.Forms.TileLasLoader_Form.instance;
         }
 
         protected override void OnUpdate()

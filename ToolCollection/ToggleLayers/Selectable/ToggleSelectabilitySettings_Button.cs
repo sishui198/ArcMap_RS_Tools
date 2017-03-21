@@ -6,7 +6,7 @@ using ESRI.ArcGIS.Framework;
 using ESRI.ArcGIS.esriSystem;
 
 
-namespace EsriTools.ToolCollection.ToggleLayers.Selectable
+namespace RS_Tools.ToolCollection.ToggleLayers.Selectable
 {
     public class ToggleSelectabilitySettings_Button : ESRI.ArcGIS.Desktop.AddIns.Button
     {
@@ -22,7 +22,7 @@ namespace EsriTools.ToolCollection.ToggleLayers.Selectable
             if (_dockWindow == null)
             {
                 UID dockWinID = new UIDClass();
-                dockWinID.Value = ThisAddIn.IDs.EsriTools_DockWins_ToggleSelectability_Dock;
+                dockWinID.Value = ThisAddIn.IDs.RS_Tools_DockWins_ToggleSelectability_Dock;
                 _dockWindow = ArcMap.DockableWindowManager.GetDockableWindow(dockWinID);
             }
             if (_dockWindow == null)

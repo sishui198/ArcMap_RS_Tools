@@ -13,7 +13,7 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Display;
 
-namespace EsriTools.DockWins
+namespace RS_Tools.DockWins
 {
     /// <summary>
     /// Designer class of the dockable window add-in. It contains user interfaces that

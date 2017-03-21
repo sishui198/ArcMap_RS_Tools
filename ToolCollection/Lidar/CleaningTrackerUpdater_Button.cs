@@ -6,7 +6,7 @@ using ESRI.ArcGIS.Framework;
 using ESRI.ArcGIS.esriSystem;
 
 
-namespace EsriTools.ToolCollection.Lidar
+namespace RS_Tools.ToolCollection.Lidar
 {
     public class CleaningTrackerUpdater_Button : ESRI.ArcGIS.Desktop.AddIns.Button
     {
@@ -31,7 +31,7 @@ namespace EsriTools.ToolCollection.Lidar
             if (_dockWindow == null)
             {
                 UID dockWinID = new UIDClass();
-                dockWinID.Value = ThisAddIn.IDs.EsriTools_DockWins_CleaningTrackerUpdate_Dock;
+                dockWinID.Value = ThisAddIn.IDs.RS_Tools_DockWins_CleaningTrackerUpdate_Dock;
                 _dockWindow = ArcMap.DockableWindowManager.GetDockableWindow(dockWinID);
             }
             if (_dockWindow == null)

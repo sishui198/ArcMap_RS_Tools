@@ -1,10 +1,10 @@
 ﻿using ESRI.ArcGIS.Desktop.AddIns;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Framework;
-using EsriTools.DockWins;
+using RS_Tools.DockWins;
 
 
-namespace EsriTools.ToolCollection.ToggleLayers.Selectable
+namespace RS_Tools.ToolCollection.ToggleLayers.Selectable
 {
     public class Layer1_Button : ESRI.ArcGIS.Desktop.AddIns.Button
     {
@@ -20,12 +20,12 @@ namespace EsriTools.ToolCollection.ToggleLayers.Selectable
             if (_dockWindow == null)
             {
                 UID dockWinID = new UIDClass();
-                dockWinID.Value = ThisAddIn.IDs.EsriTools_DockWins_ToggleSelectability_Dock;
+                dockWinID.Value = ThisAddIn.IDs.RS_Tools_DockWins_ToggleSelectability_Dock;
                 _dockWindow = ArcMap.DockableWindowManager.GetDockableWindow(dockWinID);
             }
             if (_dockWindow == null) return;
 
-            ToggleSelectability_Dock.AddinImpl winImpl = AddIn.FromID<ToggleSelectability_Dock.AddinImpl>(ThisAddIn.IDs.EsriTools_DockWins_ToggleSelectability_Dock);
+            ToggleSelectability_Dock.AddinImpl winImpl = AddIn.FromID<ToggleSelectability_Dock.AddinImpl>(ThisAddIn.IDs.RS_Tools_DockWins_ToggleSelectability_Dock);
             ToggleSelectability_Dock toggleselctable = winImpl.UI;
 
             toggleselctable.ToggleSelectability(1);

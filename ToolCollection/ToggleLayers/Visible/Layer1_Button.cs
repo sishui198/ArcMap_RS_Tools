@@ -1,9 +1,9 @@
 ﻿using ESRI.ArcGIS.Desktop.AddIns;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Framework;
-using EsriTools.DockWins;
+using RS_Tools.DockWins;
 
-namespace EsriTools.ToolCollection.ToggleLayers.Visible
+namespace RS_Tools.ToolCollection.ToggleLayers.Visible
 {
     public class Layer1_Button : ESRI.ArcGIS.Desktop.AddIns.Button
     {
@@ -19,12 +19,12 @@ namespace EsriTools.ToolCollection.ToggleLayers.Visible
             if (_dockWindow == null)
             {
                 UID dockWinID = new UIDClass();
-                dockWinID.Value = ThisAddIn.IDs.EsriTools_DockWins_ToggleVisibility_Dock;
+                dockWinID.Value = ThisAddIn.IDs.RS_Tools_DockWins_ToggleVisibility_Dock;
                 _dockWindow = ArcMap.DockableWindowManager.GetDockableWindow(dockWinID);
             }
             if (_dockWindow == null) return;
 
-            ToggleVisibility_Dock.AddinImpl winImpl = AddIn.FromID<ToggleVisibility_Dock.AddinImpl>(ThisAddIn.IDs.EsriTools_DockWins_ToggleVisibility_Dock);
+            ToggleVisibility_Dock.AddinImpl winImpl = AddIn.FromID<ToggleVisibility_Dock.AddinImpl>(ThisAddIn.IDs.RS_Tools_DockWins_ToggleVisibility_Dock);
             ToggleVisibility_Dock togglevisible = winImpl.UI;
 
             togglevisible.ToggleVisibility(1);

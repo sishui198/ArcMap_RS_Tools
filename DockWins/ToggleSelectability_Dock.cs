@@ -5,7 +5,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace EsriTools.DockWins
+namespace RS_Tools.DockWins
 {
     /// <summary>
     /// Designer class of the dockable window add-in. It contains user interfaces that
