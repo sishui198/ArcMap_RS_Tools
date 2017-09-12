@@ -1,0 +1,16 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>RS_Tools</Name>
+  <AddInID>{a1f80a4e-7369-4e14-9978-bee8e7697732}</AddInID>
+  <Description>Tools used to enhance performance and utilities to increase producitivy in ArcGIS Desktop</Description>
+  <Version>1.0</Version>
+  <Image>Images\RS_Tools.png</Image>
+  <Author>Chris Stayte</Author>
+  <Company>Woolpert Inc.</Company>
+  <Date>9/11/2017</Date>
+  <Targets>
+    <Target name="Desktop" version="10.5" />
+  </Targets>
+  <AddIn language="CLR" library="RS_Tools.dll" namespace="RS_Tools">
+    <ArcMap />
+  </AddIn>
+</ESRI.Configuration>
