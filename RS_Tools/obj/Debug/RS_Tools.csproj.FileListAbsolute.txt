@@ -1,9 +1,0 @@
-C:\Users\chris\Documents\SourceControl\Github\ArcMap_RS_Tools\RS_Tools\bin\Debug\RS_Tools.dll
-C:\Users\chris\Documents\SourceControl\Github\ArcMap_RS_Tools\RS_Tools\bin\Debug\RS_Tools.pdb
-C:\Users\chris\Documents\SourceControl\Github\ArcMap_RS_Tools\RS_Tools\obj\Debug\RS_Tools.dll
-C:\Users\chris\Documents\SourceControl\Github\ArcMap_RS_Tools\RS_Tools\obj\Debug\RS_Tools.pdb
-C:\Users\chris\Documents\SourceControl\Github\ArcMap_RS_Tools\RS_Tools\obj\Debug\RS_Tools.Properties.Resources.resources
-C:\Users\chris\Documents\SourceControl\Github\ArcMap_RS_Tools\RS_Tools\obj\Debug\RS_Tools.Tools.RasterTileLoader.RasterTileLoader_Form.resources
-C:\Users\chris\Documents\SourceControl\Github\ArcMap_RS_Tools\RS_Tools\obj\Debug\RS_Tools.csproj.GenerateResource.Cache
-C:\Users\chris\Documents\SourceControl\Github\ArcMap_RS_Tools\RS_Tools\bin\Debug\Ookii.Dialogs.dll
-C:\Users\chris\Documents\SourceControl\Github\ArcMap_RS_Tools\RS_Tools\bin\Debug\RS_Tools.esriAddIn
