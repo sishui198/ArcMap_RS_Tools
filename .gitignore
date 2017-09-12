@@ -20,8 +20,8 @@ RSTools/[Rr]elease/
 x64/
 x86/
 bld/
-[Bb]in/
-[Oo]bj/
+RS_Tools/[Bb]in/
+RS_Tools/[Oo]bj/
 [Ll]og/
 
 # Visual Studio 2015 cache/options directory
