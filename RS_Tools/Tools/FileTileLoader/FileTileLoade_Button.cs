@@ -4,17 +4,17 @@ using System.Text;
 using System.IO;
 
 
-namespace RS_Tools.Tools.RasterTileLoader
+namespace RS_Tools.Tools.FileTileLoader
 {
-    public class RasterTileLoader : ESRI.ArcGIS.Desktop.AddIns.Button
+    public class FileTileLoade_Button : ESRI.ArcGIS.Desktop.AddIns.Button
     {
-        public RasterTileLoader()
+        public FileTileLoade_Button()
         {
         }
 
         protected override void OnClick()
         {
-            RasterTileLoader_Form form = RasterTileLoader_Form.instance;
+            FileTileLoader_Form form = FileTileLoader_Form.instance;
 
             if (form == null)
                 return;

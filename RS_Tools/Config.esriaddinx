@@ -13,8 +13,8 @@
   <AddIn language="CLR" library="RS_Tools.dll" namespace="RS_Tools">
     <ArcMap>
       <Commands>
-        <Button id="Woolpert_Inc_RS_Tools_RasterTileLoader" class="RS_Tools.Tools.RasterTileLoader.RasterTileLoader" message="Loads Raster Files based on Tile Index. Index Field must match raster file schema" caption="Rater Tile Loader" tip="Loads Raster Based On Tile Index" category="RS_Tools" image="Images\RasterTileLoader\RasterTileLoader.png">
-          <Help heading="Raster Tile Loader">Loads Raster Files based on Tile Index. Index Field must match raster file schema</Help>
+        <Button id="Woolpert_Inc_RS_Tools_FileTileLoader_Button" class="RS_Tools.Tools.FileTileLoader.FileTileLoader_Button" message="Loads File Files based on Tile Index. Index Field must match file file schema" caption="File Tile Loader" tip="Loads File Based On Tile Index" category="RS_Tools" image="Images\FileTileLoader\FileTileLoader.png">
+          <Help heading="File Tile Loader">Loads Files based on Tile Index. Index Field must match file file schema</Help>
         </Button>
       </Commands>
     </ArcMap>

@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace RS_Tools.Utilities
 {
-    class ArcUtilities
+    class Utilities_ArcMap
     {
         #region Properties
 
@@ -53,16 +53,10 @@ namespace RS_Tools.Utilities
 
         #region Constructor
 
-        /// <summary>
-        /// Constructor overloded class
-        /// </summary>
-        public ArcUtilities()
-        {
-        }
 
         /// <summary> Constructor overloaded class </summary>
         /// <param name="pMapControl"> ESRI's IMap object (IMapControl4) </param>
-        public ArcUtilities(IMap pMap)
+        public Utilities_ArcMap(IMap pMap)
         {
             m_pMap = pMap;
         }
@@ -108,11 +102,11 @@ namespace RS_Tools.Utilities
             return pList;
         }
 
-        /// <summary> The feature layers in current map </summary>
+        /// <summary> Reatures a List of feature layers in current map </summary>
         /// <returns> Function to retrieve a list of all feature layers in current map </returns>
-        public ArrayList FeatureLayers()
+        public List<FeatureLayer> FeatureLayers()
         {
-            ArrayList pList = new ArrayList();
+            List<FeatureLayer> pList = new List<FeatureLayer>();
             if (FocusMap == null)
                 return pList;
             if (FocusMap.LayerCount == 0)
@@ -128,7 +122,7 @@ namespace RS_Tools.Utilities
                 while (!(pLayer == null))
                 {
                     if (pLayer is IFeatureLayer)
-                        pList.Add(pLayer.Name);
+                        pList.Add(pLayer as FeatureLayer);
                     pLayer = pEnumLayer.Next();
                 }
                 return pList;
@@ -144,9 +138,9 @@ namespace RS_Tools.Utilities
         /// <summary> Returns a list of feature layers based on the geometry type </summary>
         /// <param name="geometryType">Geometry type.  Expected values "Point", "Line" or "Polygon".</param>
         /// <returns>Arraylist</returns>
-        public ArrayList FeatureLayers(string geometryType)
+        public List<FeatureLayer> FeatureLayers(string geometryType)
         {
-            ArrayList pList = new ArrayList();
+            List<FeatureLayer> pList = new List<FeatureLayer>();
             if (FocusMap == null)
                 return pList;
             if (FocusMap.LayerCount == 0)
@@ -167,17 +161,17 @@ namespace RS_Tools.Utilities
                         if (string.Compare(geometryType, "Point", true) == 0)
                         {
                             if ((featurelayer.FeatureClass.ShapeType == esriGeometryType.esriGeometryMultipoint) || (featurelayer.FeatureClass.ShapeType == esriGeometryType.esriGeometryPoint))
-                                pList.Add(pLayer.Name);
+                                pList.Add(pLayer as FeatureLayer);
                         }
                         if (string.Compare(geometryType, "Line", true) == 0)
                         {
                             if ((featurelayer.FeatureClass.ShapeType == esriGeometryType.esriGeometryPolyline) || (featurelayer.FeatureClass.ShapeType == esriGeometryType.esriGeometryLine))
-                                pList.Add(pLayer.Name);
+                                pList.Add(pLayer as FeatureLayer);
                         }
                         if (string.Compare(geometryType, "Polygon", true) == 0)
                         {
                             if (featurelayer.FeatureClass.ShapeType == esriGeometryType.esriGeometryPolygon)
-                                pList.Add(pLayer.Name);
+                                pList.Add(pLayer as FeatureLayer);
                         }
                     }
                     pLayer = pEnumLayer.Next();
@@ -985,11 +979,14 @@ namespace RS_Tools.Utilities
             return pList;
         }
 
+
+
+
         #endregion
 
         #region Destruction 
 
-        ~ArcUtilities()
+        ~Utilities_ArcMap()
         {
 
         }

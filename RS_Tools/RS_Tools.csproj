@@ -53,13 +53,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ESRI.ArcGIS.Carto, Version=10.5.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=10.5.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Desktop.AddIns">
       <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Display, Version=10.5.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Editor, Version=10.5.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -68,15 +72,17 @@
     </Reference>
     <Reference Include="ESRI.ArcGIS.Framework">
       <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.5.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Geometry, Version=10.5.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="ESRI.ArcGIS.System">
       <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -105,14 +111,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Tools\RasterTileLoader\RasterTileLoader.cs" />
-    <Compile Include="Tools\RasterTileLoader\RasterTileLoader_Form.cs">
+    <Compile Include="Tools\FileTileLoader\FileTileLoade_Button.cs" />
+    <Compile Include="Tools\FileTileLoader\FileTileLoader_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tools\RasterTileLoader\RasterTileLoader_Form.Designer.cs">
-      <DependentUpon>RasterTileLoader_Form.cs</DependentUpon>
+    <Compile Include="Tools\FileTileLoader\FileTileLoader_Form.Designer.cs">
+      <DependentUpon>FileTileLoader_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\ArcUtilities.cs" />
+    <Compile Include="Tools\FileTileOpener\FileTileOpener.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FileTileOpener\FileTileOpener.Designer.cs">
+      <DependentUpon>FileTileOpener.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Utilities_ArcMap.cs" />
+    <Compile Include="Utilities\Utilities_General.cs" />
+    <Compile Include="Utilities\Utilities_MessageBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <AddInContent Include="Config.esriaddinx">
@@ -127,6 +141,7 @@
   <ItemGroup>
     <Reference Include="ESRI.ArcGIS.ArcMapUI">
       <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -142,8 +157,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <AddInContent Include="Images\RasterTileLoader\RasterTileLoader.png" />
-    <Content Include="Images\RasterTileLoader\searches_folder.png" />
+    <AddInContent Include="Images\FileTileLoader\FileTileLoader.png" />
+    <Content Include="Images\FileTileLoader\searches_folder.png" />
     <Content Include="Utilities\Ookii.Dialogs.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -151,10 +166,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools\RasterTileLoader\RasterTileLoader_Form.resx">
-      <DependentUpon>RasterTileLoader_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Tools\FileTileLoader\FileTileLoader_Form.resx">
+      <DependentUpon>FileTileLoader_Form.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <ZipFileExtension>esriAddIn</ZipFileExtension>
     <AddInTargetProduct>Desktop</AddInTargetProduct>
