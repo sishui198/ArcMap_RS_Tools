@@ -8,7 +8,7 @@
   <Company>Woolpert Inc.</Company>
   <Date>9/11/2017</Date>
   <Targets>
-    <Target name="Desktop" version="10.5" />
+    <Target name="Desktop" version="10.4" />
   </Targets>
   <AddIn language="CLR" library="RS_Tools.dll" namespace="RS_Tools">
     <ArcMap>
