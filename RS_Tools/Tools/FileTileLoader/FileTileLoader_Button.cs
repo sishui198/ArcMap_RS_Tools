@@ -6,9 +6,9 @@ using System.IO;
 
 namespace RS_Tools.Tools.FileTileLoader
 {
-    public class FileTileLoade_Button : ESRI.ArcGIS.Desktop.AddIns.Button
+    public class FileTileLoader_Button : ESRI.ArcGIS.Desktop.AddIns.Button
     {
-        public FileTileLoade_Button()
+        public FileTileLoader_Button()
         {
         }
 

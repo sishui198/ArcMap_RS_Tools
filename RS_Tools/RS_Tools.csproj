@@ -101,17 +101,14 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Config.esriaddinx</DependentUpon>
-    </Compile>
+    <Compile Include="Config.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Tools\FileTileLoader\FileTileLoade_Button.cs" />
+    <Compile Include="Tools\FileTileLoader\FileTileLoader_Button.cs" />
     <Compile Include="Tools\FileTileLoader\FileTileLoader_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +121,14 @@
     <Compile Include="Tools\FileTileOpener\FileTileOpener.Designer.cs">
       <DependentUpon>FileTileOpener.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\FileTileOpener\FileTileOpenerHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FileTileOpener\FileTileOpenerHelp.Designer.cs">
+      <DependentUpon>FileTileOpenerHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FileTileOpener\FileTileOpenerSettings_Button.cs" />
+    <Compile Include="Tools\FileTileOpener\FileTileOpener_Tool.cs" />
     <Compile Include="Utilities\Utilities_ArcMap.cs" />
     <Compile Include="Utilities\Utilities_General.cs" />
     <Compile Include="Utilities\Utilities_MessageBox.cs" />
@@ -131,8 +136,8 @@
   <ItemGroup>
     <AddInContent Include="Config.esriaddinx">
       <Generator>ArcGISAddInHostGenerator</Generator>
-      <LastGenOutput>Config.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Config1.Designer.cs</LastGenOutput>
     </AddInContent>
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +164,13 @@
   <ItemGroup>
     <AddInContent Include="Images\FileTileLoader\FileTileLoader.png" />
     <Content Include="Images\FileTileLoader\searches_folder.png" />
+    <AddInContent Include="Images\FileTileOpener\FileTileOpener.png" />
+    <AddInContent Include="Images\FileTileOpener\FileTileOpener_Settings.png" />
+    <AddInContent Include="Images\FileTileOpener\help.png" />
+    <AddInContent Include="Images\FileTileOpener\searches_folder.png" />
+    <AddInContent Include="Images\FileTileOpener\FileTileOpenerHelpImage.png" />
+    <AddInContent Include="Images\FileTileOpener\FileTileOpenerSettings_Button.png" />
+    <AddInContent Include="Images\FileTileOpener\FileTileOpener.cur" />
     <Content Include="Utilities\Ookii.Dialogs.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +180,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\FileTileLoader\FileTileLoader_Form.resx">
       <DependentUpon>FileTileLoader_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FileTileOpener\FileTileOpener.resx">
+      <DependentUpon>FileTileOpener.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FileTileOpener\FileTileOpenerHelp.resx">
+      <DependentUpon>FileTileOpenerHelp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

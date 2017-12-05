@@ -6,7 +6,7 @@
   <Image>Images\RS_Tools.png</Image>
   <Author>Chris Stayte</Author>
   <Company>Woolpert Inc.</Company>
-  <Date>9/11/2017</Date>
+  <Date>11/28/2017</Date>
   <Targets>
     <Target name="Desktop" version="10.4" />
   </Targets>
@@ -16,6 +16,8 @@
         <Button id="Woolpert_Inc_RS_Tools_FileTileLoader_Button" class="RS_Tools.Tools.FileTileLoader.FileTileLoader_Button" message="Loads File Files based on Tile Index. Index Field must match file file schema" caption="File Tile Loader" tip="Loads File Based On Tile Index" category="RS_Tools" image="Images\FileTileLoader\FileTileLoader.png">
           <Help heading="File Tile Loader">Loads Files based on Tile Index. Index Field must match file file schema</Help>
         </Button>
+        <Tool id="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" class="RS_Tools.Tools.FileTileOpener.FileTileOpener_Tool" message="Opens a file based on a tile index. The file will open in the systems default program." caption="File Tile Opener" tip="Opens File Based On Tile Index" category="RS_Tools" image="Images\FileTileOpener\FileTileOpener.png" cursor="Images\FileTileOpener\FileTileOpener.cur" />
+        <Button id="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" class="RS_Tools.Tools.FileTileOpener.FileTileOpenerSettings_Button" message="Settings For File Tile Opener" caption="File Tile Opener Settings" tip="Settings For File Tile Opener" category="RS_Tools" image="Images\FileTileOpener\FileTileOpenerSettings_Button.png" />
       </Commands>
     </ArcMap>
   </AddIn>

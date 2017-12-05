@@ -192,7 +192,7 @@ namespace RS_Tools.Tools.FileTileLoader
                 cbo_TileIndex.SelectedIndex = 0;
             } else
             {
-                MessageBox.Show("Add Some Polygon Layers to the Map", MB_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Add A Polygon Layer to the Map", MB_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }
