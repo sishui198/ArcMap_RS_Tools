@@ -6,7 +6,7 @@
   <Image>Images\RS_Tools.png</Image>
   <Author>Chris Stayte</Author>
   <Company>Woolpert Inc.</Company>
-  <Date>11/28/2017</Date>
+  <Date>12/4/2017</Date>
   <Targets>
     <Target name="Desktop" version="10.4" />
   </Targets>
@@ -18,7 +18,19 @@
         </Button>
         <Tool id="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" class="RS_Tools.Tools.FileTileOpener.FileTileOpener_Tool" message="Opens a file based on a tile index. The file will open in the systems default program." caption="File Tile Opener" tip="Opens File Based On Tile Index" category="RS_Tools" image="Images\FileTileOpener\FileTileOpener.png" cursor="Images\FileTileOpener\FileTileOpener.cur" />
         <Button id="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" class="RS_Tools.Tools.FileTileOpener.FileTileOpenerSettings_Button" message="Settings For File Tile Opener" caption="File Tile Opener Settings" tip="Settings For File Tile Opener" category="RS_Tools" image="Images\FileTileOpener\FileTileOpenerSettings_Button.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Inspector_Launcher" class="RS_Tools.Tools.Inspector.Inspector_Launcher" message="Launches Inspector" caption="Launch Inspector" tip="Launches Inspector" category="RS_Tools" image="Images\Inspector\Inspector_Launcher.png" />
+        <Button id="Woolpert_Inc_RS_Tools_OKNext" class="RS_Tools.Tools.Inspector.OKNext" message="Mark the current feature with a '1' in the table and zoom to the next feature with it entirely in frame. " caption="Okay, Next" tip="Mark current feature and move to next" category="RS_Tools" image="Images\Inspector\OKNext.png" />
+        <Button id="Woolpert_Inc_RS_Tools_OKNextScale" class="RS_Tools.Tools.Inspector.OKNextScale" message="Mark the current feature with a '1' in the table and zoom to the next feature using the current extent." caption="Okay, Next Scale" tip="Mark current feature and move to next at same extent" category="RS_Tools" image="Images\Inspector\OKNextScale.png" />
+        <Button id="Woolpert_Inc_RS_Tools_OkayStay" class="RS_Tools.Tools.Inspector.OkayStay" message="Marks the current feature with a '1' in the table" caption="Okay, Stay" tip="Marks the current feature as done" category="RS_Tools" image="Images\Inspector\OkayStay.png" />
+        <Button id="Woolpert_Inc_RS_Tools_DeleteNext" class="RS_Tools.Tools.Inspector.DeleteNext" message="Deletes a current feature and zooms to the next feature fully in the extent." caption="Delete, Next" tip="Deletes current feature and zooms to next" category="RS_Tools" image="Images\Inspector\DeleteNext.png" />
+        <Button id="Woolpert_Inc_RS_Tools_AutoSaveSettings" class="RS_Tools.Tools.AutoSave.AutoSaveSettings" message="Gives the ability to setup an auto save feature" caption="Auto Save Settings" tip="Setup Auto Save Settings" category="RS_Tools" image="Images\AutoSave\AutoSaveSettings.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Sidekick" class="RS_Tools.Tools.Sidekick.Sidekick" message="Enabling allows mutiple arcmap sessions to follow one" caption="Sidekick" tip="Sync ArcMap Views" category="RS_Tools" image="Images\Sidekick.png" />
       </Commands>
+      <DockableWindows>
+        <DockableWindow id="Woolpert_Inc_RS_Tools_Inspector" class="RS_Tools.Tools.Inspector.Inspector+AddinImpl" caption="Inspector" image="Images\Inspector\Inspector.png">
+          <InitialPlacement height="193" width="147" state="pinned" position="left" />
+        </DockableWindow>
+      </DockableWindows>
     </ArcMap>
   </AddIn>
 </ESRI.Configuration>
