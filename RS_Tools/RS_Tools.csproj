@@ -174,6 +174,16 @@
     <Compile Include="Tools\Inspector\OKNext.cs" />
     <Compile Include="Tools\Inspector\OKNextScale.cs" />
     <Compile Include="Tools\Sidekick\Sidekick_Button.cs" />
+    <Compile Include="Tools\SurfaceGenerator\BoundaryProblem.cs" />
+    <Compile Include="Tools\SurfaceGenerator\GDBUtilities.cs" />
+    <Compile Include="Tools\SurfaceGenerator\SurfaceGapFix_Beta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SurfaceGenerator\SurfaceGapFix_Beta.Designer.cs">
+      <DependentUpon>SurfaceGapFix_Beta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SurfaceGenerator\SurfaceGenerator_Launcher.cs" />
+    <Compile Include="Tools\SurfaceGenerator\Util.cs" />
     <Compile Include="Utilities\Utilities_ArcMap.cs" />
     <Compile Include="Utilities\Utilities_General.cs" />
     <Compile Include="Utilities\Utilities_MessageBox.cs" />
@@ -241,6 +251,8 @@
     <AddInContent Include="Images\Inspector\OKNextScale.png" />
     <AddInContent Include="Images\Inspector\OkayStay.png" />
     <AddInContent Include="Images\Sidekick\Sidekick.png" />
+    <AddInContent Include="Images\SurfaceGenerator\folder-open-icon.png" />
+    <AddInContent Include="Images\SurfaceGenerator\SurfaceGenerator_Launcher.png" />
     <Content Include="Utilities\Ookii.Dialogs.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -265,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Inspector\Inspector.resx">
       <DependentUpon>Inspector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SurfaceGenerator\SurfaceGapFix_Beta.resx">
+      <DependentUpon>SurfaceGapFix_Beta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

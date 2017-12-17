@@ -51,13 +51,16 @@
         <Button id="Woolpert_Inc_RS_Tools_Domain_13" class="RS_Tools.Tools.DomainAppointer.Domain_13" message="Assign Domain 13" caption="Assign Domain 13" tip="Assign Domain 13" category="RS_Tools" image="Images\DomainAppointer\Domain_13.png" />
         <Button id="Woolpert_Inc_RS_Tools_Domain_14" class="RS_Tools.Tools.DomainAppointer.Domain_14" message="Assign Domain 14" caption="Assign Domain 14" tip="Assign Domain 14" category="RS_Tools" image="Images\DomainAppointer\Domain_14.png" />
         <!-- Domain Appointer End -->
+        <!-- Surface Generator Start-->
+        <Button id="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher" class="RS_Tools.Tools.SurfaceGenerator.SurfaceGenerator_Launcher" message="Launch Surface Generator" caption="Surface Generator Launcher" tip="Launch Surface Generator" category="RS_Tools" image="Images\SurfaceGenerator\SurfaceGenerator_Launcher.png" />
+        <!-- Surface Generator End-->
       </Commands>
       <DockableWindows>
         <DockableWindow id="Woolpert_Inc_RS_Tools_Inspector" class="RS_Tools.Tools.Inspector.Inspector+AddinImpl" caption="Inspector" image="Images\Inspector\Inspector.png">
           <InitialPlacement height="193" width="147" state="pinned" position="left" />
         </DockableWindow>
         <DockableWindow id="Woolpert_Inc_RS_Tools_DomainAppointer" class="RS_Tools.Tools.DomainAppointer.DomainAppointer+AddinImpl" caption="Domain Appointer" image="Images\DomainAppointer\DomainAppointer.png">
-          <InitialPlacement height="300" width="300" state="pinned" position="left" />
+          <InitialPlacement height="300" width="147" state="pinned" position="left" />
         </DockableWindow>
       </DockableWindows>
       <Toolbars>
@@ -94,9 +97,10 @@
           <Items>
             <Button refID="Woolpert_Inc_RS_Tools_Sidekick_Button" />
             <Button refID="Woolpert_Inc_RS_Tools_AutoSaveSettings" />
-            <Button refID="Woolpert_Inc_RS_Tools_FileTileLoader_Button"/>
-            <Button refID="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" separator="true"/>
-            <Button refID="Woolpert_Inc_RS_Tools_FileTileOpener_Tool"/>
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileLoader_Button" />
+            <Button refID="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher"/>
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" separator="true" />
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" />
           </Items>
         </Toolbar>
       </Toolbars>
