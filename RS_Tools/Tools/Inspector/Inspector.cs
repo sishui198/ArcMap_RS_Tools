@@ -78,8 +78,6 @@ namespace RS_Tools.Tools.Inspector
         private IEditor3 _editor;
         private double _initialfeaturecount = -1;
         private double _initialcompletedrows = -1;
-        private double _previouspercentcomplete = 0;
-        private double _previousscompletedthissession = 0;
         private String _status;
         #endregion
 

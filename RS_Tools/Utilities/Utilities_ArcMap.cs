@@ -979,7 +979,47 @@ namespace RS_Tools.Utilities
             return pList;
         }
 
+        ///<summary> The number fields of a specified layer using a Domain Table</summary>
+        /// <param name="pLayer"> The layer from which a list of number fields is to be fetched </param>
+        ///<returns> Function to retrieve a list of all number fields in a given layer using a Domain Table</returns>
+        public ArrayList NumberFieldsWithDomain(ILayer pLayer)
+        {
+            ArrayList pList = new ArrayList();
+            if (pLayer == null)
+                return pList;
+            try
+            {
+                if (pLayer is IGeoFeatureLayer)
+                {
+                    IFeatureLayer pFlayer = (IFeatureLayer)pLayer;
+                    IDisplayTable pDisplayTable = (IDisplayTable)pFlayer;
+                    IFields pFields = pDisplayTable.DisplayTable.Fields;
+                    for (int i = 0; i < pFields.FieldCount; i++)
+                    {
+                        IField pField = pFields.get_Field(i);
+                        if (pField.Type == esriFieldType.esriFieldTypeDouble || pField.Type == esriFieldType.esriFieldTypeInteger || pField.Type == esriFieldType.esriFieldTypeSingle || pField.Type == esriFieldType.esriFieldTypeSmallInteger)
+                        {
+                            IDomain pDomain = pField.Domain;
 
+                            if (pDomain != null)
+                            {
+                                if (pDomain.Type == esriDomainType.esriDTCodedValue)
+                                {
+                                    pList.Add(pField.AliasName);
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                if (SupressMessaging == false)
+                    MessageBox.Show(ex.Message, "All Number Fields - By Layer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            return pList;
+        }
 
 
         #endregion

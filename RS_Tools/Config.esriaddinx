@@ -6,7 +6,7 @@
   <Image>Images\RS_Tools.png</Image>
   <Author>Chris Stayte</Author>
   <Company>Woolpert Inc.</Company>
-  <Date>12/4/2017</Date>
+  <Date>12/17/2017</Date>
   <Targets>
     <Target name="Desktop" version="10.4" />
   </Targets>
@@ -16,21 +16,90 @@
         <Button id="Woolpert_Inc_RS_Tools_FileTileLoader_Button" class="RS_Tools.Tools.FileTileLoader.FileTileLoader_Button" message="Loads File Files based on Tile Index. Index Field must match file file schema" caption="File Tile Loader" tip="Loads File Based On Tile Index" category="RS_Tools" image="Images\FileTileLoader\FileTileLoader.png">
           <Help heading="File Tile Loader">Loads Files based on Tile Index. Index Field must match file file schema</Help>
         </Button>
+        <!-- File Tile Opener Start -->
         <Tool id="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" class="RS_Tools.Tools.FileTileOpener.FileTileOpener_Tool" message="Opens a file based on a tile index. The file will open in the systems default program." caption="File Tile Opener" tip="Opens File Based On Tile Index" category="RS_Tools" image="Images\FileTileOpener\FileTileOpener.png" cursor="Images\FileTileOpener\FileTileOpener.cur" />
         <Button id="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" class="RS_Tools.Tools.FileTileOpener.FileTileOpenerSettings_Button" message="Settings For File Tile Opener" caption="File Tile Opener Settings" tip="Settings For File Tile Opener" category="RS_Tools" image="Images\FileTileOpener\FileTileOpenerSettings_Button.png" />
+        <!-- File Tile Opener End -->
+        <!-- Inspector End -->
         <Button id="Woolpert_Inc_RS_Tools_Inspector_Launcher" class="RS_Tools.Tools.Inspector.Inspector_Launcher" message="Launches Inspector" caption="Launch Inspector" tip="Launches Inspector" category="RS_Tools" image="Images\Inspector\Inspector_Launcher.png" />
         <Button id="Woolpert_Inc_RS_Tools_OKNext" class="RS_Tools.Tools.Inspector.OKNext" message="Mark the current feature with a '1' in the table and zoom to the next feature with it entirely in frame. " caption="Okay, Next" tip="Mark current feature and move to next" category="RS_Tools" image="Images\Inspector\OKNext.png" />
         <Button id="Woolpert_Inc_RS_Tools_OKNextScale" class="RS_Tools.Tools.Inspector.OKNextScale" message="Mark the current feature with a '1' in the table and zoom to the next feature using the current extent." caption="Okay, Next Scale" tip="Mark current feature and move to next at same extent" category="RS_Tools" image="Images\Inspector\OKNextScale.png" />
         <Button id="Woolpert_Inc_RS_Tools_OkayStay" class="RS_Tools.Tools.Inspector.OkayStay" message="Marks the current feature with a '1' in the table" caption="Okay, Stay" tip="Marks the current feature as done" category="RS_Tools" image="Images\Inspector\OkayStay.png" />
         <Button id="Woolpert_Inc_RS_Tools_DeleteNext" class="RS_Tools.Tools.Inspector.DeleteNext" message="Deletes a current feature and zooms to the next feature fully in the extent." caption="Delete, Next" tip="Deletes current feature and zooms to next" category="RS_Tools" image="Images\Inspector\DeleteNext.png" />
+        <!-- Inspector End -->
+        <!-- Auto Save Start -->
         <Button id="Woolpert_Inc_RS_Tools_AutoSaveSettings" class="RS_Tools.Tools.AutoSave.AutoSaveSettings" message="Gives the ability to setup an auto save feature" caption="Auto Save Settings" tip="Setup Auto Save Settings" category="RS_Tools" image="Images\AutoSave\AutoSaveSettings.png" />
-        <Button id="Woolpert_Inc_RS_Tools_Sidekick" class="RS_Tools.Tools.Sidekick.Sidekick" message="Enabling allows mutiple arcmap sessions to follow one" caption="Sidekick" tip="Sync ArcMap Views" category="RS_Tools" image="Images\Sidekick.png" />
+        <!-- Auto Save End-->
+        <!-- Sidekick Start-->
+        <Button id="Woolpert_Inc_RS_Tools_Sidekick_Button" class="RS_Tools.Tools.Sidekick.Sidekick_Button" message="Enabling allows mutiple arcmap sessions to follow one" caption="Sidekick" tip="Sync ArcMap Views" category="RS_Tools" image="Images\Sidekick\Sidekick.png" />
+        <!-- Sidekick End -->
+        <!-- Domain Appointer Start -->
+        <Button id="Woolpert_Inc_RS_Tools_DomainAppointerLauncher" class="RS_Tools.Tools.DomainAppointer.DomainAppointerLauncher" message="Launch Domain Appointer" caption="Launch Domain Appointer" tip="Launch Domain Appointer" category="RS_Tools" image="Images\DomainAppointer\DomainAppointerLauncher.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_00" class="RS_Tools.Tools.DomainAppointer.Domain_00" message="Assign Domain 0" caption="Assign Domain 00" tip="Assign Domain 0" category="RS_Tools" image="Images\DomainAppointer\Domain_00.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_01" class="RS_Tools.Tools.DomainAppointer.Domain_01" message="Assign Domain 1" caption="Assign Domain 01" tip="Assign Domain 1" category="RS_Tools" image="Images\DomainAppointer\Domain_01.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_02" class="RS_Tools.Tools.DomainAppointer.Domain_02" message="Assign Domain 2" caption="Assign Domain 02" tip="Assign Domain 2" category="RS_Tools" image="Images\DomainAppointer\Domain_02.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_03" class="RS_Tools.Tools.DomainAppointer.Domain_03" message="Assign Domain 3" caption="Assign Domain 03" tip="Assign Domain 3" category="RS_Tools" image="Images\DomainAppointer\Domain_03.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_04" class="RS_Tools.Tools.DomainAppointer.Domain_04" message="Assign Domain 4" caption="Assign Domain 04" tip="Assign Domain 4" category="RS_Tools" image="Images\DomainAppointer\Domain_04.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_05" class="RS_Tools.Tools.DomainAppointer.Domain_05" message="Assign Domain 5" caption="Assign Domain 05" tip="Assign Domain 5" category="RS_Tools" image="Images\DomainAppointer\Domain_05.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_06" class="RS_Tools.Tools.DomainAppointer.Domain_06" message="Assign Domain 6" caption="Assign Domain 06" tip="Assign Domain 6" category="RS_Tools" image="Images\DomainAppointer\Domain_06.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_07" class="RS_Tools.Tools.DomainAppointer.Domain_07" message="Assign Domain 7" caption="Assign Domain 07" tip="Assign Domain 7" category="RS_Tools" image="Images\DomainAppointer\Domain_07.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_08" class="RS_Tools.Tools.DomainAppointer.Domain_08" message="Assign Domain 8" caption="Assign Domain 08" tip="Assign Domain 8" category="RS_Tools" image="Images\DomainAppointer\Domain_08.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_09" class="RS_Tools.Tools.DomainAppointer.Domain_09" message="Assign Domain 9" caption="Assign Domain 09" tip="Assign Domain 9" category="RS_Tools" image="Images\DomainAppointer\Domain_09.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_10" class="RS_Tools.Tools.DomainAppointer.Domain_10" message="Assign Domain 10" caption="Assign Domain 10" tip="Assign Domain 10" category="RS_Tools" image="Images\DomainAppointer\Domain_10.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_11" class="RS_Tools.Tools.DomainAppointer.Domain_11" message="Assign Domain 11" caption="Assign Domain 11" tip="Assign Domain 11" category="RS_Tools" image="Images\DomainAppointer\Domain_11.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_12" class="RS_Tools.Tools.DomainAppointer.Domain_12" message="Assign Domain 12" caption="Assign Domain 12" tip="Assign Domani 12" category="RS_Tools" image="Images\DomainAppointer\Domain_12.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_13" class="RS_Tools.Tools.DomainAppointer.Domain_13" message="Assign Domain 13" caption="Assign Domain 13" tip="Assign Domain 13" category="RS_Tools" image="Images\DomainAppointer\Domain_13.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_14" class="RS_Tools.Tools.DomainAppointer.Domain_14" message="Assign Domain 14" caption="Assign Domain 14" tip="Assign Domain 14" category="RS_Tools" image="Images\DomainAppointer\Domain_14.png" />
+        <!-- Domain Appointer End -->
       </Commands>
       <DockableWindows>
         <DockableWindow id="Woolpert_Inc_RS_Tools_Inspector" class="RS_Tools.Tools.Inspector.Inspector+AddinImpl" caption="Inspector" image="Images\Inspector\Inspector.png">
           <InitialPlacement height="193" width="147" state="pinned" position="left" />
         </DockableWindow>
+        <DockableWindow id="Woolpert_Inc_RS_Tools_DomainAppointer" class="RS_Tools.Tools.DomainAppointer.DomainAppointer+AddinImpl" caption="Domain Appointer" image="Images\DomainAppointer\DomainAppointer.png">
+          <InitialPlacement height="300" width="300" state="pinned" position="left" />
+        </DockableWindow>
       </DockableWindows>
+      <Toolbars>
+        <Toolbar id="Woolpert_Inc_RS_Tools_RS_Domain_Appointer" caption="RS Domain Appointer" showInitially="false">
+          <Items>
+            <Button refID="Woolpert_Inc_RS_Tools_DomainAppointerLauncher" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_00" separator="true" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_01" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_02" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_03" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_04" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_05" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_06" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_07" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_08" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_09" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_10" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_11" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_12" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_13" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_14" />
+          </Items>
+        </Toolbar>
+        <Toolbar id="Woolpert_Inc_RS_Tools_RS_Inspector" caption="RS Inspector" showInitially="false">
+          <Items>
+            <Button refID="Woolpert_Inc_RS_Tools_Inspector_Launcher" />
+            <Button refID="Woolpert_Inc_RS_Tools_OKNext" separator="true" />
+            <Button refID="Woolpert_Inc_RS_Tools_OKNextScale" />
+            <Button refID="Woolpert_Inc_RS_Tools_OkayStay" />
+            <Button refID="Woolpert_Inc_RS_Tools_DeleteNext" />
+          </Items>
+        </Toolbar>
+        <Toolbar id="Woolpert_Inc_RS_Tools_RS_Utilities" caption="RS Utilities" showInitially="false">
+          <Items>
+            <Button refID="Woolpert_Inc_RS_Tools_Sidekick_Button" />
+            <Button refID="Woolpert_Inc_RS_Tools_AutoSaveSettings" />
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileLoader_Button"/>
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" separator="true"/>
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileOpener_Tool"/>
+          </Items>
+        </Toolbar>
+      </Toolbars>
     </ArcMap>
   </AddIn>
 </ESRI.Configuration>

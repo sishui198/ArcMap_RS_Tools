@@ -101,7 +101,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config1.Designer.cs">
+    <Compile Include="Config.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Config.esriaddinx</DependentUpon>
     </Compile>
@@ -118,6 +118,29 @@
       <DependentUpon>AutoSave.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\AutoSave\AutoSaveSettings.cs" />
+    <Compile Include="Tools\DomainAppointer\DataService.cs" />
+    <Compile Include="Tools\DomainAppointer\DomainAppointer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools\DomainAppointer\DomainAppointer.Designer.cs">
+      <DependentUpon>DomainAppointer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\DomainAppointer\DomainAppointerLauncher.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_00.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_01.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_02.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_03.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_04.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_05.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_06.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_07.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_08.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_09.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_10.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_11.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_12.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_13.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_14.cs" />
     <Compile Include="Tools\FileTileLoader\FileTileLoader_Button.cs" />
     <Compile Include="Tools\FileTileLoader\FileTileLoader_Form.cs">
       <SubType>Form</SubType>
@@ -150,7 +173,7 @@
     <Compile Include="Tools\Inspector\OkayStay.cs" />
     <Compile Include="Tools\Inspector\OKNext.cs" />
     <Compile Include="Tools\Inspector\OKNextScale.cs" />
-    <Compile Include="Tools\Sidekick\Sidekick.cs" />
+    <Compile Include="Tools\Sidekick\Sidekick_Button.cs" />
     <Compile Include="Utilities\Utilities_ArcMap.cs" />
     <Compile Include="Utilities\Utilities_General.cs" />
     <Compile Include="Utilities\Utilities_MessageBox.cs" />
@@ -159,7 +182,7 @@
     <AddInContent Include="Config.esriaddinx">
       <Generator>ArcGISAddInHostGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Config1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Config.Designer.cs</LastGenOutput>
     </AddInContent>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +210,23 @@
     <AddInContent Include="Images\FileTileLoader\FileTileLoader.png" />
     <AddInContent Include="Images\Inspector\DeleteNext.png" />
     <AddInContent Include="Images\AutoSave\AutoSaveSettings.png" />
+    <AddInContent Include="Images\DomainAppointer\DomainAppointer.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_01.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_00.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_02.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_03.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_04.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_05.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_06.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_07.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_08.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_09.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_10.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_11.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_12.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_13.png" />
+    <AddInContent Include="Images\DomainAppointer\DomainAppointerLauncher.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_14.png" />
     <Content Include="Images\FileTileLoader\searches_folder.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener_Settings.png" />
@@ -200,7 +240,7 @@
     <AddInContent Include="Images\Inspector\OKNext.png" />
     <AddInContent Include="Images\Inspector\OKNextScale.png" />
     <AddInContent Include="Images\Inspector\OkayStay.png" />
-    <AddInContent Include="Images\Sidekick.png" />
+    <AddInContent Include="Images\Sidekick\Sidekick.png" />
     <Content Include="Utilities\Ookii.Dialogs.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\AutoSave\AutoSave.resx">
       <DependentUpon>AutoSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\DomainAppointer\DomainAppointer.resx">
+      <DependentUpon>DomainAppointer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\FileTileLoader\FileTileLoader_Form.resx">
       <DependentUpon>FileTileLoader_Form.cs</DependentUpon>

@@ -10,11 +10,10 @@ using System.Windows.Forms;
 
 namespace RS_Tools.Tools.Sidekick
 {
-    public class Sidekick : ESRI.ArcGIS.Desktop.AddIns.Button
+    public class Sidekick_Button : ESRI.ArcGIS.Desktop.AddIns.Button
     {
         #region Fields
 
-        private string APPFOLDER = "DClone";
         private IApplication _application;
         private IActiveView _activeview;
         private IMxDocument _mxdocument;
@@ -33,7 +32,7 @@ namespace RS_Tools.Tools.Sidekick
 
         #endregion
 
-        public Sidekick()
+        public Sidekick_Button()
         {
             _application = ArcMap.Application;
             UpdateEvents();
