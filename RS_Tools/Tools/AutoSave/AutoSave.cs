@@ -98,7 +98,7 @@ namespace RS_Tools.Tools.AutoSave
 
             _utilitiesArcmap = new Utilities_ArcMap(_map);
             if (this.cboTargetLayer.Items.Count > 0) this.cboTargetLayer.Items.Clear();
-            this.cboTargetLayer.Items.AddRange(_utilitiesArcmap.FeatureLayers().ToArray());
+            this.cboTargetLayer.Items.AddRange(_utilitiesArcmap.FeatureLayers().Select(item => item.Name).ToArray());
             if (this.cboTargetLayer.Items.Count > 0)
             {
                 this.cboTargetLayer.SelectedIndex = 0;
