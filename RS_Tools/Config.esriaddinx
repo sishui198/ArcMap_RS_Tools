@@ -6,7 +6,7 @@
   <Image>Images\RS_Tools.png</Image>
   <Author>Chris Stayte</Author>
   <Company>Woolpert Inc.</Company>
-  <Date>12/17/2017</Date>
+  <Date>12/19/2017</Date>
   <Targets>
     <Target name="Desktop" version="10.4" />
   </Targets>
@@ -54,6 +54,7 @@
         <!-- Surface Generator Start-->
         <Button id="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher" class="RS_Tools.Tools.SurfaceGenerator.SurfaceGenerator_Launcher" message="Launch Surface Generator" caption="Surface Generator Launcher" tip="Launch Surface Generator" category="RS_Tools" image="Images\SurfaceGenerator\SurfaceGenerator_Launcher.png" />
         <!-- Surface Generator End-->
+        <Button id="Woolpert_Inc_RS_Tools_NotificationButton" class="RS_Tools.Tools.Sandbox.NotificationButton" message="Test Notifications" caption="NotificationButton" tip="Test Notifications" category="RS_Tools_Beta" image="Images\NotificationButton.png" />
       </Commands>
       <DockableWindows>
         <DockableWindow id="Woolpert_Inc_RS_Tools_Inspector" class="RS_Tools.Tools.Inspector.Inspector+AddinImpl" caption="Inspector" image="Images\Inspector\Inspector.png">
@@ -98,9 +99,14 @@
             <Button refID="Woolpert_Inc_RS_Tools_Sidekick_Button" />
             <Button refID="Woolpert_Inc_RS_Tools_AutoSaveSettings" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileLoader_Button" />
-            <Button refID="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher"/>
+            <Button refID="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" separator="true" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" />
+          </Items>
+        </Toolbar>
+        <Toolbar id="Woolpert_Inc_RS_Tools_RS_Sandbox" caption="RS Sandbox" showInitially="false">
+          <Items>
+            <Button refID="Woolpert_Inc_RS_Tools_NotificationButton"/>
           </Items>
         </Toolbar>
       </Toolbars>

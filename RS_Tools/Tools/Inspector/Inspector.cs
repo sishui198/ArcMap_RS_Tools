@@ -519,7 +519,6 @@ namespace RS_Tools.Tools.Inspector
             return true;
         }
 
-
         private IEditor3 GetEditorFromArcMap(IMxApplication mxApplication)
         {
             if (mxApplication == null)

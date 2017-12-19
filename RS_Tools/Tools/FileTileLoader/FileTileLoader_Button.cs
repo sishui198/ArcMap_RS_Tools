@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 
-
 namespace RS_Tools.Tools.FileTileLoader
 {
     public class FileTileLoader_Button : ESRI.ArcGIS.Desktop.AddIns.Button
