@@ -127,6 +127,7 @@
       <DependentUpon>AutoSave.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\AutoSave\AutoSaveSettings.cs" />
+    <Compile Include="Tools\CollapseAllLayers\CollapseAllLayers.cs" />
     <Compile Include="Tools\DomainAppointer\DataService.cs" />
     <Compile Include="Tools\DomainAppointer\DomainAppointer.cs">
       <SubType>UserControl</SubType>
@@ -247,6 +248,7 @@
     <AddInContent Include="Images\DomainAppointer\Domain_13.png" />
     <AddInContent Include="Images\DomainAppointer\DomainAppointerLauncher.png" />
     <AddInContent Include="Images\DomainAppointer\Domain_14.png" />
+    <AddInContent Include="Images\CollapseAllLayers\CollapseAllLayers.png" />
     <Content Include="Images\FileTileLoader\searches_folder.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener_Settings.png" />

@@ -2,11 +2,11 @@
   <Name>RS_Tools</Name>
   <AddInID>{a1f80a4e-7369-4e14-9978-bee8e7697732}</AddInID>
   <Description>Tools used to enhance performance and utilities to increase producitivy in ArcGIS Desktop</Description>
-  <Version>1.0.1</Version>
+  <Version>1.1.0</Version>
   <Image>Images\RS_Tools.png</Image>
   <Author>Chris Stayte</Author>
   <Company>Woolpert Inc.</Company>
-  <Date>12/19/2017</Date>
+  <Date>1/22/2018</Date>
   <Targets>
     <Target name="Desktop" version="10.4" />
   </Targets>
@@ -55,6 +55,9 @@
         <Button id="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher" class="RS_Tools.Tools.SurfaceGenerator.SurfaceGenerator_Launcher" message="Launch Surface Generator" caption="Surface Generator Launcher" tip="Launch Surface Generator" category="RS_Tools" image="Images\SurfaceGenerator\SurfaceGenerator_Launcher.png" />
         <!-- Surface Generator End-->
         <Button id="Woolpert_Inc_RS_Tools_NotificationButton" class="RS_Tools.Tools.Sandbox.NotificationButton" message="Test Notifications" caption="NotificationButton" tip="Test Notifications" category="RS_Tools_Beta" image="Images\NotificationButton.png" />
+        <!-- Collapse All Layers-->
+        <Button id="Woolpert_Inc_RS_Tools_CollapseAllLayers" class="RS_Tools.Tools.CollapseAllLayers.CollapseAllLayers" message="Collapse all layers in the table of contents." caption="Collapse All Layers" tip="Collapse all layers" category="RS_Tools" image="Images\CollapseAllLayers\CollapseAllLayers.png" />
+        <!-- Collapse All Layers End -->
       </Commands>
       <DockableWindows>
         <DockableWindow id="Woolpert_Inc_RS_Tools_Inspector" class="RS_Tools.Tools.Inspector.Inspector+AddinImpl" caption="Inspector" image="Images\Inspector\Inspector.png">
@@ -100,13 +103,14 @@
             <Button refID="Woolpert_Inc_RS_Tools_AutoSaveSettings" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileLoader_Button" />
             <Button refID="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher" />
+            <Button refID="Woolpert_Inc_RS_Tools_CollapseAllLayers"/>
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" separator="true" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" />
           </Items>
         </Toolbar>
         <Toolbar id="Woolpert_Inc_RS_Tools_RS_Sandbox" caption="RS Sandbox" showInitially="false">
           <Items>
-            <Button refID="Woolpert_Inc_RS_Tools_NotificationButton"/>
+            <Button refID="Woolpert_Inc_RS_Tools_NotificationButton" />
           </Items>
         </Toolbar>
       </Toolbars>
