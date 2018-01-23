@@ -54,9 +54,11 @@
   <ItemGroup>
     <Reference Include="ESRI.ArcGIS.Carto, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Desktop.AddIns">
       <Private>False</Private>
@@ -64,6 +66,7 @@
     </Reference>
     <Reference Include="ESRI.ArcGIS.Display, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Editor, Version=10.5.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -76,9 +79,15 @@
     </Reference>
     <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Geometry, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ESRI.ArcGIS.System">
       <Private>False</Private>
@@ -118,6 +127,7 @@
       <DependentUpon>AutoSave.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\AutoSave\AutoSaveSettings.cs" />
+    <Compile Include="Tools\CollapseAllLayers\CollapseAllLayers.cs" />
     <Compile Include="Tools\DomainAppointer\DataService.cs" />
     <Compile Include="Tools\DomainAppointer\DomainAppointer.cs">
       <SubType>UserControl</SubType>
@@ -173,6 +183,7 @@
     <Compile Include="Tools\Inspector\OkayStay.cs" />
     <Compile Include="Tools\Inspector\OKNext.cs" />
     <Compile Include="Tools\Inspector\OKNextScale.cs" />
+    <Compile Include="Tools\Sandbox\NotificationButton.cs" />
     <Compile Include="Tools\Sidekick\Sidekick_Button.cs" />
     <Compile Include="Tools\SurfaceGenerator\BoundaryProblem.cs" />
     <Compile Include="Tools\SurfaceGenerator\GDBUtilities.cs" />
@@ -237,6 +248,7 @@
     <AddInContent Include="Images\DomainAppointer\Domain_13.png" />
     <AddInContent Include="Images\DomainAppointer\DomainAppointerLauncher.png" />
     <AddInContent Include="Images\DomainAppointer\Domain_14.png" />
+    <AddInContent Include="Images\CollapseAllLayers\CollapseAllLayers.png" />
     <Content Include="Images\FileTileLoader\searches_folder.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener_Settings.png" />
@@ -253,6 +265,7 @@
     <AddInContent Include="Images\Sidekick\Sidekick.png" />
     <AddInContent Include="Images\SurfaceGenerator\folder-open-icon.png" />
     <AddInContent Include="Images\SurfaceGenerator\SurfaceGenerator_Launcher.png" />
+    <AddInContent Include="Images\NotificationButton.png" />
     <Content Include="Utilities\Ookii.Dialogs.dll" />
   </ItemGroup>
   <ItemGroup>

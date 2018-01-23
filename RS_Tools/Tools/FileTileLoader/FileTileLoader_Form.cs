@@ -340,12 +340,19 @@ namespace RS_Tools.Tools.FileTileLoader
         private void LoadFileList()
         {
             bool itWorked = false;
+            GroupLayer rasterGroup = null; 
+            if (_fileList.Count > 0)
+            {
+                rasterGroup = new GroupLayer();
+                rasterGroup.Name = "New Files";
+            }
+
             foreach (KeyValuePair<String, Boolean> file in _fileList)
             {
                 if (file.Value == true)
                 {
                     if (!itWorked)
-                        SaveFileTypeList(GetExtension());
+                        //SaveFileTypeList(GetExtension());
                     itWorked = true;
 
                     string filePath = txb_FileWorkspace.Text + "\\" + Utilities.Utilities_General.AddPrefixAndSuffixToFileName(file.Key, txb_Prefix.Text, txb_Suffix.Text) + GetExtension();
@@ -353,7 +360,10 @@ namespace RS_Tools.Tools.FileTileLoader
                     {
                         IRasterLayer rasterLayer = new RasterLayer();
                         rasterLayer.CreateFromFilePath(filePath);
-                        _mxdocument.AddLayer(rasterLayer);
+                        ILegendGroup group = ((ILegendInfo)rasterLayer).get_LegendGroup(0);
+                        group.Visible = false;
+                        rasterGroup.Add(rasterLayer);
+                       
                     }
                     catch (Exception ex)
                     {
@@ -365,6 +375,7 @@ namespace RS_Tools.Tools.FileTileLoader
             }
             if (itWorked)
             {
+                if (rasterGroup != null) _mxdocument.AddLayer(rasterGroup);
                 _mxdocument.ActivatedView.Refresh();
             }
 
