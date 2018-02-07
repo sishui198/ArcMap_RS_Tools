@@ -2,11 +2,11 @@
   <Name>RS_Tools</Name>
   <AddInID>{a1f80a4e-7369-4e14-9978-bee8e7697732}</AddInID>
   <Description>Tools used to enhance performance and utilities to increase producitivy in ArcGIS Desktop</Description>
-  <Version>1.1.0</Version>
+  <Version>1.2.0</Version>
   <Image>Images\RS_Tools.png</Image>
   <Author>Chris Stayte</Author>
   <Company>Woolpert Inc.</Company>
-  <Date>1/22/2018</Date>
+  <Date>2/6/2018</Date>
   <Targets>
     <Target name="Desktop" version="10.4" />
   </Targets>
@@ -26,6 +26,7 @@
         <Button id="Woolpert_Inc_RS_Tools_OKNextScale" class="RS_Tools.Tools.Inspector.OKNextScale" message="Mark the current feature with a '1' in the table and zoom to the next feature using the current extent." caption="Okay, Next Scale" tip="Mark current feature and move to next at same extent" category="RS_Tools" image="Images\Inspector\OKNextScale.png" />
         <Button id="Woolpert_Inc_RS_Tools_OkayStay" class="RS_Tools.Tools.Inspector.OkayStay" message="Marks the current feature with a '1' in the table" caption="Okay, Stay" tip="Marks the current feature as done" category="RS_Tools" image="Images\Inspector\OkayStay.png" />
         <Button id="Woolpert_Inc_RS_Tools_DeleteNext" class="RS_Tools.Tools.Inspector.DeleteNext" message="Deletes a current feature and zooms to the next feature fully in the extent." caption="Delete, Next" tip="Deletes current feature and zooms to next" category="RS_Tools" image="Images\Inspector\DeleteNext.png" />
+        <Button id="Woolpert_Inc_RS_Tools_InspectorSorter_Launcher" class="RS_Tools.Tools.Inspector.InspectorSorter_Launcher" message="Generates a custom order for the RS Inspector" caption="Inspector Sorter" tip="Get a order for inspector" category="RS_Tools" image="Images\Inspector\InspectorSorter_Launcher.png" />
         <!-- Inspector End -->
         <!-- Auto Save Start -->
         <Button id="Woolpert_Inc_RS_Tools_AutoSaveSettings" class="RS_Tools.Tools.AutoSave.AutoSaveSettings" message="Gives the ability to setup an auto save feature" caption="Auto Save Settings" tip="Setup Auto Save Settings" category="RS_Tools" image="Images\AutoSave\AutoSaveSettings.png" />
@@ -91,6 +92,7 @@
         <Toolbar id="Woolpert_Inc_RS_Tools_RS_Inspector" caption="RS Inspector" showInitially="false">
           <Items>
             <Button refID="Woolpert_Inc_RS_Tools_Inspector_Launcher" />
+            <Button refID="Woolpert_Inc_RS_Tools_InspectorSorter_Launcher"/>
             <Button refID="Woolpert_Inc_RS_Tools_OKNext" separator="true" />
             <Button refID="Woolpert_Inc_RS_Tools_OKNextScale" />
             <Button refID="Woolpert_Inc_RS_Tools_OkayStay" />
@@ -103,7 +105,7 @@
             <Button refID="Woolpert_Inc_RS_Tools_AutoSaveSettings" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileLoader_Button" />
             <Button refID="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher" />
-            <Button refID="Woolpert_Inc_RS_Tools_CollapseAllLayers"/>
+            <Button refID="Woolpert_Inc_RS_Tools_CollapseAllLayers" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" separator="true" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" />
           </Items>

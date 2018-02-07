@@ -179,6 +179,13 @@
     <Compile Include="Tools\Inspector\Inspector.Designer.cs">
       <DependentUpon>Inspector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Inspector\InspectorSorter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Inspector\InspectorSorter.Designer.cs">
+      <DependentUpon>InspectorSorter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Inspector\InspectorSorter_Launcher.cs" />
     <Compile Include="Tools\Inspector\Inspector_Launcher.cs" />
     <Compile Include="Tools\Inspector\OkayStay.cs" />
     <Compile Include="Tools\Inspector\OKNext.cs" />
@@ -266,6 +273,7 @@
     <AddInContent Include="Images\SurfaceGenerator\folder-open-icon.png" />
     <AddInContent Include="Images\SurfaceGenerator\SurfaceGenerator_Launcher.png" />
     <AddInContent Include="Images\NotificationButton.png" />
+    <AddInContent Include="Images\Inspector\InspectorSorter_Launcher.png" />
     <Content Include="Utilities\Ookii.Dialogs.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -290,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Inspector\Inspector.resx">
       <DependentUpon>Inspector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Inspector\InspectorSorter.resx">
+      <DependentUpon>InspectorSorter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\SurfaceGenerator\SurfaceGapFix_Beta.resx">
       <DependentUpon>SurfaceGapFix_Beta.cs</DependentUpon>

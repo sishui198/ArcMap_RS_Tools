@@ -102,21 +102,33 @@ namespace RS_Tools.Tools.Inspector
         {
             if (!CheckRequirements()) return;
 
-            ILayer buildingslayer = _utilitiesArcMap.Layer(this.cboBuildingLayer.Text);
+            IFeatureLayer buildingslayer = _utilitiesArcMap.FeatureLayer(this.cboBuildingLayer.Text);
             try
             {
                 if (buildingslayer != null)
                 {
+                    int indexField = _utilitiesArcMap.FindField(buildingslayer, "rsi_index");
                     int inspectionfieldindex = _utilitiesArcMap.FindField(buildingslayer, "rsi");
-                    IFeatureLayer buildingsfeaturelayer = buildingslayer as IFeatureLayer;
-                    IFeatureClass buildingsfeatureclass = buildingsfeaturelayer.FeatureClass;
-                    IFeatureSelection buildingsfeatureselection = buildingsfeaturelayer as IFeatureSelection;
-                    if (buildingsfeatureselection.SelectionSet.Count > 0)
-                        Update(1, buildingsfeaturelayer);
 
+                    IFeatureClass buildingsfeatureclass = buildingslayer.FeatureClass;
+                    IFeatureSelection buildingsfeatureselection = buildingslayer as IFeatureSelection;
+                    if (buildingsfeatureselection.SelectionSet.Count > 0)
+                        Update(1, buildingslayer);
+
+                    IFeatureCursor featurecursor = null;
                     IQueryFilter queryfilter = new QueryFilterClass();
                     queryfilter.WhereClause = "\"rsi\" IS NULL";
-                    IFeatureCursor featurecursor = buildingsfeatureclass.Search(queryfilter, false);
+
+
+                    if (indexField > -1)
+                    {
+                        queryfilter.SubFields = "rsi_index";
+                        IQueryFilterDefinition queryFilterDef = (IQueryFilterDefinition)queryfilter;
+                        queryFilterDef.PostfixClause = "ORDER BY rsi_index";
+                    }
+
+                    featurecursor = buildingsfeatureclass.Search(queryfilter, false);
+
                     IFeature feature = null;
 
                     while ((feature = featurecursor.NextFeature()) != null)
@@ -161,6 +173,7 @@ namespace RS_Tools.Tools.Inspector
                             return;
                         }
                     }
+
                 }
             }
             catch (Exception ex)
@@ -177,21 +190,32 @@ namespace RS_Tools.Tools.Inspector
         {
             if (!CheckRequirements()) return;
 
-            ILayer buildingslayer = _utilitiesArcMap.Layer(this.cboBuildingLayer.Text);
+            IFeatureLayer buildingslayer = _utilitiesArcMap.FeatureLayer(this.cboBuildingLayer.Text);
             try
             {
                 if (buildingslayer != null)
                 {
+                    int indexField = _utilitiesArcMap.FindField(buildingslayer, "rsi_index");
                     int inspectionfieldindex = _utilitiesArcMap.FindField(buildingslayer, "rsi");
-                    IFeatureLayer buildingsfeaturelayer = buildingslayer as IFeatureLayer;
-                    IFeatureClass buildingsfeatureclass = buildingsfeaturelayer.FeatureClass;
-                    IFeatureSelection buildingsfeatureselection = buildingsfeaturelayer as IFeatureSelection;
-                    if (buildingsfeatureselection.SelectionSet.Count > 0)
-                        Delete(buildingsfeaturelayer);
 
+                    IFeatureClass buildingsfeatureclass = buildingslayer.FeatureClass;
+                    IFeatureSelection buildingsfeatureselection = buildingslayer as IFeatureSelection;
+                    if (buildingsfeatureselection.SelectionSet.Count > 0)
+                        Delete(buildingslayer);
+
+                    IFeatureCursor featurecursor = null;
                     IQueryFilter queryfilter = new QueryFilterClass();
                     queryfilter.WhereClause = "\"rsi\" IS NULL";
-                    IFeatureCursor featurecursor = buildingsfeatureclass.Search(queryfilter, false);
+
+                    if (indexField > -1)
+                    {
+                        queryfilter.SubFields = "rsi_index";
+                        IQueryFilterDefinition queryFilterDef = (IQueryFilterDefinition)queryfilter;
+                        queryFilterDef.PostfixClause = "ORDER BY rsi_index";
+                    }
+                    
+                    featurecursor = buildingsfeatureclass.Search(queryfilter, false);
+
                     IFeature feature = null;
 
                     while ((feature = featurecursor.NextFeature()) != null)
@@ -260,21 +284,33 @@ namespace RS_Tools.Tools.Inspector
         {
             if (!CheckRequirements()) return;
 
-            ILayer buildingslayer = _utilitiesArcMap.Layer(this.cboBuildingLayer.Text);
+            IFeatureLayer buildingslayer = _utilitiesArcMap.FeatureLayer(this.cboBuildingLayer.Text);
             try
             {
                 if (buildingslayer != null)
                 {
+                    int indexField = _utilitiesArcMap.FindField(buildingslayer, "rsi_index");
                     int inspectionfieldindex = _utilitiesArcMap.FindField(buildingslayer, "rsi");
-                    IFeatureLayer buildingsfeaturelayer = buildingslayer as IFeatureLayer;
-                    IFeatureClass buildingsfeatureclass = buildingsfeaturelayer.FeatureClass;
-                    IFeatureSelection buildingsfeatureselection = buildingsfeaturelayer as IFeatureSelection;
-                    if (buildingsfeatureselection.SelectionSet.Count > 0)
-                        Update(1, buildingsfeaturelayer);
 
+                    IFeatureClass buildingsfeatureclass = buildingslayer.FeatureClass;
+                    IFeatureSelection buildingsfeatureselection = buildingslayer as IFeatureSelection;
+                    if (buildingsfeatureselection.SelectionSet.Count > 0)
+                        Update(1, buildingslayer);
+
+                    IFeatureCursor featurecursor = null;
                     IQueryFilter queryfilter = new QueryFilterClass();
                     queryfilter.WhereClause = "\"rsi\" IS NULL";
-                    IFeatureCursor featurecursor = buildingsfeatureclass.Search(queryfilter, false);
+
+
+                    if (indexField > -1)
+                    {
+                        queryfilter.SubFields = "rsi_index";
+                        IQueryFilterDefinition queryFilterDef = (IQueryFilterDefinition)queryfilter;
+                        queryFilterDef.PostfixClause = "ORDER BY rsi_index";
+                    }
+
+                    featurecursor = buildingsfeatureclass.Search(queryfilter, false);
+
                     IFeature feature = null;
 
                     while ((feature = featurecursor.NextFeature()) != null)
