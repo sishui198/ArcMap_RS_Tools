@@ -52,7 +52,8 @@ namespace RS_Tools.Tools.Inspector
             {
                 if (GenerateFeaturesDictionary())
                 {
-
+                    SortFeatures();
+                    PopulateFields();
                 };
             };
         }
@@ -72,7 +73,6 @@ namespace RS_Tools.Tools.Inspector
             cbo_FeatureLayers.Items.AddRange(_utilitiesArcMap.FeatureLayers().Select(item => item.Name).ToArray());
             if (this.cbo_FeatureLayers.Items.Count > 0) this.cbo_FeatureLayers.SelectedIndex = 0;
         }
-
 
         private bool CheckRequirements()
         {
@@ -172,7 +172,7 @@ namespace RS_Tools.Tools.Inspector
                         IPolyline polyline = feature.Shape as IPolyline;
                         if ((polygon != null) || (polyline != null))
                         {
-                            IArea area = feature as IArea;
+                            IArea area = feature.Shape as IArea;
                             if (area != null)
                             {
                                 x = area.Centroid.X;
@@ -210,14 +210,88 @@ namespace RS_Tools.Tools.Inspector
             return true;
         }
 
-        private void SortFeature()
+        private void SortFeatures()
         {
-            _features.Sort(delegate(Dictionary<string, double> a, Dictionary<string, double> b)
+            if (rb_BottomLeft.Checked && rb_Column.Checked) // Bottom Left, Columns
             {
-                int xdiff = a["x"].CompareTo(b["x"]);
-                if (xdiff != 0) return xdiff;
+                _features.Sort(delegate (Dictionary<string, double> a, Dictionary<string, double> b)
+                {
+                    int xdiff = a["x"].CompareTo(b["x"]);
+                    if (xdiff != 0) return xdiff;
                     else return a["y"].CompareTo(b["y"]);
-            });
+                });
+            }
+
+            if (rb_BottomLeft.Checked && rb_Row.Checked) // Bottom Left, Rows
+            {
+                _features.Sort(delegate (Dictionary<string, double> a, Dictionary<string, double> b)
+                {
+                    int xdiff = a["y"].CompareTo(b["y"]);
+                    if (xdiff != 0) return xdiff;
+                    else return a["x"].CompareTo(b["x"]);
+                });
+            }
+            
+            if (rb_TopRight.Checked && rb_Column.Checked) // Top Right, Columns
+            {
+                _features.Sort(delegate (Dictionary<string, double> a, Dictionary<string, double> b)
+                {
+                    int xdiff = b["x"].CompareTo(a["x"]);
+                    if (xdiff != 0) return xdiff;
+                    else return b["y"].CompareTo(a["y"]);
+                });
+            }
+
+            if (rb_TopRight.Checked && rb_Row.Checked) // Top Right, Rows
+            {
+                _features.Sort(delegate (Dictionary<string, double> a, Dictionary<string, double> b)
+                {
+                    int xdiff = b["y"].CompareTo(a["y"]);
+                    if (xdiff != 0) return xdiff;
+                    else return b["x"].CompareTo(a["x"]);
+                });
+            }
+
+            if (rb_BottomRight.Checked && rb_Column.Checked) // Bottom Right, Columns
+            {
+                _features.Sort(delegate (Dictionary<string, double> a, Dictionary<string, double> b)
+                {
+                    int xdiff = b["x"].CompareTo(a["x"]);
+                    if (xdiff != 0) return xdiff;
+                    else return a["y"].CompareTo(b["y"]);
+                });
+            }
+
+            if (rb_BottomRight.Checked && rb_Row.Checked) // Bottom Right, Rows
+            {
+                _features.Sort(delegate (Dictionary<string, double> a, Dictionary<string, double> b)
+                {
+                    int xdiff = a["y"].CompareTo(b["y"]);
+                    if (xdiff != 0) return xdiff;
+                    else return b["x"].CompareTo(a["x"]);
+                });
+            }
+
+            if (rb_TopLeft.Checked && rb_Column.Checked) // Top Left, Columns
+            {
+                _features.Sort(delegate (Dictionary<string, double> a, Dictionary<string, double> b)
+                {
+                    int xdiff = a["x"].CompareTo(b["x"]);
+                    if (xdiff != 0) return xdiff;
+                    else return b["y"].CompareTo(a["y"]);
+                });
+            }
+
+            if (rb_TopLeft.Checked && rb_Row.Checked) // Top Left, Rows
+            {
+                _features.Sort(delegate (Dictionary<string, double> a, Dictionary<string, double> b)
+                {
+                    int xdiff = b["y"].CompareTo(a["y"]);
+                    if (xdiff != 0) return xdiff;
+                    else return a["x"].CompareTo(b["x"]);
+                });
+            }
+
         }
 
         private void PopulateFields()
@@ -231,6 +305,8 @@ namespace RS_Tools.Tools.Inspector
                 {
                     int fieldIndex = _utilitiesArcMap.FindField(featureLayer, "rsi_index");
 
+                    _editor.StartOperation();
+
                     for(var i = 0; i < _features.Count; i++)
                     {
 
@@ -239,9 +315,10 @@ namespace RS_Tools.Tools.Inspector
                         IFeature feature = featureClass.GetFeature((int)oid);
 
                         feature.set_Value(fieldIndex, i + 1);
+                        feature.Store();
 
                     }
-
+                    _editor.StopOperation("Generated Indicies");
 
                 }
                 

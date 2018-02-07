@@ -46,7 +46,7 @@
             // 
             // btn_GenerateIndex
             // 
-            this.btn_GenerateIndex.Location = new System.Drawing.Point(161, 311);
+            this.btn_GenerateIndex.Location = new System.Drawing.Point(161, 358);
             this.btn_GenerateIndex.Name = "btn_GenerateIndex";
             this.btn_GenerateIndex.Size = new System.Drawing.Size(115, 23);
             this.btn_GenerateIndex.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 258);
+            this.label1.Location = new System.Drawing.Point(12, 305);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 1;
@@ -67,7 +67,7 @@
             // cbo_FeatureLayers
             // 
             this.cbo_FeatureLayers.FormattingEnabled = true;
-            this.cbo_FeatureLayers.Location = new System.Drawing.Point(14, 284);
+            this.cbo_FeatureLayers.Location = new System.Drawing.Point(14, 331);
             this.cbo_FeatureLayers.Name = "cbo_FeatureLayers";
             this.cbo_FeatureLayers.Size = new System.Drawing.Size(262, 21);
             this.cbo_FeatureLayers.TabIndex = 3;
@@ -75,7 +75,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 9);
+            this.label2.Location = new System.Drawing.Point(31, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(226, 65);
             this.label2.TabIndex = 4;
@@ -163,7 +163,7 @@
             this.groupCorner.Controls.Add(this.rb_TopRight);
             this.groupCorner.Controls.Add(this.rb_BottomRight);
             this.groupCorner.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupCorner.Location = new System.Drawing.Point(34, 77);
+            this.groupCorner.Location = new System.Drawing.Point(34, 124);
             this.groupCorner.Name = "groupCorner";
             this.groupCorner.Size = new System.Drawing.Size(223, 110);
             this.groupCorner.TabIndex = 13;
@@ -175,7 +175,7 @@
             this.groupDirection.Controls.Add(this.rb_Column);
             this.groupDirection.Controls.Add(this.rb_Row);
             this.groupDirection.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupDirection.Location = new System.Drawing.Point(34, 193);
+            this.groupDirection.Location = new System.Drawing.Point(34, 240);
             this.groupDirection.Name = "groupDirection";
             this.groupDirection.Size = new System.Drawing.Size(223, 45);
             this.groupDirection.TabIndex = 14;
@@ -186,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(288, 346);
+            this.ClientSize = new System.Drawing.Size(288, 389);
             this.Controls.Add(this.groupDirection);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbo_FeatureLayers);
