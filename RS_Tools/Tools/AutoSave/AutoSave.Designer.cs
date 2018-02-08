@@ -198,6 +198,10 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // AutoSave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
