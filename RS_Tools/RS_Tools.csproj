@@ -151,6 +151,12 @@
     <Compile Include="Tools\DomainAppointer\Domain_12.cs" />
     <Compile Include="Tools\DomainAppointer\Domain_13.cs" />
     <Compile Include="Tools\DomainAppointer\Domain_14.cs" />
+    <Compile Include="Tools\FileTileCloner\FileTileCloner_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FileTileCloner\FileTileCloner_Form.Designer.cs">
+      <DependentUpon>FileTileCloner_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\FileTileLoader\FileTileLoader_Button.cs" />
     <Compile Include="Tools\FileTileLoader\FileTileLoader_Form.cs">
       <SubType>Form</SubType>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\DomainAppointer\DomainAppointer.resx">
       <DependentUpon>DomainAppointer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FileTileCloner\FileTileCloner_Form.resx">
+      <DependentUpon>FileTileCloner_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\FileTileLoader\FileTileLoader_Form.resx">
       <DependentUpon>FileTileLoader_Form.cs</DependentUpon>
