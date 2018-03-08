@@ -2,11 +2,11 @@
   <Name>RS_Tools</Name>
   <AddInID>{a1f80a4e-7369-4e14-9978-bee8e7697732}</AddInID>
   <Description>Tools used to enhance performance and utilities to increase producitivy in ArcGIS Desktop</Description>
-  <Version>1.2.1</Version>
+  <Version>1.3.0</Version>
   <Image>Images\RS_Tools.png</Image>
   <Author>Chris Stayte</Author>
   <Company>Woolpert Inc.</Company>
-  <Date>2/6/2018</Date>
+  <Date>3/7/2018</Date>
   <Targets>
     <Target name="Desktop" version="10.4" />
   </Targets>
@@ -59,6 +59,9 @@
         <!-- Collapse All Layers-->
         <Button id="Woolpert_Inc_RS_Tools_CollapseAllLayers" class="RS_Tools.Tools.CollapseAllLayers.CollapseAllLayers" message="Collapse all layers in the table of contents." caption="Collapse All Layers" tip="Collapse all layers" category="RS_Tools" image="Images\CollapseAllLayers\CollapseAllLayers.png" />
         <!-- Collapse All Layers End -->
+        <!-- File Tile Cloner Start -->
+        <Button id="Woolpert_Inc_RS_Tools_FileTileCloner_Button" class="RS_Tools.Tools.FileTileCloner.FileTileCloner_Button" message="Clones files from one place ot another using a tile index. " caption="File Tile Cloner" tip="Clones Files" category="RS Tools" image="Images\FileTileCloner\FileTileCloner_Button.png" />
+        <!-- File Tile Cloner End -->
       </Commands>
       <DockableWindows>
         <DockableWindow id="Woolpert_Inc_RS_Tools_Inspector" class="RS_Tools.Tools.Inspector.Inspector+AddinImpl" caption="Inspector" image="Images\Inspector\Inspector.png">
@@ -92,7 +95,7 @@
         <Toolbar id="Woolpert_Inc_RS_Tools_RS_Inspector" caption="RS Inspector" showInitially="false">
           <Items>
             <Button refID="Woolpert_Inc_RS_Tools_Inspector_Launcher" />
-            <Button refID="Woolpert_Inc_RS_Tools_InspectorSorter_Launcher"/>
+            <Button refID="Woolpert_Inc_RS_Tools_InspectorSorter_Launcher" />
             <Button refID="Woolpert_Inc_RS_Tools_OKNext" separator="true" />
             <Button refID="Woolpert_Inc_RS_Tools_OKNextScale" />
             <Button refID="Woolpert_Inc_RS_Tools_OkayStay" />
@@ -106,6 +109,7 @@
             <Button refID="Woolpert_Inc_RS_Tools_FileTileLoader_Button" />
             <Button refID="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher" />
             <Button refID="Woolpert_Inc_RS_Tools_CollapseAllLayers" />
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileCloner_Button"/>
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" separator="true" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" />
           </Items>
