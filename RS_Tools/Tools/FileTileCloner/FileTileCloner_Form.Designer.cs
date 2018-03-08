@@ -34,8 +34,8 @@
             this.rb_all = new System.Windows.Forms.RadioButton();
             this.lbl_FileCloningMethod = new System.Windows.Forms.Label();
             this.lbl_SourceWorkspace = new System.Windows.Forms.Label();
-            this.btn_browse = new System.Windows.Forms.Button();
-            this.txb_FileWorkspace = new System.Windows.Forms.TextBox();
+            this.btn_browseSrc = new System.Windows.Forms.Button();
+            this.txb_FileWorkspaceSrc = new System.Windows.Forms.TextBox();
             this.cbo_extension = new System.Windows.Forms.ComboBox();
             this.lbl_extension = new System.Windows.Forms.Label();
             this.lbl_suffix = new System.Windows.Forms.Label();
@@ -49,8 +49,8 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_initilaize = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_browseDst = new System.Windows.Forms.Button();
+            this.txb_FileWorkspaceDst = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn_CloneFile
@@ -62,13 +62,14 @@
             this.btn_CloneFile.TabIndex = 38;
             this.btn_CloneFile.Text = "Clone Files";
             this.btn_CloneFile.UseVisualStyleBackColor = true;
+            this.btn_CloneFile.Click += new System.EventHandler(this.btn_CloneFile_Click);
             // 
             // rb_selected
             // 
             this.rb_selected.AutoSize = true;
             this.rb_selected.Location = new System.Drawing.Point(53, 299);
             this.rb_selected.Name = "rb_selected";
-            this.rb_selected.Size = new System.Drawing.Size(67, 17);
+            this.rb_selected.Size = new System.Drawing.Size(68, 17);
             this.rb_selected.TabIndex = 37;
             this.rb_selected.TabStop = true;
             this.rb_selected.Text = "Selected";
@@ -79,7 +80,7 @@
             this.rb_all.AutoSize = true;
             this.rb_all.Location = new System.Drawing.Point(9, 299);
             this.rb_all.Name = "rb_all";
-            this.rb_all.Size = new System.Drawing.Size(36, 17);
+            this.rb_all.Size = new System.Drawing.Size(38, 17);
             this.rb_all.TabIndex = 36;
             this.rb_all.TabStop = true;
             this.rb_all.Text = "All";
@@ -90,7 +91,7 @@
             this.lbl_FileCloningMethod.AutoSize = true;
             this.lbl_FileCloningMethod.Location = new System.Drawing.Point(9, 274);
             this.lbl_FileCloningMethod.Name = "lbl_FileCloningMethod";
-            this.lbl_FileCloningMethod.Size = new System.Drawing.Size(103, 13);
+            this.lbl_FileCloningMethod.Size = new System.Drawing.Size(114, 13);
             this.lbl_FileCloningMethod.TabIndex = 35;
             this.lbl_FileCloningMethod.Text = "File Loading Method";
             // 
@@ -99,27 +100,28 @@
             this.lbl_SourceWorkspace.AutoSize = true;
             this.lbl_SourceWorkspace.Location = new System.Drawing.Point(9, 155);
             this.lbl_SourceWorkspace.Name = "lbl_SourceWorkspace";
-            this.lbl_SourceWorkspace.Size = new System.Drawing.Size(99, 13);
+            this.lbl_SourceWorkspace.Size = new System.Drawing.Size(102, 13);
             this.lbl_SourceWorkspace.TabIndex = 34;
             this.lbl_SourceWorkspace.Text = "Source Workspace";
             // 
-            // btn_browse
+            // btn_browseSrc
             // 
-            this.btn_browse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_browse.BackgroundImage")));
-            this.btn_browse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_browse.Location = new System.Drawing.Point(299, 176);
-            this.btn_browse.Name = "btn_browse";
-            this.btn_browse.Size = new System.Drawing.Size(24, 24);
-            this.btn_browse.TabIndex = 33;
-            this.btn_browse.UseVisualStyleBackColor = true;
+            this.btn_browseSrc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_browseSrc.BackgroundImage")));
+            this.btn_browseSrc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_browseSrc.Location = new System.Drawing.Point(299, 176);
+            this.btn_browseSrc.Name = "btn_browseSrc";
+            this.btn_browseSrc.Size = new System.Drawing.Size(24, 24);
+            this.btn_browseSrc.TabIndex = 33;
+            this.btn_browseSrc.UseVisualStyleBackColor = true;
+            this.btn_browseSrc.Click += new System.EventHandler(this.btn_browseSrc_Click);
             // 
-            // txb_FileWorkspace
+            // txb_FileWorkspaceSrc
             // 
-            this.txb_FileWorkspace.Location = new System.Drawing.Point(12, 176);
-            this.txb_FileWorkspace.Name = "txb_FileWorkspace";
-            this.txb_FileWorkspace.ReadOnly = true;
-            this.txb_FileWorkspace.Size = new System.Drawing.Size(281, 20);
-            this.txb_FileWorkspace.TabIndex = 32;
+            this.txb_FileWorkspaceSrc.Location = new System.Drawing.Point(12, 176);
+            this.txb_FileWorkspaceSrc.Name = "txb_FileWorkspaceSrc";
+            this.txb_FileWorkspaceSrc.ReadOnly = true;
+            this.txb_FileWorkspaceSrc.Size = new System.Drawing.Size(281, 22);
+            this.txb_FileWorkspaceSrc.TabIndex = 32;
             // 
             // cbo_extension
             // 
@@ -134,7 +136,7 @@
             this.lbl_extension.AutoSize = true;
             this.lbl_extension.Location = new System.Drawing.Point(220, 101);
             this.lbl_extension.Name = "lbl_extension";
-            this.lbl_extension.Size = new System.Drawing.Size(53, 13);
+            this.lbl_extension.Size = new System.Drawing.Size(57, 13);
             this.lbl_extension.TabIndex = 30;
             this.lbl_extension.Text = "Extension";
             // 
@@ -143,7 +145,7 @@
             this.lbl_suffix.AutoSize = true;
             this.lbl_suffix.Location = new System.Drawing.Point(114, 101);
             this.lbl_suffix.Name = "lbl_suffix";
-            this.lbl_suffix.Size = new System.Drawing.Size(33, 13);
+            this.lbl_suffix.Size = new System.Drawing.Size(36, 13);
             this.lbl_suffix.TabIndex = 29;
             this.lbl_suffix.Text = "Suffix";
             // 
@@ -151,14 +153,14 @@
             // 
             this.txb_Suffix.Location = new System.Drawing.Point(117, 123);
             this.txb_Suffix.Name = "txb_Suffix";
-            this.txb_Suffix.Size = new System.Drawing.Size(100, 20);
+            this.txb_Suffix.Size = new System.Drawing.Size(100, 22);
             this.txb_Suffix.TabIndex = 28;
             // 
             // txb_Prefix
             // 
             this.txb_Prefix.Location = new System.Drawing.Point(12, 123);
             this.txb_Prefix.Name = "txb_Prefix";
-            this.txb_Prefix.Size = new System.Drawing.Size(100, 20);
+            this.txb_Prefix.Size = new System.Drawing.Size(100, 22);
             this.txb_Prefix.TabIndex = 27;
             // 
             // lbl_prefix
@@ -166,7 +168,7 @@
             this.lbl_prefix.AutoSize = true;
             this.lbl_prefix.Location = new System.Drawing.Point(12, 101);
             this.lbl_prefix.Name = "lbl_prefix";
-            this.lbl_prefix.Size = new System.Drawing.Size(33, 13);
+            this.lbl_prefix.Size = new System.Drawing.Size(35, 13);
             this.lbl_prefix.TabIndex = 26;
             this.lbl_prefix.Text = "Prefix";
             // 
@@ -175,7 +177,7 @@
             this.lbl_TileNameField.AutoSize = true;
             this.lbl_TileNameField.Location = new System.Drawing.Point(168, 51);
             this.lbl_TileNameField.Name = "lbl_TileNameField";
-            this.lbl_TileNameField.Size = new System.Drawing.Size(80, 13);
+            this.lbl_TileNameField.Size = new System.Drawing.Size(84, 13);
             this.lbl_TileNameField.TabIndex = 25;
             this.lbl_TileNameField.Text = "Tile Name Field";
             // 
@@ -184,7 +186,7 @@
             this.lbl_TileIndex.AutoSize = true;
             this.lbl_TileIndex.Location = new System.Drawing.Point(13, 51);
             this.lbl_TileIndex.Name = "lbl_TileIndex";
-            this.lbl_TileIndex.Size = new System.Drawing.Size(53, 13);
+            this.lbl_TileIndex.Size = new System.Drawing.Size(55, 13);
             this.lbl_TileIndex.TabIndex = 24;
             this.lbl_TileIndex.Text = "Tile Index";
             // 
@@ -215,6 +217,7 @@
             this.btn_close.TabIndex = 21;
             this.btn_close.Text = "Close";
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // btn_initilaize
             // 
@@ -232,43 +235,46 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 203);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 13);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 41;
             this.label1.Text = "Destination Workspace";
             // 
-            // button1
+            // btn_browseDst
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(299, 224);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 24);
-            this.button1.TabIndex = 40;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_browseDst.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_browseDst.BackgroundImage")));
+            this.btn_browseDst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_browseDst.Location = new System.Drawing.Point(299, 224);
+            this.btn_browseDst.Name = "btn_browseDst";
+            this.btn_browseDst.Size = new System.Drawing.Size(24, 24);
+            this.btn_browseDst.TabIndex = 40;
+            this.btn_browseDst.UseVisualStyleBackColor = true;
+            this.btn_browseDst.Click += new System.EventHandler(this.btn_browseDst_Click);
             // 
-            // textBox1
+            // txb_FileWorkspaceDst
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 224);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(281, 20);
-            this.textBox1.TabIndex = 39;
+            this.txb_FileWorkspaceDst.Location = new System.Drawing.Point(12, 224);
+            this.txb_FileWorkspaceDst.Name = "txb_FileWorkspaceDst";
+            this.txb_FileWorkspaceDst.ReadOnly = true;
+            this.txb_FileWorkspaceDst.Size = new System.Drawing.Size(281, 22);
+            this.txb_FileWorkspaceDst.TabIndex = 39;
             // 
             // FileTileCloner_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(344, 350);
+            this.ControlBox = false;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_browseDst);
+            this.Controls.Add(this.txb_FileWorkspaceDst);
             this.Controls.Add(this.btn_CloneFile);
             this.Controls.Add(this.rb_selected);
             this.Controls.Add(this.rb_all);
             this.Controls.Add(this.lbl_FileCloningMethod);
             this.Controls.Add(this.lbl_SourceWorkspace);
-            this.Controls.Add(this.btn_browse);
-            this.Controls.Add(this.txb_FileWorkspace);
+            this.Controls.Add(this.btn_browseSrc);
+            this.Controls.Add(this.txb_FileWorkspaceSrc);
             this.Controls.Add(this.cbo_extension);
             this.Controls.Add(this.lbl_extension);
             this.Controls.Add(this.lbl_suffix);
@@ -281,8 +287,13 @@
             this.Controls.Add(this.cbo_TileIndex);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_initilaize);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FileTileCloner_Form";
-            this.Text = "FileTileCloner_Form";
+            this.Text = "File Tile Cloner";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,8 +306,8 @@
         private System.Windows.Forms.RadioButton rb_all;
         private System.Windows.Forms.Label lbl_FileCloningMethod;
         private System.Windows.Forms.Label lbl_SourceWorkspace;
-        private System.Windows.Forms.Button btn_browse;
-        private System.Windows.Forms.TextBox txb_FileWorkspace;
+        private System.Windows.Forms.Button btn_browseSrc;
+        private System.Windows.Forms.TextBox txb_FileWorkspaceSrc;
         private System.Windows.Forms.ComboBox cbo_extension;
         private System.Windows.Forms.Label lbl_extension;
         private System.Windows.Forms.Label lbl_suffix;
@@ -310,7 +321,7 @@
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Button btn_initilaize;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_browseDst;
+        private System.Windows.Forms.TextBox txb_FileWorkspaceDst;
     }
 }
