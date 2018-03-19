@@ -122,6 +122,16 @@ namespace RS_Tools.Tools.FileTileCloner
             }
         }
 
+        private void btn_CreateBatch_Click(object sender, EventArgs e)
+        {
+            if (CheckRequirements())
+            {
+                GenerateFileList();
+                ValidateFileList();
+                CreateBatchFile();
+            }
+        }
+
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -280,18 +290,45 @@ namespace RS_Tools.Tools.FileTileCloner
 
         private void ValidateFileList()
         {
+            int cloneCount = 1; // labeling the processor bar
+            ITrackCancel trackcancel = new CancelTracker();
+            IProgressDialogFactory progressdialogfactory = new ProgressDialogFactoryClass();
+            IStepProgressor stepprogressor = progressdialogfactory.Create(trackcancel, _application.hWnd);
+            stepprogressor.MinRange = 0;
+            stepprogressor.MaxRange = _fileList.Count;
+            stepprogressor.StepValue = 1;
+            stepprogressor.Message = "Validating...";
+            IProgressDialog2 progressdialog = (IProgressDialog2)stepprogressor; // Creates and displays
+            progressdialog.CancelEnabled = false;
+            progressdialog.Description = "Validating {_fileList.Count} files...";
+            progressdialog.Title = MB_TITLE;
+            progressdialog.Animation = esriProgressAnimationTypes.esriProgressSpiral;
+
+
+
             IDictionary<String, Boolean> newList = new Dictionary<String, Boolean>();
 
             foreach (KeyValuePair<String, Boolean> file in _fileList)
             {
+                progressdialog.Description = string.Format("Validating {0} of {1}...", cloneCount, _fileList.Count);
                 string filePath = txb_FileWorkspaceSrc.Text + "\\" + Utilities_General.AddPrefixAndSuffixToFileName(file.Key, txb_Prefix.Text, txb_Suffix.Text) + GetExtension();
                 if (!File.Exists(filePath))
                     newList.Add(file.Key, false);
                 else
                     newList.Add(file.Key, file.Value);
+                stepprogressor.Step();
+                cloneCount++;
 
             }
             _fileList = newList;
+
+
+
+            trackcancel = null;
+            stepprogressor = null;
+            progressdialog.HideDialog();
+            progressdialog = null;
+            //_activeView.Refresh();
         }
 
         private void CloneFileList()
@@ -349,6 +386,88 @@ namespace RS_Tools.Tools.FileTileCloner
             
         }
 
+        private void CreateBatchFile()
+        {
+            string path = "";
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if(fbd.ShowDialog() == DialogResult.OK)
+            {
+                path = fbd.SelectedPath;
+            } 
+
+            if (!Directory.Exists(path))
+            {
+                Utilities_MessageBox.ErrorBox("Path Does Not Exist", MB_TITLE);
+                return;
+            }
+
+            int versionCount = 1; // This is used to make mutiple files so the batch file don't overwrite on another.
+            string filePath = path + string.Format(@"\{0}_{1}_{2}.bat", cbo_TileIndex.Text, "CopyFiles", versionCount);
+            while (File.Exists(filePath))
+            {
+                versionCount++;
+                filePath = path + string.Format(@"\{0}_{1}_{2}.bat", cbo_TileIndex.Text, "CopyFiles", versionCount);
+            }
+
+            
+
+
+            bool itWorked = false;
+
+
+
+            int cloneCount = 1; // labeling the processor bar
+            ITrackCancel trackcancel = new CancelTracker();
+            IProgressDialogFactory progressdialogfactory = new ProgressDialogFactoryClass();
+            IStepProgressor stepprogressor = progressdialogfactory.Create(trackcancel, _application.hWnd);
+            stepprogressor.MinRange = 0;
+            stepprogressor.MaxRange = _fileList.Count;
+            stepprogressor.StepValue = 1;
+            stepprogressor.Message = "Generating...";
+            IProgressDialog2 progressdialog = (IProgressDialog2)stepprogressor; // Creates and displays
+            progressdialog.CancelEnabled = false;
+            progressdialog.Description = "Prepping {_fileList.Count} files...";
+            progressdialog.Title = MB_TITLE;
+            progressdialog.Animation = esriProgressAnimationTypes.esriProgressSpiral;
+
+
+            foreach (KeyValuePair<String, Boolean> file in _fileList)
+            {
+                if (file.Value)
+                {
+                    progressdialog.Description = string.Format("Adding File {0} of {1}...", cloneCount, _fileList.Count);
+                    if (!itWorked)
+                        SaveFileTypeList(GetExtension());
+                    itWorked = true;
+
+                    try
+                    {
+                        var sourceFile = txb_FileWorkspaceSrc.Text + @"\" + Utilities_General.AddPrefixAndSuffixToFileName(file.Key, txb_Prefix.Text, txb_Suffix.Text) + GetExtension();
+                        var destinationFile = txb_FileWorkspaceDst.Text + @"\" + Utilities_General.AddPrefixAndSuffixToFileName(file.Key, txb_Prefix.Text, txb_Suffix.Text) + GetExtension();
+
+                        using (System.IO.StreamWriter sw = File.AppendText(filePath))
+                        {
+                            sw.WriteLine(String.Format("copy {0} {1}", sourceFile, destinationFile));
+                        }
+
+                    }
+                    catch (Exception yourBest) // but you don't succeed
+                    {
+                        yourBest.ToString();
+                        // Just So We Get No Crashes ;) 
+                    }
+                    stepprogressor.Step();
+                    cloneCount++;
+                }
+
+            }
+            trackcancel = null;
+            stepprogressor = null;
+            progressdialog.HideDialog();
+            progressdialog = null;
+            //_activeView.Refresh();
+        }
+
         private string GetExtension()
         {
             string extension = String.Empty;
@@ -395,15 +514,8 @@ namespace RS_Tools.Tools.FileTileCloner
             }
         }
 
-
         #endregion
 
         
-
-       
-
-        
-
-
     }
 }
