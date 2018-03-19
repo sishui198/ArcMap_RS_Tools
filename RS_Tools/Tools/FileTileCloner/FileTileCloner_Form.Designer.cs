@@ -51,12 +51,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_browseDst = new System.Windows.Forms.Button();
             this.txb_FileWorkspaceDst = new System.Windows.Forms.TextBox();
+            this.btn_CreateBatch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_CloneFile
             // 
             this.btn_CloneFile.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CloneFile.Location = new System.Drawing.Point(220, 299);
+            this.btn_CloneFile.Location = new System.Drawing.Point(232, 299);
             this.btn_CloneFile.Name = "btn_CloneFile";
             this.btn_CloneFile.Size = new System.Drawing.Size(100, 23);
             this.btn_CloneFile.TabIndex = 38;
@@ -258,6 +259,17 @@
             this.txb_FileWorkspaceDst.Size = new System.Drawing.Size(281, 22);
             this.txb_FileWorkspaceDst.TabIndex = 39;
             // 
+            // btn_CreateBatch
+            // 
+            this.btn_CreateBatch.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CreateBatch.Location = new System.Drawing.Point(127, 299);
+            this.btn_CreateBatch.Name = "btn_CreateBatch";
+            this.btn_CreateBatch.Size = new System.Drawing.Size(100, 23);
+            this.btn_CreateBatch.TabIndex = 42;
+            this.btn_CreateBatch.Text = "Create Batch";
+            this.btn_CreateBatch.UseVisualStyleBackColor = true;
+            this.btn_CreateBatch.Click += new System.EventHandler(this.btn_CreateBatch_Click);
+            // 
             // FileTileCloner_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +277,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(344, 350);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_CreateBatch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_browseDst);
             this.Controls.Add(this.txb_FileWorkspaceDst);
@@ -323,5 +336,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_browseDst;
         private System.Windows.Forms.TextBox txb_FileWorkspaceDst;
+        private System.Windows.Forms.Button btn_CreateBatch;
     }
 }
