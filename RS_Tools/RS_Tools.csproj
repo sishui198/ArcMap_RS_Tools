@@ -151,6 +151,8 @@
     <Compile Include="Tools\DomainAppointer\Domain_12.cs" />
     <Compile Include="Tools\DomainAppointer\Domain_13.cs" />
     <Compile Include="Tools\DomainAppointer\Domain_14.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_15.cs" />
+    <Compile Include="Tools\DomainAppointer\Domain_16.cs" />
     <Compile Include="Tools\FileTileCloner\FileTileCloner_Button.cs" />
     <Compile Include="Tools\FileTileCloner\FileTileCloner_Form.cs">
       <SubType>Form</SubType>
@@ -264,6 +266,8 @@
     <AddInContent Include="Images\DomainAppointer\Domain_14.png" />
     <AddInContent Include="Images\CollapseAllLayers\CollapseAllLayers.png" />
     <AddInContent Include="Images\FileTileCloner\FileTileCloner_Button.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_15.png" />
+    <AddInContent Include="Images\DomainAppointer\Domain_16.png" />
     <Content Include="Images\FileTileLoader\searches_folder.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener_Settings.png" />

@@ -125,6 +125,8 @@ namespace RS_Tools.Tools.DomainAppointer
             Domain_12 button12 = AddIn.FromID<Domain_12>(ThisAddIn.IDs.RS_Tools_Tools_DomainAppointer_Domain_12);
             Domain_13 button13 = AddIn.FromID<Domain_13>(ThisAddIn.IDs.RS_Tools_Tools_DomainAppointer_Domain_13);
             Domain_14 button14 = AddIn.FromID<Domain_14>(ThisAddIn.IDs.RS_Tools_Tools_DomainAppointer_Domain_14);
+            Domain_15 button15 = AddIn.FromID<Domain_15>(ThisAddIn.IDs.RS_Tools_Tools_DomainAppointer_Domain_15);
+            Domain_16 button16 = AddIn.FromID<Domain_16>(ThisAddIn.IDs.RS_Tools_Tools_DomainAppointer_Domain_16);
 
 
             button0.domain = ApplyDomain;
@@ -142,6 +144,8 @@ namespace RS_Tools.Tools.DomainAppointer
             button12.domain = ApplyDomain;
             button13.domain = ApplyDomain;
             button14.domain = ApplyDomain;
+            button15.domain = ApplyDomain;
+            button16.domain = ApplyDomain;
         }
 
         private void ApplyDomain(DomainCode code)

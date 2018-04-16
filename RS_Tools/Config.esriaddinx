@@ -2,11 +2,11 @@
   <Name>RS_Tools</Name>
   <AddInID>{a1f80a4e-7369-4e14-9978-bee8e7697732}</AddInID>
   <Description>Tools used to enhance performance and utilities to increase producitivy in ArcGIS Desktop</Description>
-  <Version>1.3.1</Version>
+  <Version>1.3.2</Version>
   <Image>Images\RS_Tools.png</Image>
   <Author>Chris Stayte</Author>
   <Company>Woolpert Inc.</Company>
-  <Date>3/7/2018</Date>
+  <Date>4/13/2018</Date>
   <Targets>
     <Target name="Desktop" version="10.4" />
   </Targets>
@@ -48,9 +48,11 @@
         <Button id="Woolpert_Inc_RS_Tools_Domain_09" class="RS_Tools.Tools.DomainAppointer.Domain_09" message="Assign Domain 9" caption="Assign Domain 09" tip="Assign Domain 9" category="RS_Tools" image="Images\DomainAppointer\Domain_09.png" />
         <Button id="Woolpert_Inc_RS_Tools_Domain_10" class="RS_Tools.Tools.DomainAppointer.Domain_10" message="Assign Domain 10" caption="Assign Domain 10" tip="Assign Domain 10" category="RS_Tools" image="Images\DomainAppointer\Domain_10.png" />
         <Button id="Woolpert_Inc_RS_Tools_Domain_11" class="RS_Tools.Tools.DomainAppointer.Domain_11" message="Assign Domain 11" caption="Assign Domain 11" tip="Assign Domain 11" category="RS_Tools" image="Images\DomainAppointer\Domain_11.png" />
-        <Button id="Woolpert_Inc_RS_Tools_Domain_12" class="RS_Tools.Tools.DomainAppointer.Domain_12" message="Assign Domain 12" caption="Assign Domain 12" tip="Assign Domani 12" category="RS_Tools" image="Images\DomainAppointer\Domain_12.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_12" class="RS_Tools.Tools.DomainAppointer.Domain_12" message="Assign Domain 12" caption="Assign Domain 12" tip="Assign Domain 12" category="RS_Tools" image="Images\DomainAppointer\Domain_12.png" />
         <Button id="Woolpert_Inc_RS_Tools_Domain_13" class="RS_Tools.Tools.DomainAppointer.Domain_13" message="Assign Domain 13" caption="Assign Domain 13" tip="Assign Domain 13" category="RS_Tools" image="Images\DomainAppointer\Domain_13.png" />
         <Button id="Woolpert_Inc_RS_Tools_Domain_14" class="RS_Tools.Tools.DomainAppointer.Domain_14" message="Assign Domain 14" caption="Assign Domain 14" tip="Assign Domain 14" category="RS_Tools" image="Images\DomainAppointer\Domain_14.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_15" class="RS_Tools.Tools.DomainAppointer.Domain_15" message="Assign Domain 15" caption="Assign Domain 15" tip="Assign Domain 15" category="RS_Tools" image="Images\DomainAppointer\Domain_15.png" />
+        <Button id="Woolpert_Inc_RS_Tools_Domain_16" class="RS_Tools.Tools.DomainAppointer.Domain_16" message="Assign Domain 16" caption="Assign Domain 16" tip="Assign Domain 16" category="RS_Tools" image="Images\DomainAppointer\Domain_16.png" />
         <!-- Domain Appointer End -->
         <!-- Surface Generator Start-->
         <Button id="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher" class="RS_Tools.Tools.SurfaceGenerator.SurfaceGenerator_Launcher" message="Launch Surface Generator" caption="Surface Generator Launcher" tip="Launch Surface Generator" category="RS_Tools" image="Images\SurfaceGenerator\SurfaceGenerator_Launcher.png" />
@@ -90,6 +92,8 @@
             <Button refID="Woolpert_Inc_RS_Tools_Domain_12" />
             <Button refID="Woolpert_Inc_RS_Tools_Domain_13" />
             <Button refID="Woolpert_Inc_RS_Tools_Domain_14" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_15" />
+            <Button refID="Woolpert_Inc_RS_Tools_Domain_16" />
           </Items>
         </Toolbar>
         <Toolbar id="Woolpert_Inc_RS_Tools_RS_Inspector" caption="RS Inspector" showInitially="false">
@@ -109,7 +113,7 @@
             <Button refID="Woolpert_Inc_RS_Tools_FileTileLoader_Button" />
             <Button refID="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher" />
             <Button refID="Woolpert_Inc_RS_Tools_CollapseAllLayers" />
-            <Button refID="Woolpert_Inc_RS_Tools_FileTileCloner_Button"/>
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileCloner_Button" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" separator="true" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" />
           </Items>
