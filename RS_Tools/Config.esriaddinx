@@ -2,11 +2,11 @@
   <Name>RS_Tools</Name>
   <AddInID>{a1f80a4e-7369-4e14-9978-bee8e7697732}</AddInID>
   <Description>Tools used to enhance performance and utilities to increase producitivy in ArcGIS Desktop</Description>
-  <Version>1.3.2</Version>
+  <Version>1.4.0</Version>
   <Image>Images\RS_Tools.png</Image>
   <Author>Chris Stayte</Author>
   <Company>Woolpert Inc.</Company>
-  <Date>4/13/2018</Date>
+  <Date>4/24/2018</Date>
   <Targets>
     <Target name="Desktop" version="10.4" />
   </Targets>
@@ -64,6 +64,10 @@
         <!-- File Tile Cloner Start -->
         <Button id="Woolpert_Inc_RS_Tools_FileTileCloner_Button" class="RS_Tools.Tools.FileTileCloner.FileTileCloner_Button" message="Clones files from one place ot another using a tile index. " caption="File Tile Cloner" tip="Clones Files" category="RS Tools" image="Images\FileTileCloner\FileTileCloner_Button.png" />
         <!-- File Tile Cloner End -->
+        <!-- Homesite Start-->
+        <Tool id="Woolpert_Inc_RS_Tools_Homesite_Tool" class="RS_Tools.Tools.Homesite.Homesite_Tool" message="Creates a homesite polygon" caption="Create Homesite" tip="Creates a homesite polygon" category="RS Tools" image="Images\Homesite\Homesite_Tool.png" cursor="Images\Homesite\Homesite_Tool.cur" />
+        <Button id="Woolpert_Inc_RS_Tools_HomesiteSettings_Button" class="RS_Tools.Tools.Homesite.HomesiteSettings_Button" message="Homesite Settings" caption="Homesite Settings" tip="Homesite Settings" category="RS Tools" image="Images\Homesite\HomesiteSettings_Button.png" />
+        <!-- Homesite End -->
       </Commands>
       <DockableWindows>
         <DockableWindow id="Woolpert_Inc_RS_Tools_Inspector" class="RS_Tools.Tools.Inspector.Inspector+AddinImpl" caption="Inspector" image="Images\Inspector\Inspector.png">
@@ -116,6 +120,8 @@
             <Button refID="Woolpert_Inc_RS_Tools_FileTileCloner_Button" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" separator="true" />
             <Button refID="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" />
+            <Button refID="Woolpert_Inc_RS_Tools_HomesiteSettings_Button" separator="true"/>
+            <Button refID="Woolpert_Inc_RS_Tools_Homesite_Tool"  />
           </Items>
         </Toolbar>
         <Toolbar id="Woolpert_Inc_RS_Tools_RS_Sandbox" caption="RS Sandbox" showInitially="false">

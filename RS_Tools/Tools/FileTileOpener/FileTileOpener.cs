@@ -23,7 +23,7 @@ namespace RS_Tools.Tools.FileTileOpener
     public partial class FileTileOpener : Form
     {
 
-        #region Field(s)
+        #region Properties
         private static volatile FileTileOpener _instance;  // Instantiating A Singleton
         public static FileTileOpener instance
         {

@@ -181,6 +181,14 @@
     </Compile>
     <Compile Include="Tools\FileTileOpener\FileTileOpenerSettings_Button.cs" />
     <Compile Include="Tools\FileTileOpener\FileTileOpener_Tool.cs" />
+    <Compile Include="Tools\Homesite\Homesite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Homesite\Homesite.Designer.cs">
+      <DependentUpon>Homesite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Homesite\HomesiteSettings_Button.cs" />
+    <Compile Include="Tools\Homesite\Homesite_Tool.cs" />
     <Compile Include="Tools\Inspector\DeleteNext.cs" />
     <Compile Include="Tools\Inspector\Inspector.cs">
       <SubType>UserControl</SubType>
@@ -286,6 +294,9 @@
     <AddInContent Include="Images\SurfaceGenerator\SurfaceGenerator_Launcher.png" />
     <AddInContent Include="Images\NotificationButton.png" />
     <AddInContent Include="Images\Inspector\InspectorSorter_Launcher.png" />
+    <AddInContent Include="Images\Homesite\Homesite_Tool.png" />
+    <AddInContent Include="Images\Homesite\Homesite_Tool.cur" />
+    <AddInContent Include="Images\Homesite\HomesiteSettings_Button.png" />
     <Content Include="Utilities\Ookii.Dialogs.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -310,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\FileTileOpener\FileTileOpenerHelp.resx">
       <DependentUpon>FileTileOpenerHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Homesite\Homesite.resx">
+      <DependentUpon>Homesite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\Inspector\Inspector.resx">
       <DependentUpon>Inspector.cs</DependentUpon>
