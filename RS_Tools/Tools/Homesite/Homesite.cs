@@ -265,9 +265,11 @@ namespace RS_Tools.Tools.Homesite
                     homesite.Shape = homesite_polygon;
                     homesite.Store();
 
-                    _editor.StopOperation("Homesite");
+                    
 
                 }
+
+                _editor.StopOperation("Homesite");
             } catch (Exception ex)
             {
                 RS_Tools.Utilities.Utilities_MessageBox.ErrorBox(ex.Message, MB_TITLE);
