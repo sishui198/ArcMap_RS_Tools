@@ -148,7 +148,7 @@ namespace RS_Tools.Tools.Inspector
                             IGeometry geometry = geometryfactory.CreateGeometryFromEnumerator(enumgeometry);
 
                             IEnvelope envelope = geometry.Envelope;
-                            envelope.Expand(2.5, 2.5, true);
+                            envelope.Expand(.2, .2, true);
                             _activeView.Extent = envelope;
                             _activeView.Refresh();
 
