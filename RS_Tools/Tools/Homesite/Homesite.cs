@@ -253,6 +253,7 @@ namespace RS_Tools.Tools.Homesite
                     // This caused a problem with memory allocation. It would not delete the orignal data. 
                     ArrayList fields = _utilitiesArcMap.NumberFieldsWithDomain(featureLayer);
 
+                    // Set the attribute back to the old ones. 
                     foreach (string field in fields)
                     {
                         newFeature.set_Value(newFeature.Fields.FindField(field), feature.get_Value(feature.Fields.FindField(field)));
@@ -261,13 +262,12 @@ namespace RS_Tools.Tools.Homesite
 
                     newFeature.Store();
                     feature.Delete();
-                    IFeature homesite = featureClass.CreateFeature();
-                    homesite.Shape = homesite_polygon;
-                    homesite.Store();
-
                     
-
                 }
+
+                IFeature homesite = featureClass.CreateFeature();
+                homesite.Shape = homesite_polygon;
+                homesite.Store();
 
                 _editor.StopOperation("Homesite");
             } catch (Exception ex)
