@@ -428,8 +428,12 @@ namespace RS_Tools.Tools.Inspector
                 return;
             }
 
+            
+
             IFeatureClass featureclass = buildingsfeaturelayer.FeatureClass;
             IEnumIDs enumIDs = featureselection.SelectionSet.IDs;
+
+            _editor.StartOperation();
             enumIDs.Reset();
             int intOID = enumIDs.Next();
             while (intOID != -1)
@@ -440,9 +444,9 @@ namespace RS_Tools.Tools.Inspector
                     int inspectionfieldindex = _utilitiesArcMap.FindField(featureclass, "rsi");
                     if (inspectionfieldindex > -1)
                     {
-                        _editor.StartOperation();
+                        //_editor.StartOperation();
                         feature.set_Value(inspectionfieldindex, status);
-                        _editor.StopOperation("Status updated!" + feature.OID);
+                        //_editor.StopOperation("Status updated!" + feature.OID);
                         feature.Store();
                     }
                     else
@@ -455,7 +459,10 @@ namespace RS_Tools.Tools.Inspector
 
             _activeView.Refresh();
 
+            _editor.StopOperation("Inspected...");
+
             GetStatus();
+
         }
 
         private void Delete(IFeatureLayer buildingsfeaturelayer)
@@ -615,6 +622,8 @@ namespace RS_Tools.Tools.Inspector
             }
             
         }
+
+
         #endregion
 
     }
