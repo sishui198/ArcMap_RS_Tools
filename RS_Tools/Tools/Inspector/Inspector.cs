@@ -386,6 +386,46 @@ namespace RS_Tools.Tools.Inspector
 
         }
 
+        //private void btn_Undo_Click(object sender, EventArgs e)
+        //{
+        //    if (!CheckRequirements()) return;
+
+        //    IFeatureLayer buildingslayer = _utilitiesArcMap.FeatureLayer(this.cboBuildingLayer.Text);
+
+        //    try
+        //    {
+        //        if (buildingslayer != null)
+        //        {
+        //            int indexField = _utilitiesArcMap.FindField(buildingslayer, "rsi_index");
+        //            int inspectionFieldIndex = _utilitiesArcMap.FindField(buildingslayer, "rsi");
+
+        //            IFeatureClass buildingsfeatureclass = buildingslayer.FeatureClass;
+
+
+        //            IFeatureCursor featureCursor = null;
+        //            IQueryFilter queryFilter = new QueryFilterClass();
+        //            queryFilter.WhereClause = "\"rsi\" = 1";
+
+        //            if (indexField > -1)
+        //            {
+        //                queryFilter.SubFields = "rsi_index";
+        //                IQueryFilterDefinition queryFilterDef = (IQueryFilterDefinition)queryFilter;
+        //                queryFilterDef.PostfixClause = "ORDER BY rsi_index";
+        //            }
+
+        //            featureCursor = buildingsfeatureclass.Search(queryFilter, false);
+
+        //            featureCursor.
+        //        }
+
+                
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Building Inspector", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        //    }
+        //}
+
         #endregion
 
         #region Methods
@@ -428,8 +468,12 @@ namespace RS_Tools.Tools.Inspector
                 return;
             }
 
+            
+
             IFeatureClass featureclass = buildingsfeaturelayer.FeatureClass;
             IEnumIDs enumIDs = featureselection.SelectionSet.IDs;
+
+            _editor.StartOperation();
             enumIDs.Reset();
             int intOID = enumIDs.Next();
             while (intOID != -1)
@@ -440,9 +484,9 @@ namespace RS_Tools.Tools.Inspector
                     int inspectionfieldindex = _utilitiesArcMap.FindField(featureclass, "rsi");
                     if (inspectionfieldindex > -1)
                     {
-                        _editor.StartOperation();
+                        //_editor.StartOperation();
                         feature.set_Value(inspectionfieldindex, status);
-                        _editor.StopOperation("Status updated!" + feature.OID);
+                        //_editor.StopOperation("Status updated!" + feature.OID);
                         feature.Store();
                     }
                     else
@@ -455,7 +499,10 @@ namespace RS_Tools.Tools.Inspector
 
             _activeView.Refresh();
 
+            _editor.StopOperation("Inspected...");
+
             GetStatus();
+
         }
 
         private void Delete(IFeatureLayer buildingsfeaturelayer)
@@ -615,6 +662,8 @@ namespace RS_Tools.Tools.Inspector
             }
             
         }
+
+
         #endregion
 
     }
