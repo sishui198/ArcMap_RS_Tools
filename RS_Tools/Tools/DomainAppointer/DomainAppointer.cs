@@ -110,6 +110,7 @@ namespace RS_Tools.Tools.DomainAppointer
 
         private void setupDelegates()
         {
+            Domain_Null buttonNull = AddIn.FromID<Domain_Null>(ThisAddIn.IDs.RS_Tools_Tools_DomainAppointer_Domain_Null);
             Domain_00 button0 = AddIn.FromID<Domain_00>(ThisAddIn.IDs.RS_Tools_Tools_DomainAppointer_Domain_00);
             Domain_01 button1 = AddIn.FromID<Domain_01>(ThisAddIn.IDs.RS_Tools_Tools_DomainAppointer_Domain_01);
             Domain_02 button2 = AddIn.FromID<Domain_02>(ThisAddIn.IDs.RS_Tools_Tools_DomainAppointer_Domain_02);
@@ -131,6 +132,7 @@ namespace RS_Tools.Tools.DomainAppointer
             Domain_18 button18 = AddIn.FromID<Domain_18>(ThisAddIn.IDs.RS_Tools_Tools_DomainAppointer_Domain_18);
             Domain_19 button19 = AddIn.FromID<Domain_19>(ThisAddIn.IDs.RS_Tools_Tools_DomainAppointer_Domain_19);
 
+            buttonNull.domain = ApplyDomainNull;
             button0.domain = ApplyDomain;
             button1.domain = ApplyDomain;
             button2.domain = ApplyDomain;
@@ -153,7 +155,7 @@ namespace RS_Tools.Tools.DomainAppointer
             button19.domain = ApplyDomain;
         }
 
-        private void ApplyDomain(DomainCode code)
+        private void ApplyDomainNull()
         {
             if (CheckRequirements())
             {
@@ -172,15 +174,48 @@ namespace RS_Tools.Tools.DomainAppointer
                     IFeature feature = featureClass.GetFeature(intOID);
                     if (feature != null)
                     {
-                        _editor.StartOperation();
-                        feature.set_Value(fieldIndex, (int)code);
-                        _editor.StopOperation("Update Class Type " + feature.OID);
+                        feature.set_Value(fieldIndex, System.DBNull.Value);
                         feature.Store();
                     }
                     intOID = enumIDs.Next();
                 }
 
                 _activeView.Refresh();
+                _editor.StopOperation("Update Class Type");
+            }
+        }
+
+        private void ApplyDomain(DomainCode code)
+        {
+            if (CheckRequirements())
+            {
+                IFeatureLayer featureLayer = _utilities.FeatureLayer(cboFeatureLayer.Text);
+                IFeatureClass featureClass = featureLayer.FeatureClass;
+                IFeatureSelection featureSelection = featureLayer as IFeatureSelection;
+                IEnumIDs enumIDs = featureSelection.SelectionSet.IDs;
+                int fieldIndex = _utilities.FindField(featureClass, cboField.Text);
+
+
+                _editor.StartOperation();
+                enumIDs.Reset();
+
+                int intOID = enumIDs.Next();
+
+                while (intOID != -1)
+                {
+                    IFeature feature = featureClass.GetFeature(intOID);
+                    if (feature != null)
+                    {
+                        
+                        feature.set_Value(fieldIndex, (int)code);
+                        
+                        feature.Store();
+                    }
+                    intOID = enumIDs.Next();
+                }
+
+                _activeView.Refresh();
+                _editor.StopOperation("Update Class Type");
             }
         }
 

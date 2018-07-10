@@ -31,4 +31,5 @@ namespace RS_Tools.Tools.DomainAppointer
     };
 
     public delegate void ApplyDomainDelegate(DomainCode code);
+    public delegate void ApplyDomainNullDelegate();
 }

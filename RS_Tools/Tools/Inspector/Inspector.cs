@@ -386,46 +386,6 @@ namespace RS_Tools.Tools.Inspector
 
         }
 
-        //private void btn_Undo_Click(object sender, EventArgs e)
-        //{
-        //    if (!CheckRequirements()) return;
-
-        //    IFeatureLayer buildingslayer = _utilitiesArcMap.FeatureLayer(this.cboBuildingLayer.Text);
-
-        //    try
-        //    {
-        //        if (buildingslayer != null)
-        //        {
-        //            int indexField = _utilitiesArcMap.FindField(buildingslayer, "rsi_index");
-        //            int inspectionFieldIndex = _utilitiesArcMap.FindField(buildingslayer, "rsi");
-
-        //            IFeatureClass buildingsfeatureclass = buildingslayer.FeatureClass;
-
-
-        //            IFeatureCursor featureCursor = null;
-        //            IQueryFilter queryFilter = new QueryFilterClass();
-        //            queryFilter.WhereClause = "\"rsi\" = 1";
-
-        //            if (indexField > -1)
-        //            {
-        //                queryFilter.SubFields = "rsi_index";
-        //                IQueryFilterDefinition queryFilterDef = (IQueryFilterDefinition)queryFilter;
-        //                queryFilterDef.PostfixClause = "ORDER BY rsi_index";
-        //            }
-
-        //            featureCursor = buildingsfeatureclass.Search(queryFilter, false);
-
-        //            featureCursor.
-        //        }
-
-                
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Building Inspector", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        //    }
-        //}
-
         #endregion
 
         #region Methods
