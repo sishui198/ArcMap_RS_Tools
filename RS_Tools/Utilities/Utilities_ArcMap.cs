@@ -1024,7 +1024,7 @@ namespace RS_Tools.Utilities
 
         ///<summary> The number fields of a specified layer </summary>
         /// <param name="pLayer"> The layer from which a list of number fields is to be fetched </param>
-        ///<returns> Function to retrieve a list of all number fields in a given layer </returns>
+        ///<returns> Function to retrieve a list of all number fields in a given layer, will exclude any field that is requried </returns>
         public ArrayList NumberFieldsNotRequired(ILayer pLayer)
         {
             ArrayList pList = new ArrayList();
