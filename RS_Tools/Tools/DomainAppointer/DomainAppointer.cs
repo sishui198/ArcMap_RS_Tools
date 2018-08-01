@@ -97,11 +97,12 @@ namespace RS_Tools.Tools.DomainAppointer
             Initialize();
         }
 
-        private void cboFeatureLayer_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboFeatureLayer_SelectedIndexChanged(object ssender, EventArgs e)
         {
             cboField.Items.Clear();
             ILayer featureLayer = _utilities.Layer(cboFeatureLayer.Text);
-            cboField.Items.AddRange(_utilities.NumberFieldsWithDomain(featureLayer).ToArray());
+            //cboField.Items.AddRange(_utilities.NumberFieldsWithDomain(featureLayer).ToArray());
+            cboField.Items.AddRange(_utilities.NumberFieldsNotRequired(featureLayer).ToArray());
         }
 
         #endregion
@@ -159,29 +160,37 @@ namespace RS_Tools.Tools.DomainAppointer
         {
             if (CheckRequirements())
             {
-                IFeatureLayer featureLayer = _utilities.FeatureLayer(cboFeatureLayer.Text);
-                IFeatureClass featureClass = featureLayer.FeatureClass;
-                IFeatureSelection featureSelection = featureLayer as IFeatureSelection;
-                IEnumIDs enumIDs = featureSelection.SelectionSet.IDs;
-                int fieldIndex = _utilities.FindField(featureClass, cboField.Text);
-
-                enumIDs.Reset();
-
-                int intOID = enumIDs.Next();
-
-                while (intOID != -1)
+                try
                 {
-                    IFeature feature = featureClass.GetFeature(intOID);
-                    if (feature != null)
-                    {
-                        feature.set_Value(fieldIndex, System.DBNull.Value);
-                        feature.Store();
-                    }
-                    intOID = enumIDs.Next();
-                }
+                    IFeatureLayer featureLayer = _utilities.FeatureLayer(cboFeatureLayer.Text);
+                    IFeatureClass featureClass = featureLayer.FeatureClass;
+                    IFeatureSelection featureSelection = featureLayer as IFeatureSelection;
+                    IEnumIDs enumIDs = featureSelection.SelectionSet.IDs;
+                    int fieldIndex = _utilities.FindField(featureClass, cboField.Text);
 
-                _activeView.Refresh();
-                _editor.StopOperation("Update Class Type");
+                    enumIDs.Reset();
+
+                    _editor.StartOperation();
+                    int intOID = enumIDs.Next();
+
+                    while (intOID != -1)
+                    {
+                        IFeature feature = featureClass.GetFeature(intOID);
+                        if (feature != null)
+                        {
+                            feature.set_Value(fieldIndex, System.DBNull.Value);
+                            feature.Store();
+                        }
+                        intOID = enumIDs.Next();
+                    }
+
+                    _activeView.Refresh();
+                    _editor.StopOperation("Update Class Type");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Shapefiles Don't Accept Null");
+                }
             }
         }
 
