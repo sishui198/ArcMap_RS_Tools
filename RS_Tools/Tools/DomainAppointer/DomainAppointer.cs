@@ -170,6 +170,7 @@ namespace RS_Tools.Tools.DomainAppointer
 
                     enumIDs.Reset();
 
+                    _editor.StartOperation();
                     int intOID = enumIDs.Next();
 
                     while (intOID != -1)
