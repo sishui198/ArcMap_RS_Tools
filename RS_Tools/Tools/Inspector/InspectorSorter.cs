@@ -190,8 +190,8 @@ namespace RS_Tools.Tools.Inspector
 
                         _features.Add(new Dictionary<string, double> {
                             {"oid", feature.OID},
-                            {"x", (double)x },
-                            {"y", (double)y }
+                            {"x", (int)x },
+                            {"y", (int)y }
                         });
                     }
                 }
