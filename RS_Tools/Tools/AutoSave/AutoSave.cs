@@ -1,33 +1,30 @@
-﻿using System;
-using System.Linq;
-using ESRI.ArcGIS.ArcMapUI;
+﻿using ESRI.ArcGIS.ArcMapUI;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.Editor;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Framework;
 using ESRI.ArcGIS.Geodatabase;
-using System.Windows.Forms;
 using RS_Tools.Utilities;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace RS_Tools.Tools.AutoSave
 {
     public partial class AutoSave : Form
     {
-        public AutoSave()
-        {
-            InitializeComponent();
-        }
-
         #region Fields
-
         public IApplication _application;
         private IMap _map;
         private IActiveView _activeView;
         private IMxDocument _mxdocument;
+        IEditor3 _editor;
         private Utilities_ArcMap _utilitiesArcmap;
         private string _targetlayer = string.Empty;
         private bool _dialogdismissed = true;
+
+        private IEditEvents_Event _editEvents;
 
         #endregion
 
@@ -37,6 +34,7 @@ namespace RS_Tools.Tools.AutoSave
         {
             _application = application;
             InitializeComponent();
+            Initialize();
         }
 
         #endregion
@@ -60,6 +58,11 @@ namespace RS_Tools.Tools.AutoSave
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if (_editor.EditState == esriEditState.esriStateNotEditing)
+            {
+                MessageBox.Show("Start an edit session first!");
+                return;
+            }
             UpdateInterval();
             timer1.Enabled = true;
             this.btnStart.Enabled = false;
@@ -95,6 +98,11 @@ namespace RS_Tools.Tools.AutoSave
             _mxdocument = (IMxDocument)_application.Document;
             _map = _mxdocument.FocusMap;
             _activeView = _mxdocument.ActiveView;
+
+            _editor = GetEditorFromArcMap(_application as IMxApplication);
+            _editEvents = (IEditEvents_Event)_editor;
+
+            _editEvents.OnStopEditing += new IEditEvents_OnStopEditingEventHandler(OnStopEditing);
 
             _utilitiesArcmap = new Utilities_ArcMap(_map);
             if (this.cboTargetLayer.Items.Count > 0) this.cboTargetLayer.Items.Clear();
@@ -183,7 +191,8 @@ namespace RS_Tools.Tools.AutoSave
 
                 if (this.cboTargetLayer.Items.Count == 0) return false;
 
-                IEditor3 _editor = GetEditorFromArcMap(_application as IMxApplication);
+                
+
                 if (_editor == null) return false;
 
                 if (_editor.EditState != esriEditState.esriStateEditing) return false;
@@ -234,6 +243,11 @@ namespace RS_Tools.Tools.AutoSave
             ESRI.ArcGIS.Editor.IEditor3 editor3 = extension as ESRI.ArcGIS.Editor.IEditor3; // Dynamic Cast
 
             return editor3;
+        }
+
+        private void OnStopEditing(bool save)
+        {
+            btnStop_Click(null, null);
         }
 
         #endregion

@@ -47,7 +47,7 @@
             // btn_CopyStatus
             // 
             this.btn_CopyStatus.Image = ((System.Drawing.Image)(resources.GetObject("btn_CopyStatus.Image")));
-            this.btn_CopyStatus.Location = new System.Drawing.Point(3, 316);
+            this.btn_CopyStatus.Location = new System.Drawing.Point(3, 331);
             this.btn_CopyStatus.Name = "btn_CopyStatus";
             this.btn_CopyStatus.Size = new System.Drawing.Size(155, 33);
             this.btn_CopyStatus.TabIndex = 15;
@@ -57,7 +57,7 @@
             // lblReport
             // 
             this.lblReport.AutoSize = true;
-            this.lblReport.Location = new System.Drawing.Point(3, 0);
+            this.lblReport.Location = new System.Drawing.Point(3, 15);
             this.lblReport.Name = "lblReport";
             this.lblReport.Size = new System.Drawing.Size(96, 17);
             this.lblReport.TabIndex = 14;
@@ -68,7 +68,7 @@
             this.btnOKStay.ForeColor = System.Drawing.Color.Blue;
             this.btnOKStay.Image = ((System.Drawing.Image)(resources.GetObject("btnOKStay.Image")));
             this.btnOKStay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOKStay.Location = new System.Drawing.Point(3, 240);
+            this.btnOKStay.Location = new System.Drawing.Point(3, 255);
             this.btnOKStay.Name = "btnOKStay";
             this.btnOKStay.Size = new System.Drawing.Size(155, 32);
             this.btnOKStay.TabIndex = 13;
@@ -81,7 +81,7 @@
             this.btnOKNextScale.ForeColor = System.Drawing.Color.CadetBlue;
             this.btnOKNextScale.Image = ((System.Drawing.Image)(resources.GetObject("btnOKNextScale.Image")));
             this.btnOKNextScale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOKNextScale.Location = new System.Drawing.Point(3, 202);
+            this.btnOKNextScale.Location = new System.Drawing.Point(3, 217);
             this.btnOKNextScale.Name = "btnOKNextScale";
             this.btnOKNextScale.Size = new System.Drawing.Size(152, 32);
             this.btnOKNextScale.TabIndex = 12;
@@ -94,7 +94,7 @@
             this.btnNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNext.Location = new System.Drawing.Point(3, 278);
+            this.btnNext.Location = new System.Drawing.Point(3, 293);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(155, 32);
             this.btnNext.TabIndex = 11;
@@ -107,7 +107,7 @@
             this.btnOKNext.ForeColor = System.Drawing.Color.Green;
             this.btnOKNext.Image = ((System.Drawing.Image)(resources.GetObject("btnOKNext.Image")));
             this.btnOKNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOKNext.Location = new System.Drawing.Point(3, 164);
+            this.btnOKNext.Location = new System.Drawing.Point(3, 179);
             this.btnOKNext.Name = "btnOKNext";
             this.btnOKNext.Size = new System.Drawing.Size(152, 32);
             this.btnOKNext.TabIndex = 10;
@@ -119,7 +119,7 @@
             // 
             this.btnInitialize.Image = ((System.Drawing.Image)(resources.GetObject("btnInitialize.Image")));
             this.btnInitialize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInitialize.Location = new System.Drawing.Point(3, 20);
+            this.btnInitialize.Location = new System.Drawing.Point(3, 35);
             this.btnInitialize.Name = "btnInitialize";
             this.btnInitialize.Size = new System.Drawing.Size(155, 29);
             this.btnInitialize.TabIndex = 9;
@@ -132,7 +132,7 @@
             this.cboBuildingLayer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBuildingLayer.DropDownWidth = 400;
             this.cboBuildingLayer.FormattingEnabled = true;
-            this.cboBuildingLayer.Location = new System.Drawing.Point(3, 55);
+            this.cboBuildingLayer.Location = new System.Drawing.Point(3, 70);
             this.cboBuildingLayer.Name = "cboBuildingLayer";
             this.cboBuildingLayer.Size = new System.Drawing.Size(155, 24);
             this.cboBuildingLayer.TabIndex = 8;
@@ -141,7 +141,7 @@
             // lb_scaleRatio
             // 
             this.lb_scaleRatio.AutoSize = true;
-            this.lb_scaleRatio.Location = new System.Drawing.Point(3, 82);
+            this.lb_scaleRatio.Location = new System.Drawing.Point(3, 97);
             this.lb_scaleRatio.Name = "lb_scaleRatio";
             this.lb_scaleRatio.Size = new System.Drawing.Size(96, 17);
             this.lb_scaleRatio.TabIndex = 18;
@@ -149,7 +149,7 @@
             // 
             // tb_scale
             // 
-            this.tb_scale.Location = new System.Drawing.Point(3, 102);
+            this.tb_scale.Location = new System.Drawing.Point(3, 117);
             this.tb_scale.Maximum = 1000;
             this.tb_scale.Minimum = 100;
             this.tb_scale.Name = "tb_scale";
@@ -176,6 +176,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(203, 428);
             this.flowLayoutPanel1.TabIndex = 26;
             this.flowLayoutPanel1.WrapContents = false;

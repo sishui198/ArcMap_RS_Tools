@@ -63,7 +63,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(17, 44);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 13);
+            this.label6.Size = new System.Drawing.Size(222, 19);
             this.label6.TabIndex = 10;
             this.label6.Text = "---------------- OR ---------------";
             // 
@@ -72,7 +72,7 @@
             this.rdRemindMe.AutoSize = true;
             this.rdRemindMe.Location = new System.Drawing.Point(35, 62);
             this.rdRemindMe.Name = "rdRemindMe";
-            this.rdRemindMe.Size = new System.Drawing.Size(86, 17);
+            this.rdRemindMe.Size = new System.Drawing.Size(104, 23);
             this.rdRemindMe.TabIndex = 16;
             this.rdRemindMe.Text = "Remind Me!";
             this.rdRemindMe.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             this.rdAutoSave.Checked = true;
             this.rdAutoSave.Location = new System.Drawing.Point(35, 20);
             this.rdAutoSave.Name = "rdAutoSave";
-            this.rdAutoSave.Size = new System.Drawing.Size(90, 17);
+            this.rdAutoSave.Size = new System.Drawing.Size(110, 23);
             this.rdAutoSave.TabIndex = 15;
             this.rdAutoSave.TabStop = true;
             this.rdAutoSave.Text = "Save For Me!";
@@ -121,7 +121,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(283, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(58, 19);
             this.label3.TabIndex = 24;
             this.label3.Text = "minutes";
             // 
@@ -139,10 +139,10 @@
             0,
             0});
             this.numTimeInterval.Name = "numTimeInterval";
-            this.numTimeInterval.Size = new System.Drawing.Size(76, 22);
+            this.numTimeInterval.Size = new System.Drawing.Size(76, 26);
             this.numTimeInterval.TabIndex = 23;
             this.numTimeInterval.Value = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -153,7 +153,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(118, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(88, 19);
             this.label2.TabIndex = 22;
             this.label2.Text = "Time Interval";
             // 
@@ -164,7 +164,7 @@
             this.cboTargetLayer.FormattingEnabled = true;
             this.cboTargetLayer.Location = new System.Drawing.Point(99, 48);
             this.cboTargetLayer.Name = "cboTargetLayer";
-            this.cboTargetLayer.Size = new System.Drawing.Size(329, 21);
+            this.cboTargetLayer.Size = new System.Drawing.Size(329, 27);
             this.cboTargetLayer.TabIndex = 21;
             // 
             // label1
@@ -172,7 +172,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(18, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(83, 19);
             this.label1.TabIndex = 20;
             this.label1.Text = "Target Layer";
             // 
@@ -204,7 +204,7 @@
             // 
             // AutoSave
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 268);
             this.ControlBox = false;
