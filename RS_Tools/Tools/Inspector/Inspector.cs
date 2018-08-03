@@ -435,7 +435,7 @@ namespace RS_Tools.Tools.Inspector
         private void tb_scale_ValueChanged(object sender, EventArgs e)
         {
             double scale = Math.Round((sender as TrackBar).Value / 100.0, 2);
-            //lb_scaleRatio.Text = (string.Format("Scale Ratio: {0}", scale));
+            lb_scaleRatio.Text = (string.Format("Scale Ratio: {0}", scale));
         }
 
         #endregion
