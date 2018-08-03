@@ -187,7 +187,9 @@ namespace RS_Tools.Tools.DomainAppointer
                     _activeView.Refresh();
                     _editor.StopOperation("Update Class Type");
                 }
+#pragma warning disable CS0168 // Variable is declared but never used
                 catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
                 {
                     MessageBox.Show("Shapefiles Don't Accept Null");
                 }
