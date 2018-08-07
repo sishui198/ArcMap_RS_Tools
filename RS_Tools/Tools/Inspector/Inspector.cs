@@ -12,6 +12,7 @@ using ESRI.ArcGIS.Framework;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 using RS_Tools.Utilities;
+using RS_Tools.Tools.RS_Tools_Settings;
 
 namespace RS_Tools.Tools.Inspector
 {

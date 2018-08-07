@@ -95,6 +95,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ookii.Dialogs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0c15020868fd6249, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Utilities\Ookii.Dialogs.dll</HintPath>
@@ -211,6 +215,11 @@
     <Compile Include="Tools\Inspector\OkayStay.cs" />
     <Compile Include="Tools\Inspector\OKNext.cs" />
     <Compile Include="Tools\Inspector\OKNextScale.cs" />
+    <Compile Include="Tools\Inspector\Settings.cs" />
+    <Compile Include="Tools\RS_Tools_Settings\DataService.cs" />
+    <Compile Include="Tools\RS_Tools_Settings\RS_Tools_Loader.cs" />
+    <Compile Include="Tools\RS_Tools_Settings\RS_Tool_Settings.cs" />
+    <Compile Include="Tools\RS_Tools_Settings\Settings.cs" />
     <Compile Include="Tools\Sandbox\NotificationButton.cs" />
     <Compile Include="Tools\Sidekick\Sidekick_Button.cs" />
     <Compile Include="Tools\SurfaceGenerator\BoundaryProblem.cs" />
@@ -223,6 +232,7 @@
     </Compile>
     <Compile Include="Tools\SurfaceGenerator\SurfaceGenerator_Launcher.cs" />
     <Compile Include="Tools\SurfaceGenerator\Util.cs" />
+    <Compile Include="Utilities\Settings.cs" />
     <Compile Include="Utilities\Utilities_ArcMap.cs" />
     <Compile Include="Utilities\Utilities_General.cs" />
     <Compile Include="Utilities\Utilities_MessageBox.cs" />
@@ -305,6 +315,7 @@
     <AddInContent Include="Images\Homesite\Homesite_Tool.png" />
     <AddInContent Include="Images\Homesite\Homesite_Tool.cur" />
     <AddInContent Include="Images\Homesite\HomesiteSettings_Button.png" />
+    <AddInContent Include="Images\RSToolsSettings\RS_Tools_Loader.png" />
     <Content Include="Utilities\Ookii.Dialogs.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -343,7 +354,9 @@
       <DependentUpon>SurfaceGapFix_Beta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <PropertyGroup>
     <ZipFileExtension>esriAddIn</ZipFileExtension>
     <AddInTargetProduct>Desktop</AddInTargetProduct>
