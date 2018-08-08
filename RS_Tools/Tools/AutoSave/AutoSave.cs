@@ -24,8 +24,7 @@ namespace RS_Tools.Tools.AutoSave
         private string _targetlayer = string.Empty;
         private bool _dialogdismissed = true;
 
-        private IEditEvents2_Event _editEvents;
-        private Boolean _justSaving = false;
+        private IEditEvents_Event _editEvents;
 
         #endregion
 
@@ -101,10 +100,9 @@ namespace RS_Tools.Tools.AutoSave
             _activeView = _mxdocument.ActiveView;
 
             _editor = GetEditorFromArcMap(_application as IMxApplication);
-            _editEvents = (IEditEvents2_Event)_editor;
+            _editEvents = (IEditEvents_Event)_editor;
 
-            ((IEditEvents_Event)_editEvents).OnStopEditing += new IEditEvents_OnStopEditingEventHandler(OnStopEditing);
-            _editEvents.OnSaveEdits += new IEditEvents2_OnSaveEditsEventHandler(OnSaveEdits);
+            _editEvents.OnStopEditing += new IEditEvents_OnStopEditingEventHandler(OnStopEditing);
 
             _utilitiesArcmap = new Utilities_ArcMap(_map);
             if (this.cboTargetLayer.Items.Count > 0) this.cboTargetLayer.Items.Clear();
@@ -249,18 +247,9 @@ namespace RS_Tools.Tools.AutoSave
 
         private void OnStopEditing(bool save)
         {
-            if (!_justSaving)
-            {
-                btnStop_Click(null, null);
-            }
-
-            _justSaving = false;
+            //btnStop_Click(null, null);
         }
 
-        private void OnSaveEdits()
-        {
-            _justSaving = true;
-        }
 
         #endregion
     }
