@@ -95,10 +95,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Ookii.Dialogs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0c15020868fd6249, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Utilities\Ookii.Dialogs.dll</HintPath>
@@ -107,6 +103,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -161,6 +158,13 @@
     <Compile Include="Tools\DomainAppointer\Domain_18.cs" />
     <Compile Include="Tools\DomainAppointer\Domain_19.cs" />
     <Compile Include="Tools\DomainAppointer\Domain_Null.cs" />
+    <Compile Include="Tools\EcogUtilites\PrepLASData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\EcogUtilites\PrepLASData.Designer.cs">
+      <DependentUpon>PrepLASData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\EcogUtilites\PrepLASData_Button.cs" />
     <Compile Include="Tools\FileTileCloner\FileTileCloner_Button.cs" />
     <Compile Include="Tools\FileTileCloner\FileTileCloner_Form.cs">
       <SubType>Form</SubType>
@@ -294,6 +298,7 @@
     <AddInContent Include="Images\DomainAppointer\Domain_18.png" />
     <AddInContent Include="Images\DomainAppointer\Domain_19.png" />
     <AddInContent Include="Images\DomainAppointer\Domain_Null.png" />
+    <Content Include="Images\EcogUtilities\searches_folder.png" />
     <Content Include="Images\FileTileLoader\searches_folder.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener_Settings.png" />
@@ -316,6 +321,7 @@
     <AddInContent Include="Images\Homesite\Homesite_Tool.cur" />
     <AddInContent Include="Images\Homesite\HomesiteSettings_Button.png" />
     <AddInContent Include="Images\RSToolsSettings\RS_Tools_Loader.png" />
+    <AddInContent Include="Images\PrepLASData_Button.png" />
     <Content Include="Utilities\Ookii.Dialogs.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -328,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\DomainAppointer\DomainAppointer.resx">
       <DependentUpon>DomainAppointer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\EcogUtilites\PrepLASData.resx">
+      <DependentUpon>PrepLASData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\FileTileCloner\FileTileCloner_Form.resx">
       <DependentUpon>FileTileCloner_Form.cs</DependentUpon>
