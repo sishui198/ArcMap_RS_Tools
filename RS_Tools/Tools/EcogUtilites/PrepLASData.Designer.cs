@@ -117,9 +117,10 @@
             // chb_selected_ortho_tiles
             // 
             this.chb_selected_ortho_tiles.AutoSize = true;
+            this.chb_selected_ortho_tiles.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chb_selected_ortho_tiles.Location = new System.Drawing.Point(6, 143);
             this.chb_selected_ortho_tiles.Name = "chb_selected_ortho_tiles";
-            this.chb_selected_ortho_tiles.Size = new System.Drawing.Size(149, 17);
+            this.chb_selected_ortho_tiles.Size = new System.Drawing.Size(150, 17);
             this.chb_selected_ortho_tiles.TabIndex = 27;
             this.chb_selected_ortho_tiles.Text = "Use Selected Ortho Tiles";
             this.chb_selected_ortho_tiles.UseVisualStyleBackColor = true;
@@ -136,9 +137,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(6, 83);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(158, 13);
+            this.label7.Size = new System.Drawing.Size(161, 13);
             this.label7.TabIndex = 25;
             this.label7.Text = "Field That Links to Ortho Data";
             // 
@@ -155,9 +157,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 13);
+            this.label6.Size = new System.Drawing.Size(95, 13);
             this.label6.TabIndex = 22;
             this.label6.Text = "Ortho Tile Layout";
             // 

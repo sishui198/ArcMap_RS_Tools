@@ -53,6 +53,16 @@ namespace RS_Tools.Tools.EcogUtilites
         private string _output_batch_folder = "";
         private string _output_list_folder = "";
 
+        // Reports
+        private int _report_missingLasFileCount = 0;
+        private int _report_foundLASFileCount = 0;
+        private int _report_orthoFileWithoutFullCoverageCount = 0;
+        private int _report_totalLASTileCount = 0;
+        private int _report_totalOrthoTileCount = 0;
+        private int _report_totalBufferedSHPOutput = 0;
+        private int _report_totalOriginalSHPOutput = 0;
+        private int _report_batchFilesWritten = 0;
+
         #endregion
 
         #region Constructor
@@ -168,6 +178,20 @@ namespace RS_Tools.Tools.EcogUtilites
             Dictionary<string, string> lasFiles = new Dictionary<string, string>();
             Dictionary<string, List<string>> lasOrthoFiles = new Dictionary<string, List<string>>();
 
+            var loadingForm = new RS_Tools.Utilities.LoadingBarForm();
+
+            loadingForm.Show();
+
+            //Reset the report numbers
+            _report_missingLasFileCount = 0;
+            _report_foundLASFileCount = 0;
+            _report_orthoFileWithoutFullCoverageCount = 0;
+            _report_totalLASTileCount = 0;
+            _report_totalOrthoTileCount = 0;
+            _report_totalBufferedSHPOutput = 0;
+            _report_totalOriginalSHPOutput = 0;
+            _report_batchFilesWritten = 0;
+
             try
             {
 
@@ -184,7 +208,8 @@ namespace RS_Tools.Tools.EcogUtilites
                                     ExportMergeCommands_LAS(lasFiles);
                                 }
                             }
-                        }
+                            ShowReport_LAS();
+                        }                        
                         return;
                     case 1:
                         if (CheckRequirements() && CheckRequirements_LAS_Ortho())
@@ -206,6 +231,8 @@ namespace RS_Tools.Tools.EcogUtilites
             {
                 MessageBox.Show(ex.Message, MB_TITLE, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            loadingForm.Close();
         }
 
         #endregion
@@ -520,6 +547,10 @@ namespace RS_Tools.Tools.EcogUtilites
                         lasTileNames.Add(tilename);
                     }
                     intOID = enumIDs.Next();
+
+                    // Add a tile found
+                    _report_totalLASTileCount += 1;
+                    
                 }
             }
             else
@@ -532,6 +563,9 @@ namespace RS_Tools.Tools.EcogUtilites
                 {
                     string tilename = feature.get_Value(FieldIndex).ToString();
                     lasTileNames.Add(tilename);
+
+                    // Add a tile found
+                    _report_totalLASTileCount += 1;
                 }
             }
 
@@ -546,6 +580,9 @@ namespace RS_Tools.Tools.EcogUtilites
                 if (match != null)
                 {
                     lasFiles.Add(lasTileName, match);
+
+                    // Update Report
+                    _report_foundLASFileCount += 1;
                 }
                 else
                 {
@@ -556,7 +593,7 @@ namespace RS_Tools.Tools.EcogUtilites
             // Report Missing Tiles
             if (missingLasFiles.Count() > 0)
             {
-                string missingFilesCSVPath = $"{tb_output.Text}\\MissingLASFiles.csv";
+                string missingFilesCSVPath = $"{tb_output.Text}\\Missing_LAS_Files.csv";
 
                 var csv = new StringBuilder();
 
@@ -567,10 +604,13 @@ namespace RS_Tools.Tools.EcogUtilites
 
                 File.WriteAllText(missingFilesCSVPath, csv.ToString());
 
-                if (MessageBox.Show($"There are {missingLasFiles.Count()} missing LAS files. This could defeat the purpose. A CSV will be outputted with names of missing las files.\n\nWould you like to continue anyways?", MB_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
-                {
-                    return false;
-                }
+                //if (MessageBox.Show($"There are {missingLasFiles.Count()} missing LAS files. This could defeat the purpose. A CSV will be outputted with names of missing las files.\n\nWould you like to continue anyways?", MB_TITLE, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                //{
+                //    return false;
+                //}
+
+                // Update Report
+                _report_missingLasFileCount = missingLasFiles.Count();
             }
             return true;
         }
@@ -601,17 +641,37 @@ namespace RS_Tools.Tools.EcogUtilites
                         string tileName = feature.get_Value(fieldIndex).ToString();
                         if (lasFiles.ContainsKey(tileName))
                         {
-                            // Original File
-                            string shapefileOutputPath = $"{_output_shp_original_folder}\\{tileName}.shp";
-                            IPolygon exportPolygon = feature.Shape as IPolygon;
-                            if (!File.Exists(shapefileOutputPath))
-                                CreateShapefile(exportPolygon, _output_shp_original_folder, tileName);
+                            try
+                            {
+                                // Original File
+                                string shapefileOutputPath = $"{_output_shp_original_folder}\\{tileName}.shp";
+                                IPolygon exportPolygon = feature.Shape as IPolygon;
+                                if (!File.Exists(shapefileOutputPath))
+                                    CreateShapefile(exportPolygon, _output_shp_original_folder, tileName);
 
-                            // Buffered File
-                            IPolygon exportBufferedPolygon = CreateOverlapPolygon(feature);
-                            string shapefileBufferedOutputPath = $"{_output_shp_buffered_folder}\\{tileName}.shp";
-                            if (!File.Exists(shapefileBufferedOutputPath))
-                                CreateShapefile(exportBufferedPolygon, _output_shp_buffered_folder, tileName);
+                                // Update Report
+                                _report_totalOriginalSHPOutput += 1;
+                            } catch (Exception ex)
+                            {
+
+                            }
+                            
+                            try
+                            {
+                                // Buffered File
+                                IPolygon exportBufferedPolygon = CreateOverlapPolygon(feature);
+                                string shapefileBufferedOutputPath = $"{_output_shp_buffered_folder}\\{tileName}.shp";
+                                if (!File.Exists(shapefileBufferedOutputPath))
+                                    CreateShapefile(exportBufferedPolygon, _output_shp_buffered_folder, tileName);
+
+                                // Update Report
+                                _report_totalBufferedSHPOutput += 1;
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                            
                         }
                     }
                     intOID = enumIDs.Next();
@@ -628,17 +688,37 @@ namespace RS_Tools.Tools.EcogUtilites
                     string tileName = feature.get_Value(fieldIndex).ToString();
                     if (lasFiles.ContainsKey(tileName))
                     {
-                        // Original File
-                        string shapefileOutputPath = $"{_output_shp_original_folder}\\{tileName}.shp";
-                        IPolygon exportPolygon = feature.Shape as IPolygon;
-                        if (!File.Exists(shapefileOutputPath))
-                            CreateShapefile(exportPolygon, _output_shp_original_folder, tileName);
+                        try
+                        {
+                            // Original File
+                            string shapefileOutputPath = $"{_output_shp_original_folder}\\{tileName}.shp";
+                            IPolygon exportPolygon = feature.Shape as IPolygon;
+                            if (!File.Exists(shapefileOutputPath))
+                                CreateShapefile(exportPolygon, _output_shp_original_folder, tileName);
 
-                        // Buffered File
-                        IPolygon exportBufferedPolygon = CreateOverlapPolygon(feature);
-                        string shapefileBufferedOutputPath = $"{_output_shp_buffered_folder}\\{tileName}.shp";
-                        if (!File.Exists(shapefileBufferedOutputPath))
-                            CreateShapefile(exportBufferedPolygon, _output_shp_buffered_folder, tileName);
+                            // Update Report
+                            _report_totalOriginalSHPOutput += 1;
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+
+                        try
+                        {
+                            // Buffered File
+                            IPolygon exportBufferedPolygon = CreateOverlapPolygon(feature);
+                            string shapefileBufferedOutputPath = $"{_output_shp_buffered_folder}\\{tileName}.shp";
+                            if (!File.Exists(shapefileBufferedOutputPath))
+                                CreateShapefile(exportBufferedPolygon, _output_shp_buffered_folder, tileName);
+
+                            // Update Report
+                            _report_totalBufferedSHPOutput += 1;
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
                     }
                 }
             }
@@ -664,7 +744,6 @@ namespace RS_Tools.Tools.EcogUtilites
 
             if (chb_selected_las_tiles.Checked)
             {
-                bool missingTiles = false;
                 List<String> tilesThatSuccessfullyPassedForMerging = new List<string>();
                 IFeatureSelection featureSelection = featureLayer as IFeatureSelection;
                 IEnumIDs enumIDs = featureSelection.SelectionSet.IDs;
@@ -672,8 +751,6 @@ namespace RS_Tools.Tools.EcogUtilites
                 int intOID;
                 while ((intOID = enumIDs.Next()) > -1)
                 {
-                    
-
                     IFeature feature = featureClass.GetFeature(intOID);
                     string tilename = feature.get_Value(fieldIndex).ToString();
                     string outputListFile = $"{_output_list_folder}\\{tilename}.list";
@@ -697,7 +774,6 @@ namespace RS_Tools.Tools.EcogUtilites
                         // This is useless, just wrote the functionality if it become an issue could come up with warning or error 
                         if (!ValidateBoundaryFiles(foundTiles))
                         {
-                            missingTiles = true;
                             continue;
                         }
 
@@ -713,6 +789,7 @@ namespace RS_Tools.Tools.EcogUtilites
 
                         File.WriteAllText(outputListFile, outputList.ToString());
                     }
+
                     var command = new StringBuilder();
                     command.AppendLine($"set PATH=\"{tb_erdastools.Text}\";\"{tb_geoexpress.Text}\"");
 
@@ -726,15 +803,13 @@ namespace RS_Tools.Tools.EcogUtilites
                     string batchFilePath = $"{_output_batch_folder}\\{tilename}.bat";
 
                     File.WriteAllText(batchFilePath, command.ToString());
-                }
-                if (missingTiles)
-                {
-                    MessageBox.Show("There were missing tiles that your selected tiles overlapped. Those were not exported as batch files.", MB_TITLE);
+
+                    // Update Report
+                    _report_batchFilesWritten += 1;
                 }
             }
             else
             {
-                bool missingTiles = false;
                 List<String> tilesThatSuccessfullyPassedForMerging = new List<string>();
 
                 IFeatureCursor cursor = featureClass.Search(null, false);
@@ -765,7 +840,6 @@ namespace RS_Tools.Tools.EcogUtilites
                     // This is useless, just wrote the functionality if it become an issue could come up with warning or error 
                     if (!ValidateBoundaryFiles(foundTiles))
                     {
-                        missingTiles = true;
                         continue;
                     }
 
@@ -792,15 +866,34 @@ namespace RS_Tools.Tools.EcogUtilites
                     string batchFilePath = $"{_output_batch_folder}\\{tilename}.bat";
 
                     File.WriteAllText(batchFilePath, command.ToString());
-                }
-                if (missingTiles)
-                {
-                    MessageBox.Show("There were missing tiles that your selected tiles overlapped. Those were not exported at batch files.", MB_TITLE);
+
+                    // Update Report
+                    _report_batchFilesWritten += 1;
                 }
 
             }
 
             return true;
+        }
+
+        private void ShowReport_LAS()
+        {
+            var report = new StringBuilder();
+
+            report.AppendLine($"Competed Processing {_report_totalLASTileCount} LAS Tiles");
+            report.AppendLine($"---------------------------------------------------------------------");
+            report.AppendLine($"LAS Files Found:                   {_report_foundLASFileCount}");
+            report.AppendLine($"LAS Files Missing:                 {_report_missingLasFileCount}");
+            if (_report_missingLasFileCount > 0)
+                report.AppendLine("You can find a csv file in the output folder with the name of each missing las file");
+            report.AppendLine("");
+            report.AppendLine($"Original Shapefile Tiles Exported: {_report_totalOriginalSHPOutput}");
+            report.AppendLine($"Buffered Shapefile Tiles Exported: {_report_totalBufferedSHPOutput}");
+            report.AppendLine("");
+            report.AppendLine($"Batch Files Exported:              {_report_batchFilesWritten}");
+
+            var reportForm = new Report(report.ToString());
+            reportForm.Show();
         }
 
         #endregion
