@@ -2,11 +2,11 @@
   <Name>RS_Tools</Name>
   <AddInID>{a1f80a4e-7369-4e14-9978-bee8e7697732}</AddInID>
   <Description>Tools used to enhance performance and utilities to increase producitivy in ArcGIS Desktop</Description>
-  <Version>1.5.6</Version>
+  <Version>1.5.7</Version>
   <Image>Images\RS_Tools.png</Image>
   <Author>Chris Stayte</Author>
   <Company>Woolpert Inc.</Company>
-  <Date>8/3/2018</Date>
+  <Date>11/6/2018</Date>
   <Targets>
     <Target name="Desktop" version="10.4" />
   </Targets>
@@ -17,7 +17,7 @@
         <Button id="Woolpert_Inc_RS_Tools_FileTileLoader_Button" class="RS_Tools.Tools.FileTileLoader.FileTileLoader_Button" message="Loads File Files based on Tile Index. Index Field must match file file schema" caption="File Tile Loader" tip="Loads File Based On Tile Index" category="RS_Tools" image="Images\FileTileLoader\FileTileLoader.png">
           <Help heading="File Tile Loader">Loads Files based on Tile Index. Index Field must match file file schema</Help>
         </Button>
-        <!-- File Tile Loader End-->   
+        <!-- File Tile Loader End-->
         <!-- File Tile Opener Start -->
         <Tool id="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" class="RS_Tools.Tools.FileTileOpener.FileTileOpener_Tool" message="Opens a file based on a tile index. The file will open in the systems default program." caption="File Tile Opener" tip="Opens File Based On Tile Index" category="RS_Tools" image="Images\FileTileOpener\FileTileOpener.png" cursor="Images\FileTileOpener\FileTileOpener.cur" />
         <Button id="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" class="RS_Tools.Tools.FileTileOpener.FileTileOpenerSettings_Button" message="Settings For File Tile Opener" caption="File Tile Opener Settings" tip="Settings For File Tile Opener" category="RS_Tools" image="Images\FileTileOpener\FileTileOpenerSettings_Button.png" />
@@ -68,15 +68,18 @@
         <Button id="Woolpert_Inc_RS_Tools_CollapseAllLayers" class="RS_Tools.Tools.CollapseAllLayers.CollapseAllLayers" message="Collapse all layers in the table of contents." caption="Collapse All Layers" tip="Collapse all layers" category="RS_Tools" image="Images\CollapseAllLayers\CollapseAllLayers.png" />
         <!-- Collapse All Layers End -->
         <!-- File Tile Cloner Start -->
-        <Button id="Woolpert_Inc_RS_Tools_FileTileCloner_Button" class="RS_Tools.Tools.FileTileCloner.FileTileCloner_Button" message="Clones files from one place ot another using a tile index. " caption="File Tile Cloner" tip="Clones Files" category="RS Tools" image="Images\FileTileCloner\FileTileCloner_Button.png" />
+        <Button id="Woolpert_Inc_RS_Tools_FileTileCloner_Button" class="RS_Tools.Tools.FileTileCloner.FileTileCloner_Button" message="Clones files from one place ot another using a tile index. " caption="File Tile Cloner" tip="Clones Files" category="RS_Tools" image="Images\FileTileCloner\FileTileCloner_Button.png" />
         <!-- File Tile Cloner End -->
         <!-- Homesite Start-->
-        <Tool id="Woolpert_Inc_RS_Tools_Homesite_Tool" class="RS_Tools.Tools.Homesite.Homesite_Tool" message="Creates a homesite polygon" caption="Create Homesite" tip="Creates a homesite polygon" category="RS Tools" image="Images\Homesite\Homesite_Tool.png" cursor="Images\Homesite\Homesite_Tool.cur" />
+        <Tool id="Woolpert_Inc_RS_Tools_Homesite_Tool" class="RS_Tools.Tools.Homesite.Homesite_Tool" message="Creates a homesite polygon" caption="Create Homesite" tip="Creates a homesite polygon" category="RS_Tools" image="Images\Homesite\Homesite_Tool.png" cursor="Images\Homesite\Homesite_Tool.cur" />
         <Button id="Woolpert_Inc_RS_Tools_HomesiteSettings_Button" class="RS_Tools.Tools.Homesite.HomesiteSettings_Button" message="Homesite Settings" caption="Homesite Settings" tip="Homesite Settings" category="RS Tools" image="Images\Homesite\HomesiteSettings_Button.png" />
         <!-- Homesite End -->
         <!-- RS Tools Settings Importer Start -->
         <Button id="Woolpert_Inc_RS_Tools_RS_Tools_Loader" class="RS_Tools.Tools.RS_Tools_Settings.RS_Tools_Loader" message="RS Tools Settings Importer" caption="RS Tools Settings Importer" tip="RS Tools Settings Importer" category="RS_Tools" image="Images\RSToolsSettings\RS_Tools_Loader.png" />
         <!-- RS Tools Settings Importer End -->
+        <!-- Ecog Utitlites Start-->
+        <Button id="Woolpert_Inc_RS_Tools_PrepLASData_Button" class="RS_Tools.Tools.EcogUtilites.PrepLASData_Button" message="Will build batch files to merge las data and clip it to 5% of the project area. &#xD;&#xA;" caption="My Button" tip="Prepares LAS data for Ecog" category="RS_Tools" image="Images\PrepLASData_Button.png" />
+        <!-- Ecog Utilities End -->
       </Commands>
       <DockableWindows>
         <DockableWindow id="Woolpert_Inc_RS_Tools_Inspector" class="RS_Tools.Tools.Inspector.Inspector+AddinImpl" caption="Inspector" image="Images\Inspector\Inspector.png">
@@ -141,6 +144,11 @@
         <Toolbar id="Woolpert_Inc_RS_Tools_RS_Sandbox" caption="RS Sandbox" showInitially="false">
           <Items>
             <Button refID="Woolpert_Inc_RS_Tools_NotificationButton" />
+          </Items>
+        </Toolbar>
+        <Toolbar id="Woolpert_Inc_RS_Tools_RS_Ecog_Utilities" caption="RS Ecog Utilities" showInitially="false">
+          <Items>
+            <Button refID="Woolpert_Inc_RS_Tools_PrepLASData_Button" />
           </Items>
         </Toolbar>
       </Toolbars>
