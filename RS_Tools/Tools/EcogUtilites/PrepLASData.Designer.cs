@@ -334,7 +334,6 @@
             this.tb_las_folder.ReadOnly = true;
             this.tb_las_folder.Size = new System.Drawing.Size(381, 22);
             this.tb_las_folder.TabIndex = 5;
-            this.tb_las_folder.Text = "X:\\Projects\\DodgeCo_WI_77415\\resources\\Image\\LAS";
             // 
             // label1
             // 
