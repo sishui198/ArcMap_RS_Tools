@@ -242,12 +242,6 @@
     </Compile>
     <Compile Include="Tools\SurfaceGenerator\SurfaceGenerator_Launcher.cs" />
     <Compile Include="Tools\SurfaceGenerator\Util.cs" />
-    <Compile Include="Utilities\LoadingBarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Utilities\LoadingBarForm.Designer.cs">
-      <DependentUpon>LoadingBarForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\Settings.cs" />
     <Compile Include="Utilities\Utilities_ArcMap.cs" />
     <Compile Include="Utilities\Utilities_General.cs" />
@@ -376,9 +370,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\SurfaceGenerator\SurfaceGapFix_Beta.resx">
       <DependentUpon>SurfaceGapFix_Beta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Utilities\LoadingBarForm.resx">
-      <DependentUpon>LoadingBarForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

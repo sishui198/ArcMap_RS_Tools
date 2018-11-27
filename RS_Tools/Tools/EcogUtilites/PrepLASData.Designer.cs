@@ -131,7 +131,7 @@
             this.cb_field_ortho.FormattingEnabled = true;
             this.cb_field_ortho.Location = new System.Drawing.Point(6, 108);
             this.cb_field_ortho.Name = "cb_field_ortho";
-            this.cb_field_ortho.Size = new System.Drawing.Size(591, 21);
+            this.cb_field_ortho.Size = new System.Drawing.Size(396, 21);
             this.cb_field_ortho.TabIndex = 26;
             // 
             // label7
@@ -150,7 +150,7 @@
             this.cb_tile_layout_ortho.FormattingEnabled = true;
             this.cb_tile_layout_ortho.Location = new System.Drawing.Point(6, 38);
             this.cb_tile_layout_ortho.Name = "cb_tile_layout_ortho";
-            this.cb_tile_layout_ortho.Size = new System.Drawing.Size(591, 21);
+            this.cb_tile_layout_ortho.Size = new System.Drawing.Size(396, 21);
             this.cb_tile_layout_ortho.TabIndex = 23;
             this.cb_tile_layout_ortho.SelectedIndexChanged += new System.EventHandler(this.cb_tile_layout_ortho_SelectedIndexChanged);
             // 
@@ -334,6 +334,7 @@
             this.tb_las_folder.ReadOnly = true;
             this.tb_las_folder.Size = new System.Drawing.Size(381, 22);
             this.tb_las_folder.TabIndex = 5;
+            this.tb_las_folder.Text = "X:\\Projects\\DodgeCo_WI_77415\\resources\\Image\\LAS";
             // 
             // label1
             // 
