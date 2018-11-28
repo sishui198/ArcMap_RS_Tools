@@ -1007,7 +1007,7 @@
 
                     command.AppendLine($"mrsidgeoencoder -i {outputListFile} -o {_output_las_merged_folder}\\{tilename}.las");
 
-                    command.Append($"pointcloudtoolscommand -t filter -i {_output_las_merged_folder}\\{tilename}.las -o {_output_las_clipped_folder}\\{tilename}.las -classification '' -include {_output_shp_buffered_folder}\\{tilename}.shp -return ''");
+                    command.AppendLine($"pointcloudtoolscommand -t filter -i {_output_las_merged_folder}\\{tilename}.las -o {_output_las_clipped_folder}\\{tilename}.las -classification '' -include {_output_shp_buffered_folder}\\{tilename}.shp -return ''");
 
                     if (cb_deleteMergedLAS.Checked)
                         command.Append($"del {_output_las_merged_folder}\\{tilename}.las");
