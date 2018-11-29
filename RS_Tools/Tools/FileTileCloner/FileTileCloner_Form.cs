@@ -107,7 +107,7 @@ namespace RS_Tools.Tools.FileTileCloner
                 folderBrowserDialog.SelectedPath = previousFolderDst;
 
             if (!VistaFolderBrowserDialog.IsVistaFolderDialogSupported)
-                
+                MessageBox.Show(this, "Because you are not using Windows Vista or later, the regular folder browser dialog will be used. Please use Windows Vista to see the new dialog.", "Sample folder browser dialog");
             if (folderBrowserDialog.ShowDialog(this) == DialogResult.OK)
                 this.txb_FileWorkspaceDst.Text = folderBrowserDialog.SelectedPath;
         }
