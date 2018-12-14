@@ -1393,6 +1393,13 @@
             if (!Directory.Exists(_output_list_folder))
                 Directory.CreateDirectory(_output_list_folder);
 
+            string outputOrthoSizedLasFolder = $"{tb_output.Text}\\LAS";
+
+            if (chb_OrthoSizedLAS.Checked)
+                if (!Directory.Exists(outputOrthoSizedLasFolder))
+                    Directory.CreateDirectory(outputOrthoSizedLasFolder);
+            
+
             // Get Layer Ready
             IFeatureLayer featureLayerLAS = _utilitiesArcMap.FeatureLayer(cb_tile_layout_las.Text);
             IFeatureLayer featureLayerOrtho = _utilitiesArcMap.FeatureLayer(cb_tile_layout_ortho.Text);
@@ -1437,7 +1444,10 @@
                     command.AppendLine($"pointcloudtoolscommand -t filter -i {_output_las_merged_folder}\\{tile.Key}.las -o {_output_las_clipped_folder}\\{tile.Key}.las -classification '' -include {_output_shp_buffered_folder}\\{tile.Key}.shp -return ''");
 
                     if (cb_deleteMergedLAS.Checked)
-                        command.Append($"del {_output_las_merged_folder}\\{tile.Key}.las");
+                        command.AppendLine($"del {_output_las_merged_folder}\\{tile.Key}.las");
+
+                    if (chb_OrthoSizedLAS.Checked)                       
+                        command.AppendLine($"pointcloudtoolscommand -t filter -i {_output_las_clipped_folder}\\{tile.Key}.las -o {outputOrthoSizedLasFolder}\\{tile.Key}.las -classification '' -include {_output_shp_original_folder}\\{tile.Key}.shp -return ''");
 
                     string batchFilePath = $"{_output_batch_folder}\\{tile.Key}.bat";
 
@@ -1481,5 +1491,7 @@
             var reportForm = new Report(report.ToString());
             reportForm.ShowDialog();
         }
+
+
     }
 }

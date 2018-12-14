@@ -60,6 +60,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cb_deleteMergedLAS = new System.Windows.Forms.CheckBox();
+            this.chb_OrthoSizedLAS = new System.Windows.Forms.CheckBox();
             this.tc_select_type.SuspendLayout();
             this.tp_las.SuspendLayout();
             this.tp_las_ortho.SuspendLayout();
@@ -101,6 +102,7 @@
             // 
             // tp_las_ortho
             // 
+            this.tp_las_ortho.Controls.Add(this.chb_OrthoSizedLAS);
             this.tp_las_ortho.Controls.Add(this.chb_selected_ortho_tiles);
             this.tp_las_ortho.Controls.Add(this.cb_field_ortho);
             this.tp_las_ortho.Controls.Add(this.label7);
@@ -411,6 +413,17 @@
             this.cb_deleteMergedLAS.Text = "Progressivly Delete Merged LAS Data (Saves Storage Space)\r\n";
             this.cb_deleteMergedLAS.UseVisualStyleBackColor = true;
             // 
+            // chb_OrthoSizedLAS
+            // 
+            this.chb_OrthoSizedLAS.AutoSize = true;
+            this.chb_OrthoSizedLAS.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_OrthoSizedLAS.Location = new System.Drawing.Point(6, 166);
+            this.chb_OrthoSizedLAS.Name = "chb_OrthoSizedLAS";
+            this.chb_OrthoSizedLAS.Size = new System.Drawing.Size(169, 17);
+            this.chb_OrthoSizedLAS.TabIndex = 28;
+            this.chb_OrthoSizedLAS.Text = "Create Ortho Sized LAS Tiles";
+            this.chb_OrthoSizedLAS.UseVisualStyleBackColor = true;
+            // 
             // PrepLASData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,5 +503,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox cb_deleteMergedLAS;
+        private System.Windows.Forms.CheckBox chb_OrthoSizedLAS;
     }
 }
