@@ -254,6 +254,22 @@
                 this.tb_erdastools.Text = folderBrowserDialog.SelectedPath;
         }
 
+        private void btn_folder_geoexpress_Click(object sender, EventArgs e)
+        {
+            string previousFolderDst = this.tb_geoexpress.Text;
+
+            var folderBrowserDialog = new VistaFolderBrowserDialog();
+
+            if (Directory.Exists(previousFolderDst))
+                folderBrowserDialog.SelectedPath = previousFolderDst;
+
+            if (!VistaFolderBrowserDialog.IsVistaFolderDialogSupported)
+                MessageBox.Show(this, "Because you are not using Windows Vista or later, the regular folder browser dialog will be used. Please use Windows Vista to see the new dialog.", "Sample folder browser dialog");
+
+            if (folderBrowserDialog.ShowDialog(this) == DialogResult.OK)
+                this.tb_geoexpress.Text = folderBrowserDialog.SelectedPath;
+        }
+
         /// <summary>
         /// The btn_folder_output_Click
         /// </summary>
@@ -1492,6 +1508,6 @@
             reportForm.ShowDialog();
         }
 
-
+        
     }
 }

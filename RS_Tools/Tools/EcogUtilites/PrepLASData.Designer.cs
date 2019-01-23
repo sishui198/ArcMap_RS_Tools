@@ -33,6 +33,7 @@
             this.tp_las = new System.Windows.Forms.TabPage();
             this.chb_selected_las_tiles = new System.Windows.Forms.CheckBox();
             this.tp_las_ortho = new System.Windows.Forms.TabPage();
+            this.chb_OrthoSizedLAS = new System.Windows.Forms.CheckBox();
             this.chb_selected_ortho_tiles = new System.Windows.Forms.CheckBox();
             this.cb_field_ortho = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,12 +56,11 @@
             this.tb_las_folder = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chb_recursion_las = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_folder_geoexpress = new System.Windows.Forms.Button();
             this.tb_geoexpress = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cb_deleteMergedLAS = new System.Windows.Forms.CheckBox();
-            this.chb_OrthoSizedLAS = new System.Windows.Forms.CheckBox();
             this.tc_select_type.SuspendLayout();
             this.tp_las.SuspendLayout();
             this.tp_las_ortho.SuspendLayout();
@@ -115,6 +115,17 @@
             this.tp_las_ortho.TabIndex = 1;
             this.tp_las_ortho.Text = "LAS + Ortho";
             this.tp_las_ortho.UseVisualStyleBackColor = true;
+            // 
+            // chb_OrthoSizedLAS
+            // 
+            this.chb_OrthoSizedLAS.AutoSize = true;
+            this.chb_OrthoSizedLAS.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chb_OrthoSizedLAS.Location = new System.Drawing.Point(6, 166);
+            this.chb_OrthoSizedLAS.Name = "chb_OrthoSizedLAS";
+            this.chb_OrthoSizedLAS.Size = new System.Drawing.Size(169, 17);
+            this.chb_OrthoSizedLAS.TabIndex = 28;
+            this.chb_OrthoSizedLAS.Text = "Create Ortho Sized LAS Tiles";
+            this.chb_OrthoSizedLAS.UseVisualStyleBackColor = true;
             // 
             // chb_selected_ortho_tiles
             // 
@@ -358,16 +369,17 @@
             this.chb_recursion_las.Text = "Search Subfolders";
             this.chb_recursion_las.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_folder_geoexpress
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(396, 306);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 25);
-            this.button1.TabIndex = 23;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_folder_geoexpress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_folder_geoexpress.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_folder_geoexpress.BackgroundImage")));
+            this.btn_folder_geoexpress.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_folder_geoexpress.Location = new System.Drawing.Point(396, 306);
+            this.btn_folder_geoexpress.Name = "btn_folder_geoexpress";
+            this.btn_folder_geoexpress.Size = new System.Drawing.Size(25, 25);
+            this.btn_folder_geoexpress.TabIndex = 23;
+            this.btn_folder_geoexpress.UseVisualStyleBackColor = true;
+            this.btn_folder_geoexpress.Click += new System.EventHandler(this.btn_folder_geoexpress_Click);
             // 
             // tb_geoexpress
             // 
@@ -413,17 +425,6 @@
             this.cb_deleteMergedLAS.Text = "Progressivly Delete Merged LAS Data (Saves Storage Space)\r\n";
             this.cb_deleteMergedLAS.UseVisualStyleBackColor = true;
             // 
-            // chb_OrthoSizedLAS
-            // 
-            this.chb_OrthoSizedLAS.AutoSize = true;
-            this.chb_OrthoSizedLAS.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chb_OrthoSizedLAS.Location = new System.Drawing.Point(6, 166);
-            this.chb_OrthoSizedLAS.Name = "chb_OrthoSizedLAS";
-            this.chb_OrthoSizedLAS.Size = new System.Drawing.Size(169, 17);
-            this.chb_OrthoSizedLAS.TabIndex = 28;
-            this.chb_OrthoSizedLAS.Text = "Create Ortho Sized LAS Tiles";
-            this.chb_OrthoSizedLAS.UseVisualStyleBackColor = true;
-            // 
             // PrepLASData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,7 +434,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.cb_deleteMergedLAS);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_folder_geoexpress);
             this.Controls.Add(this.tb_geoexpress);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.chb_recursion_las);
@@ -498,7 +499,7 @@
         private System.Windows.Forms.CheckBox chb_selected_las_tiles;
         private System.Windows.Forms.CheckBox chb_selected_ortho_tiles;
         private System.Windows.Forms.CheckBox chb_recursion_las;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_folder_geoexpress;
         private System.Windows.Forms.TextBox tb_geoexpress;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
