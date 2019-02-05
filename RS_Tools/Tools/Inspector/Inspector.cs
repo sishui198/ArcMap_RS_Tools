@@ -153,49 +153,6 @@ namespace RS_Tools.Tools.Inspector
                             double scale = tb_scale.Value / 100.0;
                             envelope.Expand(scale, scale, true);
 
-                            //switch (tb_scale.Value)
-                            //{
-                            //    case 100:
-                            //        envelope.Expand(1.0, 1.0, true);
-                            //        break;
-                            //    case 125:
-                            //        envelope.Expand(1.25, 1.25, true);
-                            //        break;
-                            //    case 150:
-                            //        envelope.Expand(1.50, 1.50, true);
-                            //        break;
-                            //    case 200:
-                            //        envelope.Expand(2.0, 2.0, true);
-                            //        break;
-                            //    case 225:
-                            //        envelope.Expand(2.25, 2.25, true);
-                            //        break;
-                            //    case 250:
-                            //        envelope.Expand(2.50, 2.50, true);
-                            //        break;
-                            //    case 275:
-                            //        envelope.Expand(2.75, 2.75, true);
-                            //        break;
-                            //    case 300:
-                            //        envelope.Expand(3.0, 3.0, true);
-                            //        break;
-                            //    case 325:
-                            //        envelope.Expand(3.25, 3.25, true);
-                            //        break;
-                            //    case 350:
-                            //        envelope.Expand(3.5, 3.5, true);
-                            //        break;
-                            //    case 375:
-                            //        envelope.Expand(3.75, 3.75, true);
-                            //        break;
-                            //    case 400:
-                            //        envelope.Expand(4.0, 4.0, true);
-                            //        break;
-                            //    default:
-                            //        break;
-                            //}
-
-
                             _activeView.Extent = envelope;
                             _activeView.Refresh();
 
@@ -213,7 +170,9 @@ namespace RS_Tools.Tools.Inspector
                             IEnvelope envelope = _activeView.Extent;
                             envelope.CenterAt(point);
                             _activeView.Extent = envelope;
-                            _map.MapScale = 1000;
+
+                            double scale = tb_scale.Value ;
+                            _map.MapScale = scale;
                             _activeView.Refresh();
 
                             GetStatus();
