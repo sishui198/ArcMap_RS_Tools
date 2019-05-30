@@ -47,7 +47,7 @@ namespace RS_Tools.Tools.SurfaceGenerator
 
             if (_utilities == null) _utilities = new Utilities_ArcMap(_map);
 
-            this.cboTileLayoutLayer.Items.AddRange(_utilities.PolygonLayers().ToArray());
+            this.cboTileLayoutLayer.Items.AddRange(_utilities.PolygonLayerNames().ToArray());
             if (this.cboTileLayoutLayer.Items.Count > 0) this.cboTileLayoutLayer.SelectedIndex = 0;
 
             this.tbxLASFolder.Text = _util.LASFOLDER;

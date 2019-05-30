@@ -115,6 +115,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Config.esriaddinx</DependentUpon>
     </Compile>
+    <Compile Include="Model\CustomLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -177,6 +178,13 @@
     </Compile>
     <Compile Include="Tools\FileTileCloner\FileTileCloner_Form.Designer.cs">
       <DependentUpon>FileTileCloner_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FileTileExister\FileTileExister_Button.cs" />
+    <Compile Include="Tools\FileTileExister\FileTileExister_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\FileTileExister\FileTileExister_Form.Designer.cs">
+      <DependentUpon>FileTileExister_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\FileTileLoader\FileTileLoader_Button.cs" />
     <Compile Include="Tools\FileTileLoader\FileTileLoader_Form.cs">
@@ -305,6 +313,7 @@
     <AddInContent Include="Images\DomainAppointer\Domain_19.png" />
     <AddInContent Include="Images\DomainAppointer\Domain_Null.png" />
     <Content Include="Images\EcogUtilities\searches_folder.png" />
+    <AddInContent Include="Images\FileTileExister_Button.png" />
     <Content Include="Images\FileTileLoader\searches_folder.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener.png" />
     <AddInContent Include="Images\FileTileOpener\FileTileOpener_Settings.png" />
@@ -350,6 +359,9 @@
     <EmbeddedResource Include="Tools\FileTileCloner\FileTileCloner_Form.resx">
       <DependentUpon>FileTileCloner_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FileTileExister\FileTileExister_Form.resx">
+      <DependentUpon>FileTileExister_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\FileTileLoader\FileTileLoader_Form.resx">
       <DependentUpon>FileTileLoader_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +387,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <ZipFileExtension>esriAddIn</ZipFileExtension>
     <AddInTargetProduct>Desktop</AddInTargetProduct>

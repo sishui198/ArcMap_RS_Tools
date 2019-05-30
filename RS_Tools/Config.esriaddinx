@@ -2,11 +2,11 @@
   <Name>RS_Tools</Name>
   <AddInID>{a1f80a4e-7369-4e14-9978-bee8e7697732}</AddInID>
   <Description>Tools used to enhance performance and utilities to increase producitivy in ArcGIS Desktop</Description>
-  <Version>1.6.1</Version>
+  <Version>1.6.2</Version>
   <Image>Images\RS_Tools.png</Image>
   <Author>Chris Stayte</Author>
   <Company>Woolpert Inc.</Company>
-  <Date>11/6/2018</Date>
+  <Date>5/30/2019</Date>
   <Targets>
     <Target name="Desktop" version="10.4" />
   </Targets>
@@ -80,6 +80,9 @@
         <!-- Ecog Utitlites Start-->
         <Button id="Woolpert_Inc_RS_Tools_PrepLASData_Button" class="RS_Tools.Tools.EcogUtilites.PrepLASData_Button" message="Will build batch files to merge las data and clip it to 5% of the project area. &#xD;&#xA;" caption="My Button" tip="Prepares LAS data for Ecog" category="RS_Tools" image="Images\PrepLASData_Button.png" />
         <!-- Ecog Utilities End -->
+        <!-- File Tile Exister Start-->
+        <Button id="Woolpert_Inc_RS_Tools_FileTileExister_Button" class="RS_Tools.Tools.FileTileExister.FileTileExister_Button" message="Marks File As Exists Or Not" caption="My Button" tip="File Tile Exister Launcher" category="Woolpert" image="Images\FileTileExister_Button.png" />
+        <!-- File Tile Exister Stop-->
       </Commands>
       <DockableWindows>
         <DockableWindow id="Woolpert_Inc_RS_Tools_Inspector" class="RS_Tools.Tools.Inspector.Inspector+AddinImpl" caption="Inspector" image="Images\Inspector\Inspector.png">
@@ -134,9 +137,6 @@
             <Button refID="Woolpert_Inc_RS_Tools_FileTileLoader_Button" />
             <Button refID="Woolpert_Inc_RS_Tools_SurfaceGenerator_Launcher" />
             <Button refID="Woolpert_Inc_RS_Tools_CollapseAllLayers" />
-            <Button refID="Woolpert_Inc_RS_Tools_FileTileCloner_Button" />
-            <Button refID="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" separator="true" />
-            <Button refID="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" />
             <Button refID="Woolpert_Inc_RS_Tools_HomesiteSettings_Button" separator="true" />
             <Button refID="Woolpert_Inc_RS_Tools_Homesite_Tool" />
           </Items>
@@ -149,6 +149,15 @@
         <Toolbar id="Woolpert_Inc_RS_Tools_RS_Ecog_Utilities" caption="RS Ecog Utilities" showInitially="false">
           <Items>
             <Button refID="Woolpert_Inc_RS_Tools_PrepLASData_Button" />
+          </Items>
+        </Toolbar>
+        <Toolbar id="Woolpert_Inc_RS_Tools_RS_File_Tile" caption="RS File Tile Utilities" showInitially="false">
+          <Items>
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileOpenerSettings_Button" separator="true" />
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileOpener_Tool" />
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileLoader_Button" />
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileExister_Button" />
+            <Button refID="Woolpert_Inc_RS_Tools_FileTileCloner_Button"/>
           </Items>
         </Toolbar>
       </Toolbars>

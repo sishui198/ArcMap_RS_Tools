@@ -411,9 +411,9 @@ namespace RS_Tools.Tools.Inspector
 
             _utilitiesArcMap = new RS_Tools.Utilities.Utilities_ArcMap(_map);
             if (this.cboBuildingLayer.Items.Count > 0) this.cboBuildingLayer.Items.Clear();
-            this.cboBuildingLayer.Items.AddRange(_utilitiesArcMap.PolygonLayers().ToArray());
+            this.cboBuildingLayer.Items.AddRange(_utilitiesArcMap.PolygonLayerNames().ToArray());
             this.cboBuildingLayer.Items.AddRange(_utilitiesArcMap.PolylineLayers().ToArray());
-            this.cboBuildingLayer.Items.AddRange(_utilitiesArcMap.PointLayers().ToArray());
+            this.cboBuildingLayer.Items.AddRange(_utilitiesArcMap.PointLayerNames().ToArray());
             if (this.cboBuildingLayer.Items.Count > 0) this.cboBuildingLayer.SelectedIndex = 0;
         }
 

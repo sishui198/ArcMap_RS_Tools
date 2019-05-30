@@ -68,7 +68,7 @@ namespace RS_Tools.Utilities
 
         /// <summary> The polygon feature layers in current map </summary>
         /// <returns> Function to retrieve a list of polygon feature layers in current map </returns>
-        public ArrayList PolygonLayers()
+        public ArrayList PolygonLayerNames()
         {
             ArrayList pList = new ArrayList();
             if (FocusMap == null)
@@ -90,6 +90,41 @@ namespace RS_Tools.Utilities
                     {
                         if (pFLayer.FeatureClass != null)
                             pList.Add(pLayer.Name);
+                    }
+                    pLayer = pEnumLayer.Next();
+                }
+                return pList;
+            }
+            catch (Exception ex)
+            {
+                if (SupressMessaging == false)
+                    MessageBox.Show(ex.Message, "Polygon Layers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            return pList;
+        }
+
+        public List<ILayer> PolygonLayers()
+        {
+            List<ILayer> pList = new List<ILayer>();
+            if (FocusMap == null)
+                return pList;
+            if (FocusMap.LayerCount == 0)
+                return pList;
+
+            try
+            {
+                UID pID = new UIDClass();
+                pID.Value = "{E156D7E5-22AF-11D3-9F99-00C04F6BC78E}"; //GeoFeatureLayer
+                IEnumLayer pEnumLayer = FocusMap.get_Layers(pID, true);
+                pEnumLayer.Reset();
+                ILayer pLayer = pEnumLayer.Next();
+                while (!(pLayer == null))
+                {
+                    IFeatureLayer2 pFLayer = (IFeatureLayer2)pLayer;
+                    if (pFLayer.ShapeType == esriGeometryType.esriGeometryPolygon)
+                    {
+                        if (pFLayer.FeatureClass != null)
+                            pList.Add(pLayer);
                     }
                     pLayer = pEnumLayer.Next();
                 }
@@ -223,7 +258,7 @@ namespace RS_Tools.Utilities
 
         /// <summary> The point feature layers in current map </summary>
         /// <returns> Function to retrieve a list of all point feature layers in current map </returns>
-        public ArrayList PointLayers()
+        public ArrayList PointLayerNames()
         {
             ArrayList pList = new ArrayList();
             if (FocusMap == null)
@@ -254,6 +289,41 @@ namespace RS_Tools.Utilities
                 if (SupressMessaging == false)
                     MessageBox.Show(ex.Message, "Point Layers", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            return pList;
+        }
+
+        public List<ILayer> PointLayers()
+        {
+            List<ILayer> pList = new List<ILayer>();
+
+            if (FocusMap.LayerCount == 0)
+                return pList;
+
+            try
+            {
+                UID pID = new UIDClass();
+                pID.Value = "{E156D7E5-22AF-11D3-9F99-00C04F6BC78E}"; //GeoFeatureLayer
+                IEnumLayer pEnumLayer = FocusMap.get_Layers(pID, true);
+                pEnumLayer.Reset();
+                ILayer pLayer = pEnumLayer.Next();
+                while (!(pLayer == null))
+                {
+                    IFeatureLayer2 pFLayer = (IFeatureLayer2)pLayer;
+                    if (pFLayer.ShapeType == esriGeometryType.esriGeometryMultipoint || pFLayer.ShapeType == esriGeometryType.esriGeometryPoint)
+                    {
+                        pList.Add(pLayer);
+                    }
+                    pLayer = pEnumLayer.Next();
+                }
+                return pList;
+            }
+            catch (Exception ex)
+            {
+                if (SupressMessaging == false)
+                    MessageBox.Show(ex.Message, "Point Layers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
             return pList;
         }
 
