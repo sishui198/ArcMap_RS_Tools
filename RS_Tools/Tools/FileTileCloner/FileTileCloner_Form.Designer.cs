@@ -70,7 +70,7 @@
             this.rb_selected.AutoSize = true;
             this.rb_selected.Location = new System.Drawing.Point(62, 370);
             this.rb_selected.Name = "rb_selected";
-            this.rb_selected.Size = new System.Drawing.Size(68, 17);
+            this.rb_selected.Size = new System.Drawing.Size(99, 27);
             this.rb_selected.TabIndex = 37;
             this.rb_selected.TabStop = true;
             this.rb_selected.Text = "Selected";
@@ -81,7 +81,7 @@
             this.rb_all.AutoSize = true;
             this.rb_all.Location = new System.Drawing.Point(13, 370);
             this.rb_all.Name = "rb_all";
-            this.rb_all.Size = new System.Drawing.Size(38, 17);
+            this.rb_all.Size = new System.Drawing.Size(54, 27);
             this.rb_all.TabIndex = 36;
             this.rb_all.TabStop = true;
             this.rb_all.Text = "All";
@@ -92,7 +92,7 @@
             this.lbl_FileCloningMethod.AutoSize = true;
             this.lbl_FileCloningMethod.Location = new System.Drawing.Point(9, 354);
             this.lbl_FileCloningMethod.Name = "lbl_FileCloningMethod";
-            this.lbl_FileCloningMethod.Size = new System.Drawing.Size(114, 13);
+            this.lbl_FileCloningMethod.Size = new System.Drawing.Size(166, 23);
             this.lbl_FileCloningMethod.TabIndex = 35;
             this.lbl_FileCloningMethod.Text = "File Loading Method";
             // 
@@ -101,7 +101,7 @@
             this.lbl_SourceWorkspace.AutoSize = true;
             this.lbl_SourceWorkspace.Location = new System.Drawing.Point(9, 213);
             this.lbl_SourceWorkspace.Name = "lbl_SourceWorkspace";
-            this.lbl_SourceWorkspace.Size = new System.Drawing.Size(102, 13);
+            this.lbl_SourceWorkspace.Size = new System.Drawing.Size(149, 23);
             this.lbl_SourceWorkspace.TabIndex = 34;
             this.lbl_SourceWorkspace.Text = "Source Workspace";
             // 
@@ -121,7 +121,7 @@
             this.txb_FileWorkspaceSrc.Location = new System.Drawing.Point(9, 244);
             this.txb_FileWorkspaceSrc.Name = "txb_FileWorkspaceSrc";
             this.txb_FileWorkspaceSrc.ReadOnly = true;
-            this.txb_FileWorkspaceSrc.Size = new System.Drawing.Size(339, 22);
+            this.txb_FileWorkspaceSrc.Size = new System.Drawing.Size(339, 29);
             this.txb_FileWorkspaceSrc.TabIndex = 32;
             // 
             // cbo_extension
@@ -129,7 +129,7 @@
             this.cbo_extension.FormattingEnabled = true;
             this.cbo_extension.Location = new System.Drawing.Point(273, 179);
             this.cbo_extension.Name = "cbo_extension";
-            this.cbo_extension.Size = new System.Drawing.Size(126, 21);
+            this.cbo_extension.Size = new System.Drawing.Size(126, 31);
             this.cbo_extension.TabIndex = 31;
             // 
             // lbl_extension
@@ -137,7 +137,7 @@
             this.lbl_extension.AutoSize = true;
             this.lbl_extension.Location = new System.Drawing.Point(269, 152);
             this.lbl_extension.Name = "lbl_extension";
-            this.lbl_extension.Size = new System.Drawing.Size(57, 13);
+            this.lbl_extension.Size = new System.Drawing.Size(83, 23);
             this.lbl_extension.TabIndex = 30;
             this.lbl_extension.Text = "Extension";
             // 
@@ -146,7 +146,7 @@
             this.lbl_suffix.AutoSize = true;
             this.lbl_suffix.Location = new System.Drawing.Point(129, 152);
             this.lbl_suffix.Name = "lbl_suffix";
-            this.lbl_suffix.Size = new System.Drawing.Size(36, 13);
+            this.lbl_suffix.Size = new System.Drawing.Size(51, 23);
             this.lbl_suffix.TabIndex = 29;
             this.lbl_suffix.Text = "Suffix";
             // 
@@ -154,14 +154,14 @@
             // 
             this.txb_Suffix.Location = new System.Drawing.Point(133, 178);
             this.txb_Suffix.Name = "txb_Suffix";
-            this.txb_Suffix.Size = new System.Drawing.Size(134, 22);
+            this.txb_Suffix.Size = new System.Drawing.Size(134, 29);
             this.txb_Suffix.TabIndex = 28;
             // 
             // txb_Prefix
             // 
             this.txb_Prefix.Location = new System.Drawing.Point(9, 178);
             this.txb_Prefix.Name = "txb_Prefix";
-            this.txb_Prefix.Size = new System.Drawing.Size(118, 22);
+            this.txb_Prefix.Size = new System.Drawing.Size(118, 29);
             this.txb_Prefix.TabIndex = 27;
             // 
             // lbl_prefix
@@ -169,7 +169,7 @@
             this.lbl_prefix.AutoSize = true;
             this.lbl_prefix.Location = new System.Drawing.Point(8, 152);
             this.lbl_prefix.Name = "lbl_prefix";
-            this.lbl_prefix.Size = new System.Drawing.Size(35, 13);
+            this.lbl_prefix.Size = new System.Drawing.Size(52, 23);
             this.lbl_prefix.TabIndex = 26;
             this.lbl_prefix.Text = "Prefix";
             // 
@@ -178,7 +178,7 @@
             this.lbl_TileNameField.AutoSize = true;
             this.lbl_TileNameField.Location = new System.Drawing.Point(206, 77);
             this.lbl_TileNameField.Name = "lbl_TileNameField";
-            this.lbl_TileNameField.Size = new System.Drawing.Size(84, 13);
+            this.lbl_TileNameField.Size = new System.Drawing.Size(127, 23);
             this.lbl_TileNameField.TabIndex = 25;
             this.lbl_TileNameField.Text = "Tile Name Field";
             // 
@@ -187,7 +187,7 @@
             this.lbl_TileIndex.AutoSize = true;
             this.lbl_TileIndex.Location = new System.Drawing.Point(8, 77);
             this.lbl_TileIndex.Name = "lbl_TileIndex";
-            this.lbl_TileIndex.Size = new System.Drawing.Size(55, 13);
+            this.lbl_TileIndex.Size = new System.Drawing.Size(83, 23);
             this.lbl_TileIndex.TabIndex = 24;
             this.lbl_TileIndex.Text = "Tile Index";
             // 
@@ -197,7 +197,7 @@
             this.cbo_FieldName.FormattingEnabled = true;
             this.cbo_FieldName.Location = new System.Drawing.Point(209, 106);
             this.cbo_FieldName.Name = "cbo_FieldName";
-            this.cbo_FieldName.Size = new System.Drawing.Size(190, 21);
+            this.cbo_FieldName.Size = new System.Drawing.Size(190, 31);
             this.cbo_FieldName.TabIndex = 23;
             // 
             // cbo_TileIndex
@@ -206,7 +206,7 @@
             this.cbo_TileIndex.FormattingEnabled = true;
             this.cbo_TileIndex.Location = new System.Drawing.Point(9, 106);
             this.cbo_TileIndex.Name = "cbo_TileIndex";
-            this.cbo_TileIndex.Size = new System.Drawing.Size(193, 21);
+            this.cbo_TileIndex.Size = new System.Drawing.Size(193, 31);
             this.cbo_TileIndex.TabIndex = 22;
             this.cbo_TileIndex.SelectedIndexChanged += new System.EventHandler(this.cbo_TileIndex_SelectedIndexChanged);
             // 
@@ -236,7 +236,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 279);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 13);
+            this.label1.Size = new System.Drawing.Size(184, 23);
             this.label1.TabIndex = 41;
             this.label1.Text = "Destination Workspace";
             // 
@@ -256,7 +256,7 @@
             this.txb_FileWorkspaceDst.Location = new System.Drawing.Point(11, 308);
             this.txb_FileWorkspaceDst.Name = "txb_FileWorkspaceDst";
             this.txb_FileWorkspaceDst.ReadOnly = true;
-            this.txb_FileWorkspaceDst.Size = new System.Drawing.Size(339, 22);
+            this.txb_FileWorkspaceDst.Size = new System.Drawing.Size(339, 29);
             this.txb_FileWorkspaceDst.TabIndex = 39;
             // 
             // btn_CreateBatch
@@ -272,7 +272,7 @@
             // 
             // FileTileCloner_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(411, 429);

@@ -151,7 +151,7 @@ namespace RS_Tools.Tools.FileTileOpener
             _map = _mxdocument.FocusMap;
             _utilitiesArcMap = new RS_Tools.Utilities.Utilities_ArcMap(_map);
             cboTileIndex.Items.Clear();
-            cboTileIndex.Items.AddRange(_utilitiesArcMap.PolygonLayers().ToArray());
+            cboTileIndex.Items.AddRange(_utilitiesArcMap.PolygonLayerNames().ToArray());
             if (cboTileIndex.Items.Count > 0)
             {
                 cboTileIndex.SelectedIndex = 0;

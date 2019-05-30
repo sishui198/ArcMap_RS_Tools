@@ -514,8 +514,6 @@ namespace RS_Tools.Tools.FileTileCloner
             }
         }
 
-        #endregion
-
-        
+        #endregion     
     }
 }

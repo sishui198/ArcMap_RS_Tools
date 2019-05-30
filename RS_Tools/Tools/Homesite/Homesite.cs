@@ -107,7 +107,7 @@ namespace RS_Tools.Tools.Homesite
         {
 
             cbo_featureclass.Items.Clear();
-            cbo_featureclass.Items.AddRange(_utilitiesArcMap.PolygonLayers().ToArray());
+            cbo_featureclass.Items.AddRange(_utilitiesArcMap.PolygonLayerNames().ToArray());
 
             if (cbo_featureclass.Items.Count > 0)
             {
